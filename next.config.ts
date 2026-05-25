@@ -12,6 +12,14 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: configDir,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/impact",
+        destination: "https://octaviaan.github.io/impact/index.html",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
