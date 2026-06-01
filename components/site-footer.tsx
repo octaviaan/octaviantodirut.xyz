@@ -4,32 +4,28 @@ import { navItems, profile } from "@/lib/content";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-(--border-soft)">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-10 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
-        <div className="max-w-md space-y-3">
-          <p className="font-display text-xl text-(--text)">{profile.name}</p>
-          <p className="text-sm leading-6 text-(--muted)">
+    <footer className="site-footer">
+      <div className="inner">
+        <div className="stack-sm" style={{ maxWidth: "34ch" }}>
+          <p className="serif" style={{ fontSize: "1.4rem" }}>{profile.name}</p>
+          <p className="body" style={{ fontSize: ".9rem" }}>
             Product and visual design for teams that want clarity, confidence,
             and a premium digital feel.
           </p>
         </div>
 
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between lg:min-w-md">
-          <nav className="flex flex-wrap gap-4 text-sm text-(--muted)">
+        <div className="stack" style={{ textAlign: "right" }}>
+          <nav className="fnav">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="transition hover:text-(--text)"
-              >
+              <Link key={item.href} href={item.href}>
                 {item.label}
               </Link>
             ))}
           </nav>
-
           <a
+            className="link-arrow"
             href={`mailto:${profile.email}`}
-            className="text-sm text-(--text) transition hover:text-(--accent)"
+            style={{ justifyContent: "flex-end" }}
           >
             {profile.email}
           </a>

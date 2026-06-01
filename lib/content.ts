@@ -64,8 +64,9 @@ export const profile = {
     "I design digital products with cinematic clarity and sharp commercial focus.",
   intro:
     "Independent designer crafting interfaces, systems, and brand moments for ambitious teams across product, Web3, and culture.",
-  email: "hello@octaviantodirut.com",
-  linkedin: "https://www.linkedin.com/in/octaviantodirut",
+  email: "octaviantodirut@gmail.com",
+  linkedin: "https://www.linkedin.com/in/octanaiv/",
+  x: "https://x.com/b1rdf1sh",
 };
 
 export const navItems = [
@@ -81,79 +82,109 @@ export const caseStudies: CaseStudy[] = [
     slug: "gitcoin-3-rebrand",
     title: "Gitcoin 3.0 Rebrand",
     description:
-      "A full brand and web refresh for Gitcoin's move from a grants platform into a broader funding network, paired with a generative asset tool for consistent campaign visuals.",
+      "A designed-and-coded case study for Gitcoin's 3.0 rebrand: a return to lunar-punk roots, database-first product architecture, and generative visuals for funding intelligence.",
     href: "https://gitcoin.co/",
     links: [
+      {
+        label: "View coded case study",
+        href: "https://octaviaan.github.io/impact/case-study.html",
+      },
       { label: "Visit Gitcoin", href: "https://gitcoin.co/" },
       { label: "Open asset generator", href: "https://gitcoin.co/generator" },
     ],
     heroImageSrc: "/images/gitcoin-3.jpg",
     heroImageAlt: "Gitcoin 3.0 brand artwork with Fund What Matters messaging.",
-    tags: ["Brand", "Website", "Generative Tool"],
+    tags: ["Brand", "Product", "Front-end"],
     year: "2026",
     featured: true,
     heroLabel:
-      "A sharper public identity for Gitcoin 3.0: funding intelligence, mechanism pluralism, and generative brand assets.",
+      "A designed and coded Gitcoin 3.0 case study: funding intelligence, contributor navigation, and generative brand assets.",
     challenge:
-      "Gitcoin was evolving beyond a single grants product into a network for Ethereum public goods funding: a place to discover mechanisms, compare programs, study outcomes, and coordinate capital. The brand needed to explain that shift without losing Gitcoin's public goods roots, while the day-to-day content engine needed a faster way to create visuals that still felt unmistakably Gitcoin.",
+      "Gitcoin had drifted upmarket into a more institutional SaaS expression, which weakened the grassroots credibility that made it matter to Ethereum public goods communities. The rebrand needed to return to Gitcoin's lunar-punk roots while moving the product forward as a database of everything funding: a place to browse mechanisms, compare programs, study outcomes, and contribute to the funding landscape.",
     process: [
       {
-        title: "Reframing the Public Story",
+        title: "Returning to the Plot",
         description:
-          "Repositioned the site around the line Fund What Matters and a clearer editorial architecture: campaigns, research, apps, mechanisms, and case studies. The goal was to make Gitcoin feel less like a product landing page and more like the trusted reference layer for Ethereum funding.",
+          "Reframed Gitcoin around its public-goods roots and the line Fund What Matters, shifting the expression away from institutional polish and toward a sharper contributor-led identity. The coded case study presents that strategic return as both a brand move and a product architecture move.",
       },
       {
-        title: "A System for Funding Intelligence",
+        title: "Database-First Product Architecture",
         description:
-          "Structured the visual language around dense, searchable knowledge surfaces, restrained dark UI, high-contrast teal accents, and a stronger typographic hierarchy. This gave the brand enough authority for reports and case studies while keeping enough energy for campaigns and community moments.",
+          "Structured the new site like a funding database: campaigns, research, apps, mechanisms, and case studies organized as browsable, searchable, editable knowledge. The system uses a persistent header, breadcrumbs, reading-time cues, and a file-tree sidebar so visitors always understand where they are.",
         media: [
           {
             type: "image",
-            src: "/case_studies/gitcoin-chladni-1.png",
-            alt: "Cellular Gitcoin brand background generated from the new asset system.",
+            src: "/case_studies/gitcoin-search-cmdk.png",
+            alt: "Gitcoin global search overlay with suggestions.",
             caption:
-              "The rebrand introduced generative textures that could flex across editorial, campaign, and social formats.",
+              "Global search and Command-K shortcuts make the funding database feel fast and product-native.",
             aspectRatio: "landscape",
           },
           {
             type: "image",
-            src: "/case_studies/gitcoin-chladni-2.png",
-            alt: "Circular Gitcoin brand background generated from the new asset system.",
+            src: "/case_studies/gitcoin-breadcrumbs.png",
+            alt: "Gitcoin article header with top navigation and breadcrumbs.",
             caption:
-              "A family of Chladni-inspired backgrounds gave the system recognizable variation without relying on one static key visual.",
+              "Breadcrumbs, stable navigation, and reading-time details help long-form funding content stay legible.",
             aspectRatio: "landscape",
           },
         ],
       },
       {
-        title: "Brand Asset Generator",
+        title: "Contributor Surfaces",
         description:
-          "Built a Three.js Chladni plate generator so the team could create Gitcoin-aligned visuals in seconds. Instead of treating the brand system as a fixed asset folder, the generator turned the visual language into a reusable production tool.",
+          "Added product patterns that make Gitcoin feel open-source at the interaction level: an AI assistant grounded in the database, a GitHub edit path for every article, and a tree sidebar that mirrors the repository structure.",
         media: [
           {
             type: "image",
-            src: "/case_studies/gitcoin-chladni-3.png",
-            alt: "Organic Gitcoin brand background generated from the asset generator.",
+            src: "/case_studies/gitcoin-ai-assistant.png",
+            alt: "Gitcoin AI assistant side panel with suggested questions.",
             caption:
-              "The generator made brand consistency practical for fast-moving grants, research, and ecosystem communications.",
+              "The assistant gives visitors a conversational way into the funding knowledge base.",
+            aspectRatio: "portrait",
+          },
+          {
+            type: "image",
+            src: "/case_studies/gitcoin-sidebar-tree.png",
+            alt: "Gitcoin sidebar tree with funding categories and expanded pages.",
+            caption:
+              "The left rail borrows from file explorers so contributors can browse Gitcoin like a codebase.",
+            aspectRatio: "portrait",
+          },
+          {
+            type: "image",
+            src: "/case_studies/gitcoin-edit-github.png",
+            alt: "Gitcoin article footer with an Edit on GitHub button.",
+            caption:
+              "The Edit on GitHub action turns static articles into contribution paths.",
             aspectRatio: "landscape",
           },
         ],
       },
       {
-        title: "Connecting Brand to Gitcoin 3.0",
+        title: "Generative Asset System",
         description:
-          "Aligned the identity with the Gitcoin 3.0 transition: plural funding mechanisms, community-operated rounds, and a broader grants network. The brand system had to support both institutional credibility and experimental mechanism design.",
+          "Coded a Three.js Chladni generator to create seeded hero art and Open Graph imagery for articles. The system turns the rebrand into a production tool: mathematically consistent, visually alive, and flexible enough for fast-moving research, campaign, and ecosystem pages.",
+        media: [
+          {
+            type: "image",
+            src: "/case_studies/gitcoin-asset-generator.png",
+            alt: "Gitcoin Chladni asset generator interface with particle pattern artwork.",
+            caption:
+              "One generator powers hero art and social images, giving each page a unique but recognizable Gitcoin visual.",
+            aspectRatio: "landscape",
+          },
+        ],
       },
     ],
     outcome:
-      "The rebrand gave Gitcoin a more mature public face for its 3.0 era, turning the website into a funding reference library and the asset generator into a practical tool for producing consistent campaign, research, and ecosystem visuals.",
+      "The result is a designed and coded case study that positions Gitcoin 3.0 as a funding reference layer for Ethereum: lunar-punk in tone, database-first in structure, and practical for community contribution through search, GitHub editing, AI assistance, and generative brand tooling.",
     metrics: [
-      { label: "Funding Distributed", value: "$60M+" },
-      { label: "Funding Rounds", value: "230+" },
-      { label: "Unique Donations", value: "5M+" },
-      { label: "Projects Funded", value: "3,715" },
-      { label: "Brand Tool", value: "1 generator" },
+      { label: "Funding Routed", value: "$63M+" },
+      { label: "Projects Funded", value: "3,700+" },
+      { label: "Founded", value: "2017" },
+      { label: "Role", value: "Design + Code" },
+      { label: "Stack", value: "Next.js + Three.js" },
     ],
   },
   {

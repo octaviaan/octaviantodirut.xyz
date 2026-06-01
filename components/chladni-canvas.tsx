@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 type ChladniCanvasProps = {
   className?: string;
   variant?: "card" | "hero";
+  noWrapper?: boolean;
 };
 
 type Mode = {
@@ -123,6 +124,7 @@ function createModes() {
 export function ChladniCanvas({
   className,
   variant = "card",
+  noWrapper = false,
 }: ChladniCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -330,13 +332,12 @@ export function ChladniCanvas({
     };
   }, [variant]);
 
+  if (noWrapper) {
+    return <canvas ref={canvasRef} className={cn("block h-full w-full", className)} />;
+  }
+
   return (
-    <div
-      className={cn(
-        "media-frame relative overflow-hidden rounded-md",
-        className,
-      )}
-    >
+    <div className={cn("relative overflow-hidden", className)}>
       <canvas ref={canvasRef} className="block h-full w-full" />
     </div>
   );

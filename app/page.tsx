@@ -1,199 +1,240 @@
+import Image from "next/image";
 import Link from "next/link";
-
-import { CaseStudyArt } from "@/components/case-study-art";
-import { ExperimentPreview } from "@/components/experiment-preview";
-import { FadeIn } from "@/components/fade-in";
-import { HoverPanel } from "@/components/hover-panel";
-import { SectionHeading } from "@/components/section-heading";
-import { UiButton } from "@/components/ui-button";
-import { caseStudies, experiments, profile } from "@/lib/content";
-
-const featuredStudies = caseStudies.filter((study) => study.featured);
-const featuredExperiments = experiments.slice(0, 2);
-const featuredHeroStudy = featuredStudies[0];
 
 export default function HomePage() {
   return (
-    <div className="space-y-24 pb-10 sm:space-y-28">
-      <section className="grid items-end gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-        <FadeIn className="space-y-8">
-          <div className="space-y-5">
-            <p className="text-xs font-medium uppercase text-(--accent)">
-              Product & Visual Designer
+    <>
+      {/* HERO */}
+      <section className="section wrap wide hero">
+        <div className="hero-grid">
+          <div className="reveal hero-lead">
+            <p className="eyebrow">Product &amp; Visual Designer</p>
+            <h1 className="display">Octavian<br />Todirut</h1>
+            <p className="lede balance" style={{ maxWidth: "30ch" }}>
+              I design digital products with <em className="serif mark">cinematic clarity</em> and sharp commercial focus.
             </p>
-            <h1 className="font-display max-w-4xl text-3xl leading-[0.94] text-(--text) sm:text-3xl lg:text-6xl">
-              {profile.name}
-            </h1>
-            <p className="max-w-2xl text-balance text-lg leading-8 text-(--muted) sm:text-xl">
-              {profile.tagline}
-            </p>
-          </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[
-              { label: "Focus", value: "Product clarity" },
-              { label: "Work style", value: "Systems + storytelling" },
-              { label: "Based in", value: "Remote / Europe" },
-            ].map((item) => (
-              <div key={item.label} className="panel rounded-md p-5">
-                <p className="text-xs uppercase text-(--muted)">{item.label}</p>
-                <p className="mt-3 font-display text-xl text-(--text)">
-                  {item.value}
-                </p>
+            <div className="stat-row">
+              <div className="stat">
+                <span className="eyebrow muted">Focus</span>
+                <span className="stat-v">Product clarity</span>
               </div>
-            ))}
+              <div className="stat">
+                <span className="eyebrow muted">Work&nbsp;style</span>
+                <span className="stat-v">Systems + storytelling</span>
+              </div>
+              <div className="stat">
+                <span className="eyebrow muted">Based&nbsp;in</span>
+                <span className="stat-v">Remote / Europe</span>
+              </div>
+            </div>
+
+            <div className="hero-actions">
+              <Link className="btn btn-primary" href="/case-studies">
+                View case studies <span className="arr">↗</span>
+              </Link>
+              <Link className="link-arrow" href="/contact">
+                Start a project <span className="arr">→</span>
+              </Link>
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-3">
-            <UiButton href="/case-studies" variant="primary">
-              View case studies
-            </UiButton>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.08}>
-          <Link href={`/case-studies/${featuredHeroStudy.slug}`}>
-            <HoverPanel className="group panel rounded-lg p-4 sm:p-5">
-              <CaseStudyArt
-                study={featuredHeroStudy}
-                sizes="(min-width: 1024px) 704px, (min-width: 640px) calc(100vw - 88px), calc(100vw - 64px)"
-                className="aspect-[1.56/1] min-h-0 w-full max-w-[44rem] border-none p-0 shadow-none sm:mx-auto"
+          <Link
+            className="reveal feature-card"
+            href="/case-studies/gitcoin-3-rebrand"
+            style={{ transitionDelay: ".08s" }}
+          >
+            <div className="feature-art">
+              <Image
+                src="/images/chladni-feature.png"
+                alt="Chladni generative pattern from the Gitcoin 3.0 rebrand asset generator"
+                fill
+                priority
+                sizes="(min-width: 1280px) 520px, (min-width: 1024px) 44vw, calc(100vw - 40px)"
+                style={{ objectFit: "cover" }}
               />
-
-              <div className="space-y-4 px-1 pt-5">
-                <div>
-                  <h2 className="font-display text-3xl text-(--text) sm:text-4xl">
-                    {featuredHeroStudy.title}
-                  </h2>
-                </div>
-
-                <p className="max-w-xl text-sm leading-7 text-(--muted) sm:text-base">
-                  {featuredHeroStudy.description}
-                </p>
-              </div>
-            </HoverPanel>
+              <span className="feature-tag">Selected — 01</span>
+            </div>
+            <div className="feature-body">
+              <div className="feature-meta">2026 · Brand / Product / Three.js</div>
+              <h2 className="h3 serif">
+                Gitcoin 3.0 — <em>the rebrand that returned home</em>
+              </h2>
+              <p className="body" style={{ fontSize: ".95rem" }}>
+                Walking Gitcoin back to its lunar-punk roots, and forward into the database of everything funding on Ethereum.
+              </p>
+              <span className="link-arrow">Read the case study <span className="arr">→</span></span>
+            </div>
           </Link>
-        </FadeIn>
-      </section>
-
-      <section className="space-y-8">
-        <FadeIn>
-          <SectionHeading
-            eyebrow="Selected Work"
-            title="Case studies built to show the thinking, not just the finish."
-            description="A focused set of product and visual design projects with concise context, process, and business impact."
-          />
-        </FadeIn>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          {featuredStudies.map((study, index) => (
-            <FadeIn key={study.slug} delay={0.06 * index}>
-              <HoverPanel className="group panel relative h-full rounded-lg p-5 sm:p-6">
-                <Link
-                  href={`/case-studies/${study.slug}`}
-                  aria-label={`Open case study: ${study.title}`}
-                  className="absolute inset-0 z-10 rounded-lg"
-                />
-                <div className="mb-6">
-                  <CaseStudyArt
-                    study={study}
-                    compact
-                    className="min-h-full shadow-none"
-                  />
-                </div>
-
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="font-display text-2xl text-(--text)">
-                      {study.title}
-                    </h3>
-                  </div>
-
-                  <p className="text-sm leading-7 text-(--muted)">
-                    {study.description}
-                  </p>
-
-                  <div className="relative z-20 pt-2">
-                    <UiButton
-                      href={`/case-studies/${study.slug}`}
-                      variant="secondary"
-                      size="sm"
-                    >
-                      Explore
-                    </UiButton>
-                  </div>
-                </div>
-              </HoverPanel>
-            </FadeIn>
-          ))}
         </div>
       </section>
 
-      <section className="space-y-8">
-        <FadeIn>
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <SectionHeading
-              eyebrow="Experiments"
-              title="A couple of experiments worth opening."
-              description="Selected generators and image tools pulled from the public experiment archive."
-            />
+      <hr className="divider wrap-line" />
 
-            <UiButton href="/experiments" variant="secondary" className="w-fit">
-              View all Experiments
-            </UiButton>
+      {/* SELECTED WORK */}
+      <section className="section wrap wide">
+        <div className="reveal sec-head">
+          <p className="eyebrow">Selected Work</p>
+          <h2 className="h2 balance">
+            Case studies built to show the <em>thinking</em>,<br />not just the finish.
+          </h2>
+          <p className="body" style={{ maxWidth: "52ch" }}>
+            A focused set of product and visual design projects with concise context, process, and the business impact behind each one.
+          </p>
+        </div>
+
+        <div className="work-grid">
+          <Link className="reveal work-card" href="/case-studies/gitcoin-3-rebrand">
+            <div className="work-art frame">
+              <Image
+                src="/case_studies/gitcoin-asset-generator.png"
+                alt="Chladni-generated Gitcoin brand artwork"
+                width={800}
+                height={600}
+              />
+            </div>
+            <div className="work-info">
+              <div className="work-row">
+                <span className="chip">2026</span>
+                <span className="work-tags">Brand · Product</span>
+              </div>
+              <h3 className="h3 serif">Gitcoin 3.0 Rebrand</h3>
+              <p className="body">A full brand and web refresh paired with a generative Three.js asset tool — turning the site into the reference layer for Ethereum funding.</p>
+              <span className="link-arrow">Explore <span className="arr">→</span></span>
+            </div>
+          </Link>
+
+          <Link
+            className="reveal work-card"
+            href="/case-studies/passport"
+            style={{ transitionDelay: ".06s" }}
+          >
+            <div className="work-art frame">
+              <Image
+                src="/images/passport.png"
+                alt="Passport XYZ identity interface"
+                width={800}
+                height={600}
+              />
+            </div>
+            <div className="work-info">
+              <div className="work-row">
+                <span className="chip">2025</span>
+                <span className="work-tags">Product · Identity</span>
+              </div>
+              <h3 className="h3 serif">Passport XYZ</h3>
+              <p className="body">A privacy-first identity hub helping people prove their humanity and resist Sybil attacks without exposing sensitive personal data.</p>
+              <span className="link-arrow">Explore <span className="arr">→</span></span>
+            </div>
+          </Link>
+
+          <Link
+            className="reveal work-card"
+            href="/case-studies/gitcoin-token-launch"
+            style={{ transitionDelay: ".12s" }}
+          >
+            <div className="work-art frame">
+              <Image
+                src="/images/gtc.png"
+                alt="Gitcoin token launch artwork"
+                width={800}
+                height={600}
+              />
+            </div>
+            <div className="work-info">
+              <div className="work-row">
+                <span className="chip">2021</span>
+                <span className="work-tags">Launch · Governance</span>
+              </div>
+              <h3 className="h3 serif">Gitcoin Token Launch</h3>
+              <p className="body">Launch design for the GTC rollout and the Quadratic Lands campaign that framed Gitcoin's move toward DAO governance.</p>
+              <span className="link-arrow">Explore <span className="arr">→</span></span>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      <hr className="divider wrap-line" />
+
+      {/* EXPERIMENTS */}
+      <section className="section wrap wide">
+        <div className="reveal sec-head row-head">
+          <div className="stack-sm">
+            <p className="eyebrow">Experiments</p>
+            <h2 className="h2">A couple of experiments<br />worth <em>opening</em>.</h2>
           </div>
-        </FadeIn>
+          <Link className="btn btn-ghost btn-sm" href="/experiments">
+            View all experiments <span className="arr">↗</span>
+          </Link>
+        </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          {featuredExperiments.map((experiment, index) => (
-            <FadeIn key={experiment.slug} delay={0.05 * index} className="h-full">
-              <HoverPanel className="panel group flex h-full flex-col rounded-lg p-5 sm:p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <p className="text-xs uppercase text-(--muted)">{experiment.format}</p>
-                  <p className="text-xs uppercase text-(--muted)">{experiment.year}</p>
-                </div>
+        <div className="exp-grid">
+          <Link className="reveal exp-card" href="/experiments/chladni-particles">
+            <div className="exp-top">
+              <span>Generative Art</span>
+              <span>2026</span>
+            </div>
+            <h3 className="h3 serif">Chladni Particles</h3>
+            <p className="body" style={{ fontSize: ".95rem" }}>
+              A particle simulation of Chladni figures where motion reacts to an energy field and resolves into resonant patterns.
+            </p>
+            <div className="exp-art frame">
+              <Image
+                src="/images/chladni.png"
+                alt="Chladni particles artwork"
+                width={800}
+                height={450}
+              />
+            </div>
+            <div className="exp-stack">
+              <span className="chip">JavaScript</span>
+              <span className="chip">Three.js</span>
+              <span className="chip">Generative</span>
+            </div>
+          </Link>
 
-                <div className="mt-8 space-y-4">
-                  <h3 className="font-display text-3xl text-(--text)">{experiment.title}</h3>
-                  <p className="max-w-md text-sm leading-7 text-(--muted)">
-                    {experiment.description}
-                  </p>
-                </div>
-
-                <div className="mt-8">
-                  <ExperimentPreview experiment={experiment} className="h-44" />
-                </div>
-
-                <div className="mt-8 flex flex-wrap gap-2">
-                  {experiment.stack.map((item) => (
-                    <span
-                      key={item}
-                      className="chip rounded-sm px-3 py-1 text-xs"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-auto flex flex-wrap gap-3 pt-8">
-                  <UiButton href={`/experiments/${experiment.slug}`} variant="primary" size="sm">
-                    View details
-                  </UiButton>
-                  <UiButton
-                    href={experiment.repo}
-                    target="_blank"
-                    variant="secondary"
-                    size="sm"
-                  >
-                    GitHub repo
-                  </UiButton>
-                </div>
-              </HoverPanel>
-            </FadeIn>
-          ))}
+          <Link
+            className="reveal exp-card"
+            href="/experiments/dithering-effect-svg"
+            style={{ transitionDelay: ".06s" }}
+          >
+            <div className="exp-top">
+              <span>Image Tool</span>
+              <span>2025</span>
+            </div>
+            <h3 className="h3 serif">Dithering Effect SVG</h3>
+            <p className="body" style={{ fontSize: ".95rem" }}>
+              An image uploader that applies multiple dithering algorithms and exports the result as both PNG and crisp SVG.
+            </p>
+            <div className="exp-art frame">
+              <Image
+                src="/images/dithering.jpg"
+                alt="Dithered wildlife artwork"
+                width={800}
+                height={450}
+              />
+            </div>
+            <div className="exp-stack">
+              <span className="chip">JavaScript</span>
+              <span className="chip">SVG Export</span>
+              <span className="chip">Imaging</span>
+            </div>
+          </Link>
         </div>
       </section>
 
-    </div>
+      {/* CTA STRIP */}
+      <section className="section wrap wide">
+        <div className="reveal cta-strip panel">
+          <div>
+            <p className="eyebrow">Open to select work</p>
+            <h2 className="h2">Let&apos;s build something with <em>clarity</em>.</h2>
+          </div>
+          <Link className="btn btn-primary" href="/contact">
+            Start a conversation <span className="arr">↗</span>
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }
