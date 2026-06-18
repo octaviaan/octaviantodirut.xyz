@@ -55,10 +55,15 @@ export default function CaseStudiesPage() {
       {/* LIST */}
       <div className="cl-list">
         <article className="reveal cl-row">
+          <Link
+            className="cl-row-link"
+            href="/case-studies/passport"
+            aria-label="Read the Passport case study"
+          />
           <div className="cl-art frame">
             <Image
               src="/images/passport.png"
-              alt="Passport XYZ identity interface"
+              alt="Passport identity interface"
               width={800}
               height={600}
             />
@@ -69,10 +74,10 @@ export default function CaseStudiesPage() {
               <span>Product · Identity · Sybil Resistance</span>
             </div>
             <h3 className="h2 serif" style={{ fontSize: "clamp(1.7rem,3.2vw,2.6rem)" }}>
-              Passport XYZ
+              Passport
             </h3>
             <p className="body" style={{ maxWidth: "58ch" }}>
-              A privacy-first identity hub designed to help people prove their humanity and resist Sybil attacks without exposing sensitive personal data — unifying scattered identity signals into one user-controlled trust profile.
+              A privacy-first identity hub for proving humanity through Web2 and Web3 stamps — unifying scattered identity signals into one user-controlled trust profile.
             </p>
             <div className="cl-row-foot">
               <div className="cl-mini">
@@ -98,12 +103,18 @@ export default function CaseStudiesPage() {
                 Visit project <span className="arr">↗</span>
               </a>
             </div>
+            <span className="link-arrow">Read the case study <span className="arr">→</span></span>
           </div>
         </article>
 
         <hr className="divider" />
 
         <article className="reveal cl-row">
+          <Link
+            className="cl-row-link"
+            href="/case-studies/gitcoin-token-launch"
+            aria-label="Read the Gitcoin Token Launch case study"
+          />
           <div className="cl-art frame">
             <Image
               src="/images/gtc.png"
@@ -121,7 +132,7 @@ export default function CaseStudiesPage() {
               Gitcoin Token Launch
             </h3>
             <p className="body" style={{ maxWidth: "58ch" }}>
-              Launch design for the GTC rollout and the Quadratic Lands campaign that framed Gitcoin's move toward DAO governance — turning a token drop into an entry point for community ownership.
+              Launch design for the GTC rollout and Quadratic Lands campaign — turning a token drop into an entry point for governance, public-goods funding, and community ownership.
             </p>
             <div className="cl-row-foot">
               <div className="cl-mini">
@@ -147,6 +158,7 @@ export default function CaseStudiesPage() {
                 Visit project <span className="arr">↗</span>
               </a>
             </div>
+            <span className="link-arrow">Read the case study <span className="arr">→</span></span>
           </div>
         </article>
       </div>

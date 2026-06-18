@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { ChladniCanvas } from "@/components/chladni-canvas";
 import { ReadProgress } from "@/components/read-progress";
 import { DarkThemeDefault } from "@/components/dark-theme-default";
 
@@ -20,7 +19,14 @@ export default function GitcoinCaseStudyPage() {
 
       {/* HERO */}
       <section className="cs-hero">
-        <ChladniCanvas variant="hero" className="cs-hero-art" noWrapper />
+        <Image
+          src="/images/chladni-feature.png"
+          alt="Gitcoin 3.0 brand artwork with Fund What Matters messaging"
+          fill
+          priority
+          sizes="100vw"
+          className="cs-hero-art cs-hero-image"
+        />
         <div className="cs-hero-veil" />
         <div className="wrap cs-hero-inner">
           <Link className="cs-back link-arrow" href="/case-studies">
@@ -34,6 +40,11 @@ export default function GitcoinCaseStudyPage() {
             A rebrand that walks Gitcoin <em className="serif">back</em> to its lunar-punk roots — and forward into something new:{" "}
             <em className="serif">the database of everything funding</em> on Ethereum.
           </p>
+          <div className="case-detail-actions">
+            <a className="btn btn-primary" href="https://gitcoin.co/" target="_blank" rel="noopener">
+              Visit website <span className="arr">↗</span>
+            </a>
+          </div>
           <div className="cs-facts">
             <div className="cs-fact">
               <span className="eyebrow muted">Year</span>
@@ -136,32 +147,26 @@ export default function GitcoinCaseStudyPage() {
 
         <div className="cs-principles">
           <div className="reveal cs-pr">
-            <span className="cs-pr-i">P1</span>
             <h4>Browsable + searchable</h4>
             <p className="body">Search is front and center. ⌘K from anywhere. Ask AI inline.</p>
           </div>
           <div className="reveal cs-pr" style={{ transitionDelay: ".04s" }}>
-            <span className="cs-pr-i">P2</span>
             <h4>Tree-explorer sidebar</h4>
             <p className="body">A file-tree on the left. Always know where you are in the database.</p>
           </div>
           <div className="reveal cs-pr" style={{ transitionDelay: ".08s" }}>
-            <span className="cs-pr-i">P3</span>
             <h4>Breadcrumbs everywhere</h4>
             <p className="body">Every article shows its lineage. Easy back-out, easy lateral moves.</p>
           </div>
           <div className="reveal cs-pr" style={{ transitionDelay: ".04s" }}>
-            <span className="cs-pr-i">P4</span>
             <h4>Time-to-read on every page</h4>
             <p className="body">Set expectations before the reader starts.</p>
           </div>
           <div className="reveal cs-pr" style={{ transitionDelay: ".08s" }}>
-            <span className="cs-pr-i">P5</span>
             <h4>Edit on GitHub</h4>
             <p className="body">Every article is a PR away from being improved. Transparent, OSS.</p>
           </div>
           <div className="reveal cs-pr" style={{ transitionDelay: ".12s" }}>
-            <span className="cs-pr-i">P6</span>
             <h4>Generative asset system</h4>
             <p className="body">Three.js generator for hero art + OG images. Consistent at scale.</p>
           </div>
@@ -172,13 +177,11 @@ export default function GitcoinCaseStudyPage() {
       <section className="section wrap">
         <div className="reveal cs-sec-head center">
           <p className="eyebrow">The work, on screen</p>
-          <h2 className="h2 balance">Six surfaces, <em>one</em> system.</h2>
         </div>
 
         {/* F/01 Search */}
         <div className="cs-surface reveal">
           <div className="cs-surface-text">
-            <span className="cs-num">F/01</span>
             <p className="eyebrow muted">Search</p>
             <h3 className="h3 serif">Search, <em>front and center</em>.</h3>
             <p className="body">
@@ -200,7 +203,6 @@ export default function GitcoinCaseStudyPage() {
         {/* F/02 Breadcrumbs */}
         <div className="cs-surface reveal reverse">
           <div className="cs-surface-text">
-            <span className="cs-num">F/02</span>
             <p className="eyebrow muted">Breadcrumbs &amp; Header</p>
             <h3 className="h3 serif">You are <em>here</em>. Always.</h3>
             <p className="body">
@@ -222,7 +224,6 @@ export default function GitcoinCaseStudyPage() {
         {/* F/03 Ask AI */}
         <div className="cs-surface reveal">
           <div className="cs-surface-text">
-            <span className="cs-num">F/03</span>
             <p className="eyebrow muted">Ask AI</p>
             <h3 className="h3 serif">An assistant that <em>actually</em> reads the docs.</h3>
             <p className="body">
@@ -246,7 +247,6 @@ export default function GitcoinCaseStudyPage() {
         {/* F/04 Edit on GitHub — the one glow */}
         <div className="cs-surface reveal reverse cs-glow-scope">
           <div className="cs-surface-text">
-            <span className="cs-num" style={{ color: "var(--glow)" }}>F/04</span>
             <p className="eyebrow muted">Edit on GitHub</p>
             <h3 className="h3 serif">Every article is <em>a PR away</em>.</h3>
             <p className="body">
@@ -268,7 +268,6 @@ export default function GitcoinCaseStudyPage() {
         {/* F/05 Tree sidebar */}
         <div className="cs-surface reveal">
           <div className="cs-surface-text">
-            <span className="cs-num">F/05</span>
             <p className="eyebrow muted">Tree Sidebar</p>
             <h3 className="h3 serif">The whole database, in the <em>left rail</em>.</h3>
             <p className="body">
@@ -288,71 +287,12 @@ export default function GitcoinCaseStudyPage() {
         </div>
       </section>
 
-      {/* GENERATOR F/06 */}
-      <section className="cs-gen">
-        <div className="wrap wide cs-gen-grid">
-          <figure className="reveal cs-gen-art">
-            <ChladniCanvas variant="card" noWrapper className="cs-gen-canvas" />
-            <figcaption>F/06 · Asset Generator — three.js · standing waves</figcaption>
-          </figure>
-          <div className="reveal cs-gen-text" style={{ transitionDelay: ".06s" }}>
-            <p className="eyebrow">Generative asset system</p>
-            <h3 className="h3 serif">A <em>Chladni</em> generator that knows what an article is about.</h3>
-            <p className="body">
-              I vibe-coded a small <strong style={{ color: "var(--ink)" }}>three.js generator</strong> based on Chladni patterns — the standing-wave figures that appear on a vibrating plate. Particles settle along nodal lines into organic, symmetric grids that feel both mathematical and alive.
-            </p>
-            <ul className="cs-gen-list">
-              <li>
-                <span className="cs-tick">—</span>
-                One generator powers <strong style={{ color: "var(--ink)" }}>hero art and OG images</strong>; every article gets a unique pattern, seeded from its slug.
-              </li>
-              <li>
-                <span className="cs-tick">—</span>
-                Tunable wave coefficients <span className="mono" style={{ color: "var(--ink)" }}>(m, n, a, b)</span> — the same math, infinite outputs.
-              </li>
-              <li>
-                <span className="cs-tick">—</span>
-                Animated by default, reduced-motion respected, exports a still frame at build time.
-              </li>
-            </ul>
-            <div className="cs-gen-actions">
-              <a className="btn btn-primary" href="https://gitcoin.co" target="_blank" rel="noopener">
-                Open the generator <span className="arr">↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PULL QUOTE */}
-      <section className="section wrap">
-        <blockquote className="reveal cs-quote">
-          <p className="serif">
-            A rebrand isn&apos;t a new logo. It&apos;s a <em>different commitment</em> — and a new way for the <em>community</em> to use the product.
-          </p>
-        </blockquote>
-        <div className="reveal cs-close-facts">
-          <div className="cs-cf">
-            <span className="eyebrow muted">Brand</span>
-            <span className="cs-fact-v">Lunar-punk, returned</span>
-          </div>
-          <div className="cs-cf">
-            <span className="eyebrow muted">Product</span>
-            <span className="cs-fact-v">Database-first navigation</span>
-          </div>
-          <div className="cs-cf">
-            <span className="eyebrow muted">Community</span>
-            <span className="cs-fact-v">OSS-editable, contributor-led</span>
-          </div>
-        </div>
-      </section>
-
       {/* PREV / NEXT */}
       <section className="section wrap">
         <div className="reveal cs-next">
           <Link className="cs-next-card" href="/case-studies/passport">
             <span className="cs-next-k">← Previous</span>
-            <h4 className="serif">Passport XYZ</h4>
+            <h4 className="serif">Passport</h4>
             <p className="body">A privacy-first identity hub for proving humanity and resisting Sybil attacks.</p>
           </Link>
           <Link className="cs-next-card" href="/case-studies/gitcoin-token-launch">
@@ -362,10 +302,6 @@ export default function GitcoinCaseStudyPage() {
           </Link>
         </div>
       </section>
-
-      <style>{`
-        .cs-gen-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-      `}</style>
     </>
   );
 }

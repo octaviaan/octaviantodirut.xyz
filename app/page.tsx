@@ -10,9 +10,6 @@ export default function HomePage() {
           <div className="reveal hero-lead">
             <p className="eyebrow">Product &amp; Visual Designer</p>
             <h1 className="display">Octavian<br />Todirut</h1>
-            <p className="lede balance" style={{ maxWidth: "30ch" }}>
-              I design digital products with <em className="serif mark">cinematic clarity</em> and sharp commercial focus.
-            </p>
 
             <div className="stat-row">
               <div className="stat">
@@ -33,39 +30,76 @@ export default function HomePage() {
               <Link className="btn btn-primary" href="/case-studies">
                 View case studies <span className="arr">↗</span>
               </Link>
+              <Link className="btn btn-ghost" href="/about">
+                About me <span className="arr">→</span>
+              </Link>
               <Link className="link-arrow" href="/contact">
                 Start a project <span className="arr">→</span>
               </Link>
             </div>
           </div>
 
-          <Link
-            className="reveal feature-card"
-            href="/case-studies/gitcoin-3-rebrand"
-            style={{ transitionDelay: ".08s" }}
-          >
-            <div className="feature-art">
+          <div className="reveal feature-card portrait-card" style={{ transitionDelay: ".08s" }}>
+            <div className="feature-art portrait-art">
               <Image
-                src="/images/chladni-feature.png"
-                alt="Chladni generative pattern from the Gitcoin 3.0 rebrand asset generator"
+                src="/images/octavian-profile.jpg"
+                alt="Portrait of Octavian Todirut"
                 fill
                 priority
                 sizes="(min-width: 1280px) 520px, (min-width: 1024px) 44vw, calc(100vw - 40px)"
                 style={{ objectFit: "cover" }}
               />
-              <span className="feature-tag">Selected — 01</span>
             </div>
             <div className="feature-body">
-              <div className="feature-meta">2026 · Brand / Product / Three.js</div>
-              <h2 className="h3 serif">
-                Gitcoin 3.0 — <em>the rebrand that returned home</em>
-              </h2>
+              <div className="feature-meta">Product &amp; Visual Designer</div>
+              <h2 className="h3 serif">Based in Europe, working with teams anywhere.</h2>
               <p className="body" style={{ fontSize: ".95rem" }}>
-                Walking Gitcoin back to its lunar-punk roots, and forward into the database of everything funding on Ethereum.
+                I shape product stories, interfaces, and systems for teams building complex digital products.
               </p>
-              <span className="link-arrow">Read the case study <span className="arr">→</span></span>
             </div>
-          </Link>
+          </div>
+        </div>
+      </section>
+
+      <hr className="divider wrap-line" />
+
+      {/* ABOUT */}
+      <section id="about" className="section wrap wide about-section">
+        <div className="reveal about-copy">
+          <p className="eyebrow">About</p>
+          <h2 className="h2 balance">
+            I move between <em>product logic</em>, visual systems, and the small details that make digital work feel considered.
+          </h2>
+          <div className="about-body">
+            <p className="lede">
+              I&apos;m Octavian Todirut, a product and visual designer with a background that started in print, advertising, and art direction before moving into interactive work, brand systems, and Web3 products.
+            </p>
+            <p className="body">
+              My strongest work sits where structure and atmosphere meet: interfaces that explain complex ideas, visual identities that can scale across a product, and design systems that make teams faster without sanding away character.
+            </p>
+            <p className="body">
+              I like working close to the material. That can mean shaping a product flow in Figma, building a visual language around motion and generative tools, or getting close enough to code to understand how the thing will actually ship.
+            </p>
+          </div>
+        </div>
+
+        <div className="reveal about-facts" style={{ transitionDelay: ".08s" }}>
+          <div className="about-fact">
+            <span className="eyebrow muted">Started with</span>
+            <span className="about-fact-v">Print, advertising, art direction</span>
+          </div>
+          <div className="about-fact">
+            <span className="eyebrow muted">Now focused on</span>
+            <span className="about-fact-v">Product, brand, systems</span>
+          </div>
+          <div className="about-fact">
+            <span className="eyebrow muted">Comfort zone</span>
+            <span className="about-fact-v">Ambiguous, technical, visual</span>
+          </div>
+          <div className="about-fact">
+            <span className="eyebrow muted">Tools I enjoy</span>
+            <span className="about-fact-v">Figma, motion, 3D, code</span>
+          </div>
         </div>
       </section>
 
@@ -112,7 +146,7 @@ export default function HomePage() {
             <div className="work-art frame">
               <Image
                 src="/images/passport.png"
-                alt="Passport XYZ identity interface"
+                alt="Passport identity interface"
                 width={800}
                 height={600}
               />
@@ -122,8 +156,8 @@ export default function HomePage() {
                 <span className="chip">2025</span>
                 <span className="work-tags">Product · Identity</span>
               </div>
-              <h3 className="h3 serif">Passport XYZ</h3>
-              <p className="body">A privacy-first identity hub helping people prove their humanity and resist Sybil attacks without exposing sensitive personal data.</p>
+              <h3 className="h3 serif">Passport</h3>
+              <p className="body">A privacy-first identity hub for proving humanity through user-chosen Web2 and Web3 stamps.</p>
               <span className="link-arrow">Explore <span className="arr">→</span></span>
             </div>
           </Link>
@@ -147,7 +181,7 @@ export default function HomePage() {
                 <span className="work-tags">Launch · Governance</span>
               </div>
               <h3 className="h3 serif">Gitcoin Token Launch</h3>
-              <p className="body">Launch design for the GTC rollout and the Quadratic Lands campaign that framed Gitcoin's move toward DAO governance.</p>
+              <p className="body">Launch design for the GTC rollout and Quadratic Lands campaign, turning a token drop into an entry point for governance.</p>
               <span className="link-arrow">Explore <span className="arr">→</span></span>
             </div>
           </Link>

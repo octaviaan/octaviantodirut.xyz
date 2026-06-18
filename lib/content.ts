@@ -71,6 +71,7 @@ export const profile = {
 
 export const navItems = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/experiments", label: "Experiments" },
   { href: "/design-system", label: "Design System" },
@@ -90,7 +91,6 @@ export const caseStudies: CaseStudy[] = [
         href: "https://octaviaan.github.io/impact/case-study.html",
       },
       { label: "Visit Gitcoin", href: "https://gitcoin.co/" },
-      { label: "Open asset generator", href: "https://gitcoin.co/generator" },
     ],
     heroImageSrc: "/images/gitcoin-3.jpg",
     heroImageAlt: "Gitcoin 3.0 brand artwork with Fund What Matters messaging.",
@@ -189,46 +189,51 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "passport",
-    title: "Passport XYZ",
+    title: "Passport",
     description:
-      "A privacy-first identity hub designed to help people prove their humanity and resist Sybil attacks without exposing sensitive personal data.",
+      "A privacy-first identity hub for proving humanity through Web2 and Web3 stamps, designed for Sybil resistance without exposing sensitive personal data.",
     href: "https://app.passport.xyz/",
     heroImageSrc: "/images/passport.png",
     heroImageAlt:
-      "Passport XYZ interface artwork showing identity verification and scoring.",
-    tags: ["Product", "Identity", "Sybil Resistance"],
+      "Passport interface artwork showing identity verification and scoring.",
+    tags: ["UI/UX", "Identity", "Sybil Resistance"],
     year: "2025",
     featured: true,
     heroLabel:
-      "A modular trust layer for proving humanity across Web2 and Web3 signals.",
+      "Empowering decentralized identity and Sybil resistance through a user-controlled proof-of-humanity system.",
     challenge:
-      "In Web3, trust was fragmented across wallets, platforms, and communities, which made it difficult to distinguish real participants from bots and coordinated Sybil behavior. The challenge was to design a product that could aggregate proof of humanity into one clear system while staying privacy-first and understandable for everyday users.",
+      "Identity in Web3 was scattered across wallets, platforms, and communities. Bad actors and bots made fair funding and governance harder, while many proof-of-personhood approaches created uncomfortable privacy tradeoffs. As Product Designer for Gitcoin Passport, I worked on a product that could bring identity and proof of humanity into one understandable place while keeping users in control of what they shared.",
     process: [
       {
-        title: "A Modular Trust Layer",
+        title: "Premise",
         description:
-          "Designed a modular dashboard where users choose how they show they are human by collecting and verifying individual Stamps, turning scattered identity markers into one coherent trust profile.",
+          "Gitcoin Passport, now Human Passport, needed to balance robust Sybil resistance with user privacy. The product had to help people prove humanity without asking them to expose a single sensitive identity source, and it had to make that tradeoff clear enough for everyday crypto users.",
         media: [
           {
             type: "video",
             src: "/case_studies/01_start_passport.mov",
             caption:
-              "Entry into the Passport experience, where users begin assembling proof through modular Stamps.",
+              "The Passport entry flow introduces the idea of assembling proof through modular stamps.",
             aspectRatio: "landscape",
           },
         ],
       },
       {
-        title: "The Unique Humanity Score",
+        title: "Problem",
         description:
-          "Structured the experience around a central Unique Humanity Score built from four stamp categories: Blockchain & Crypto Networks, Government IDs, Social & Professional Platforms, and Biometric Verification. This gave users a clearer mental model for how different proofs contributed to their score and credibility.",
+          "Trust signals were fragmented across onchain history, social accounts, professional platforms, and verification providers. For funding rounds and governance systems, that fragmentation made it difficult to separate real participants from coordinated Sybil behavior without pushing users toward invasive identity checks.",
+      },
+      {
+        title: "Solution: Stamps as User Choice",
+        description:
+          "I structured Passport around stamps: discrete proofs that users could choose and verify across Web2 and Web3. Instead of one mandatory identity path, people could build a passport from signals that matched their comfort level, turning scattered identity markers into one coherent trust profile.",
         media: [
           {
             type: "image",
             src: "/case_studies/web2.png",
             alt: "Passport stamp selection for Web2 identity sources.",
             caption:
-              "Web2 and platform-based credentials expanded the trust model beyond onchain activity alone.",
+              "Web2 and platform-based stamps expanded the trust model beyond wallet activity.",
             aspectRatio: "landscape",
           },
           {
@@ -242,27 +247,42 @@ export const caseStudies: CaseStudy[] = [
         ],
       },
       {
-        title: "Transparent Verification Details",
+        title: "Humanity Score",
         description:
-          "Used a sidebar-driven information architecture to make each verification step legible, with clear guidance on time, effort, cost, points gained, and whether a Stamp was verified, expired, or needed an update.",
+          "The interface centered on a humanity score so users could understand progress at a glance. Getting to a passing score became a clear product goal: verify enough stamps across categories to unlock stronger credibility for funding, governance, eligibility, and ecosystem participation.",
+      },
+      {
+        title: "Stamp Details and Verification States",
+        description:
+          "Stamp details opened in a sidebar, keeping the user in context while exposing the practical information they needed: what the stamp checks, how many points it can add, what work is required, and whether it is verified, expired, or ready to update.",
         media: [
           {
             type: "video",
             src: "/case_studies/eth_stamp.mov",
             caption:
-              "The ETH stamp flow showed how individual credential details and verification states were surfaced inside the product.",
+              "The ETH stamp flow shows how individual credential details and verification states are handled without leaving the main product surface.",
             aspectRatio: "landscape",
           },
         ],
       },
       {
-        title: "Thresholds, Titles, and Minting",
+        title: "Minting Passport Onchain",
         description:
-          "Added stronger incentive loops through score thresholds, program eligibility, activity-based titles like ETH Enthusiast and ETH Pioneer, and a final minting flow that turns reputation into an onchain asset.",
+          "Once a user reached a passing score, the product introduced a minting moment: a way to turn reputation into an onchain passport. This created a stronger finish to the journey while preserving the larger idea that the passport is assembled by the user, not imposed on them.",
+        media: [
+          {
+            type: "image",
+            src: "/case_studies/03_stamp_credentials.png",
+            alt: "Passport credential details and stamp progress interface.",
+            caption:
+              "Credential details, progress states, and the passing-score threshold made the proof model easier to understand at a glance.",
+            aspectRatio: "landscape",
+          },
+        ],
       },
     ],
     outcome:
-      "The result was a privacy-first verification product that unified identity signals into a user-controlled dashboard, made trust and status easier to understand, and helped lay the foundation for Passport XYZ's evolution into Human Passport.",
+      "The result was a privacy-first verification product that unified identity signals into a user-controlled dashboard, made trust and status easier to understand, and helped lay the foundation for Gitcoin Passport's evolution into Human Passport.",
     metrics: [
       { label: "Human Passports", value: "2M+" },
       { label: "Ecosystem Partners", value: "120+" },
@@ -275,7 +295,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "gitcoin-token-launch",
     title: "Gitcoin Token Launch",
     description:
-      "Launch design for Gitcoin's GTC rollout and the Quadratic Lands campaign that framed its move toward DAO governance.",
+      "Launch design for Gitcoin's GTC rollout and Quadratic Lands campaign, turning a token drop into an entry point for governance and public-goods ownership.",
     href: "https://www.quadraticlands.com/",
     heroImageSrc: "/images/gtc.png",
     heroImageAlt: "Gitcoin token launch artwork for the GTC campaign.",
@@ -283,25 +303,58 @@ export const caseStudies: CaseStudy[] = [
     year: "2021",
     featured: true,
     heroLabel:
-      "Token launch storytelling, governance onboarding, and campaign surfaces for the Quadratic Lands rollout.",
+      "The 01 case study: campaign storytelling, governance onboarding, and launch surfaces for Gitcoin's shift toward community ownership.",
     challenge:
-      "Gitcoin needed a launch experience that could explain GTC, signal the shift toward community governance, and help thousands of eligible users understand why the token mattered beyond speculation.",
+      "Gitcoin needed to launch GTC without reducing the story to token speculation. The experience had to explain why governance mattered, connect the drop to Gitcoin's public-goods mission, and help eligible users understand their role in the ecosystem's next chapter.",
     process: [
       {
+        title: "Launch Context",
         description:
-          "Built the launch narrative around Quadratic Lands, connecting the token drop to Gitcoin's broader mission of funding digital public goods.",
+          "The token launch marked Gitcoin's move toward DAO governance. The design challenge was to make that shift feel like an invitation into stewardship, not just a claim mechanic or market event.",
       },
       {
+        title: "Quadratic Lands Narrative",
         description:
-          "Translated governance concepts into clearer campaign messaging, onboarding moments, and visual structures that made decentralization feel participatory rather than abstract.",
+          "Built the launch narrative around Quadratic Lands, a campaign world that tied GTC back to Gitcoin's core belief in funding digital public goods. The visuals gave the launch a memorable identity while keeping the story rooted in coordination, community ownership, and public value.",
+        media: [
+          {
+            type: "image",
+            src: "/images/gtc.png",
+            alt: "Gitcoin Token Launch and Quadratic Lands campaign artwork.",
+            caption:
+              "The campaign artwork framed GTC as a governance and public-goods story, not only a token claim.",
+            aspectRatio: "landscape",
+          },
+        ],
       },
       {
+        title: "Governance Onboarding",
         description:
-          "Designed supporting surfaces that balanced hype with explanation so users could move from announcement to claim and governance context with less friction.",
+          "Translated governance concepts into clearer campaign messaging and onboarding moments. The goal was to help users understand what GTC unlocked: participation, delegation, treasury stewardship, and a larger say in how Gitcoin funds open-source and public-goods work.",
+      },
+      {
+        title: "Claim and Campaign Surfaces",
+        description:
+          "Designed launch surfaces that balanced excitement with explanation, so eligible users could move from announcement to claim to governance context with less friction. Each surface had to carry the same campaign logic: this is not only a token, it is a role in the network.",
+        media: [
+          {
+            type: "image",
+            src: "/images/gitcoin-3.jpg",
+            alt: "Gitcoin ecosystem artwork used as supporting campaign imagery.",
+            caption:
+              "Supporting surfaces kept the launch connected to Gitcoin's wider public-goods ecosystem.",
+            aspectRatio: "landscape",
+          },
+        ],
+      },
+      {
+        title: "Community Ownership",
+        description:
+          "Framed the post-claim state around participation rather than completion. The launch needed to point users toward the DAO, make governance feel active, and reinforce that GTC was a coordination layer for the people funding and building public goods.",
       },
     ],
     outcome:
-      "The launch gave Gitcoin a sharper public-facing story for GTC and helped frame the token as an entry point into governance, community ownership, and the next chapter of the ecosystem.",
+      "The launch gave GTC a clearer public-facing story: not just an airdrop, but a transition into governance, community ownership, and shared responsibility for Gitcoin's public-goods ecosystem.",
     metrics: [
       { label: "Eligible users", value: "25,500" },
       { label: "Airdrop allocation", value: "15M GTC" },
