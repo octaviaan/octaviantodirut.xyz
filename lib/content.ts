@@ -67,15 +67,16 @@ export const profile = {
   email: "octaviantodirut@gmail.com",
   linkedin: "https://www.linkedin.com/in/octanaiv/",
   x: "https://x.com/b1rdf1sh",
+  github: "https://github.com/octaviaan",
+  print: "https://cargocollective.com/octaviaan",
 };
 
 export const navItems = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/case-studies", label: "Case Studies" },
-  { href: "/experiments", label: "Experiments" },
-  { href: "/design-system", label: "Design System" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#about", label: "About me" },
+  { href: "/#work", label: "Case Studies" },
+  { href: "/#experiments", label: "AI Experiments" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export const caseStudies: CaseStudy[] = [
@@ -366,13 +367,13 @@ export const caseStudies: CaseStudy[] = [
 export const experiments: ExperimentItem[] = [
   {
     slug: "chladni-particles",
-    title: "Chladni Particles",
+    title: "Gitcoin Brand Asset Generator",
     year: "2026",
     format: "Generative Art",
     description:
       "A particle-based simulation of Chladni figures where motion reacts to an energy field and resolves into resonant patterns.",
     previewImageSrc: "/images/chladni.png",
-    previewImageAlt: "Chladni Particles artwork.",
+    previewImageAlt: "Gitcoin brand asset generator artwork.",
     heroLabel:
       "Three.js particles drifting toward resonance fields to mimic Chladni plate behavior.",
     href: "https://octaviaan.github.io/Chladni-Particles/",
@@ -389,7 +390,7 @@ export const experiments: ExperimentItem[] = [
   },
   {
     slug: "dithering-effect-svg",
-    title: "Dithering Effect SVG",
+    title: "Dithering Effect to SVG",
     year: "2025",
     format: "Image Tool",
     description:

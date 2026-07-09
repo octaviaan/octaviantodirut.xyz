@@ -48,8 +48,8 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
     <article className="section wrap wide case-detail">
       <FadeIn className="case-detail-hero">
         <div className="case-detail-copy">
-          <Link href="/case-studies" className="link-arrow">
-            <span className="arr">←</span> Case studies
+          <Link href="/#work" className="link-arrow">
+            <span className="arr">←</span> Case Studies
           </Link>
 
           <div className="case-detail-title">

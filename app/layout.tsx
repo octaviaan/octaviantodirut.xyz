@@ -45,10 +45,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Theme flash prevention + reveal gating — runs before paint */}
+        {/* Reveal gating — runs before paint */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('ot-theme');if(t){document.documentElement.setAttribute('data-theme',t);}else if(typeof window!=='undefined'&&window.location.pathname==='/case-studies/gitcoin-3-rebrand'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}document.documentElement.classList.add('js-reveal');})();`,
+            __html: `(function(){document.documentElement.classList.add('js-reveal');})();`,
           }}
         />
       </head>

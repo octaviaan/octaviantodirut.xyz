@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ReadProgress } from "@/components/read-progress";
-import { DarkThemeDefault } from "@/components/dark-theme-default";
 
 export const metadata: Metadata = {
   title: "Gitcoin 3.0 — Case Study",
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
 export default function GitcoinCaseStudyPage() {
   return (
     <>
-      <DarkThemeDefault />
       <ReadProgress />
 
       {/* HERO */}
@@ -29,8 +27,8 @@ export default function GitcoinCaseStudyPage() {
         />
         <div className="cs-hero-veil" />
         <div className="wrap cs-hero-inner">
-          <Link className="cs-back link-arrow" href="/case-studies">
-            <span className="arr">←</span> Case studies
+          <Link className="cs-back link-arrow" href="/#work">
+            <span className="arr">←</span> Case Studies
           </Link>
           <p className="eyebrow">Gitcoin · Case Study</p>
           <h1 className="display balance">

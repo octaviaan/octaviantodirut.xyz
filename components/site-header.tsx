@@ -3,10 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { ThemeToggle } from "@/components/theme-toggle";
 import { navItems } from "@/lib/content";
-
-const headerNavItems = navItems.filter((item) => item.href !== "/contact");
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -20,11 +17,11 @@ export function SiteHeader() {
         </Link>
 
         <nav className="site-nav">
-          {headerNavItems.map((item) => {
+          {navItems.map((item) => {
             const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
+              item.href !== "/" &&
+              !item.href.includes("#") &&
+              pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
@@ -38,8 +35,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="header-cta">
-          <ThemeToggle />
-          <Link className="btn btn-ghost btn-sm" href="/contact">
+          <Link className="btn btn-ghost btn-sm" href="/#contact">
             Let&apos;s&nbsp;talk
           </Link>
         </div>
