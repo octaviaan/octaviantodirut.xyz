@@ -1,5 +1,6 @@
 "use client";
 
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -32,6 +33,15 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <a
+            className="nav-external"
+            href="https://www.figma.com/proto/SQmTkWyYG5RaxF1FQ2Tw63/octa-graphic-portfolio?node-id=4012-2741&viewport=119%2C196%2C0.35&t=jvqUS1TZTpb6Wewq-1&scaling=contain&content-scaling=fixed&starting-point-node-id=4012%3A2741&page-id=0%3A1"
+            target="_blank"
+            rel="noopener"
+          >
+            Graphic design portfolio
+            <ExternalLink aria-hidden="true" size={14} strokeWidth={1.8} />
+          </a>
         </nav>
 
         <div className="header-cta">

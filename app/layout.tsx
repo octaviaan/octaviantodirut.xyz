@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: `%s | ${profile.name}`,
   },
   description:
-    "Product and visual designer crafting digital products with cinematic clarity and sharp commercial focus.",
+    "Senior Product Designer crafting digital products with cinematic clarity and sharp commercial focus.",
 };
 
 export default function RootLayout({

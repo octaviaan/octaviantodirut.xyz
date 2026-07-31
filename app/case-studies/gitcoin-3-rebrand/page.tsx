@@ -32,7 +32,7 @@ export default function GitcoinCaseStudyPage() {
           </Link>
           <p className="eyebrow">Gitcoin · Case Study</p>
           <h1 className="display balance">
-            The rebrand that<br /><em>returned home</em>.
+            Product strategy<br />&amp; platform <em>repositioning</em>.
           </h1>
           <p className="lede balance cs-hero-lede">
             A rebrand that walks Gitcoin <em className="serif">back</em> to its lunar-punk roots — and forward into something new:{" "}
@@ -101,32 +101,27 @@ export default function GitcoinCaseStudyPage() {
 
       <hr className="divider wrap-line cs-line" />
 
-      {/* THE BRIEF */}
+      {/* CHALLENGE */}
       <section className="section wrap">
         <div className="reveal cs-sec-head">
-          <p className="eyebrow">The brief, as I saw it</p>
+          <p className="eyebrow">The Challenge</p>
           <h2 className="h2 balance">Lost the <em>plot</em>.<br />Time to find it.</h2>
           <p className="body" style={{ maxWidth: "54ch" }}>
-            Gitcoin had drifted upmarket. The brand polished itself into something too institutional for the community that built it — and lost credibility with both.
+            Gitcoin became too institutional and lost a lot of the startup and grassroots vibe, as well as credibility with the community that originally built it. The brand looked like an enterprise SaaS company, not a public-goods funder.
           </p>
         </div>
+      </section>
 
-        <div className="cs-rx">
-          <article className="reveal cs-card">
-            <div className="cs-card-top">01 — Diagnosis</div>
-            <h3 className="h3 serif">The Problem.</h3>
-            <p className="body">
-              Gitcoin <strong style={{ color: "var(--ink)" }}>became too institutional</strong> — losing the grassroots energy and the credibility of the community that originally built it. The brand looked like an enterprise SaaS company, not a public-goods funder.
-            </p>
-          </article>
-          <article className="reveal cs-card" style={{ transitionDelay: ".06s" }}>
-            <div className="cs-card-top">02 — Prescription</div>
-            <h3 className="h3 serif">The Solution.</h3>
-            <p className="body">
-              Return to the <strong style={{ color: "var(--ink)" }}>lunar-punk</strong> look and movement. Turn Gitcoin into a{" "}
-              <strong style={{ color: "var(--ink)" }}>database of everything funding</strong> — the premier place where Ethereum funds solutions to its most important problems, with the team curating the funding landscape.
-            </p>
-          </article>
+      <hr className="divider wrap-line cs-line" />
+
+      {/* SOLUTION */}
+      <section className="section wrap">
+        <div className="reveal cs-sec-head">
+          <p className="eyebrow">The Solution</p>
+          <h2 className="h2 balance">A database of <em>everything funding</em>.</h2>
+          <p className="body" style={{ maxWidth: "58ch" }}>
+            Turn Gitcoin into the knowledge layer: the premier place where Ethereum funds solutions to its most important problems, and where the team curates the funding landscape.
+          </p>
         </div>
       </section>
 
@@ -138,8 +133,7 @@ export default function GitcoinCaseStudyPage() {
           <p className="eyebrow">Achieving the database feel</p>
           <h2 className="h2 balance">Browse, search, edit, <em>contribute</em>.</h2>
           <p className="body" style={{ maxWidth: "58ch" }}>
-            If Gitcoin is becoming a database, it should feel like one — fast, navigable, and editable by anyone. It has to{" "}
-            <strong style={{ color: "var(--ink)" }}>look like documentation and feel like a product</strong>. Six principles guided every UI decision.
+            If Gitcoin is becoming a database, it should feel like one. Fast, navigable, and editable by anyone, in the spirit of open-source software. Six decisions reinforced it as a database and knowledge layer.
           </p>
         </div>
 
@@ -177,7 +171,7 @@ export default function GitcoinCaseStudyPage() {
           <p className="eyebrow">The work, on screen</p>
         </div>
 
-        {/* F/01 Search */}
+        {/* 05 - Solution 1 */}
         <div className="cs-surface reveal">
           <div className="cs-surface-text">
             <p className="eyebrow muted">Search</p>
@@ -198,8 +192,29 @@ export default function GitcoinCaseStudyPage() {
           </figure>
         </div>
 
-        {/* F/02 Breadcrumbs */}
+        {/* 06 - Solution 2 */}
         <div className="cs-surface reveal reverse">
+          <div className="cs-surface-text">
+            <p className="eyebrow muted">Tree Sidebar</p>
+            <h3 className="h3 serif">The whole database, in the <em>left rail</em>.</h3>
+            <p className="body">
+              A file-explorer sidebar mirrors the repo.{" "}
+              <span className="mono" style={{ color: "var(--ink)" }}>Campaigns · Research · Apps · Mechanisms · Case Studies</span> — each folder opens to its children, with the current page highlighted. Contributors orient immediately; first-time visitors browse the funding landscape the way they'd browse a codebase.
+            </p>
+          </div>
+          <figure className="cs-shot cs-shot-tall">
+            <Image
+              src="/case_studies/gitcoin-sidebar-tree.png"
+              alt="Gitcoin sidebar showing Campaigns folder expanded"
+              width={800}
+              height={1200}
+            />
+            <figcaption>Sidebar · Tree</figcaption>
+          </figure>
+        </div>
+
+        {/* 07 - Solution 3/4 */}
+        <div className="cs-surface reveal">
           <div className="cs-surface-text">
             <p className="eyebrow muted">Breadcrumbs &amp; Header</p>
             <h3 className="h3 serif">You are <em>here</em>. Always.</h3>
@@ -219,8 +234,8 @@ export default function GitcoinCaseStudyPage() {
           </figure>
         </div>
 
-        {/* F/03 Ask AI */}
-        <div className="cs-surface reveal">
+        {/* Supporting AI surface */}
+        <div className="cs-surface reveal reverse">
           <div className="cs-surface-text">
             <p className="eyebrow muted">Ask AI</p>
             <h3 className="h3 serif">An assistant that <em>actually</em> reads the docs.</h3>
@@ -242,8 +257,8 @@ export default function GitcoinCaseStudyPage() {
           </figure>
         </div>
 
-        {/* F/04 Edit on GitHub — the one glow */}
-        <div className="cs-surface reveal reverse cs-glow-scope">
+        {/* 08 - Solution 5 */}
+        <div className="cs-surface reveal cs-glow-scope">
           <div className="cs-surface-text">
             <p className="eyebrow muted">Edit on GitHub</p>
             <h3 className="h3 serif">Every article is <em>a PR away</em>.</h3>
@@ -263,25 +278,57 @@ export default function GitcoinCaseStudyPage() {
           </figure>
         </div>
 
-        {/* F/05 Tree sidebar */}
-        <div className="cs-surface reveal">
+        {/* 09 - Solution 6 */}
+        <div className="cs-surface reveal reverse">
           <div className="cs-surface-text">
-            <p className="eyebrow muted">Tree Sidebar</p>
-            <h3 className="h3 serif">The whole database, in the <em>left rail</em>.</h3>
+            <p className="eyebrow muted">Generative Asset System</p>
+            <h3 className="h3 serif">Hero art and OG images, <em>consistent at scale</em>.</h3>
             <p className="body">
-              A file-explorer sidebar mirrors the repo.{" "}
-              <span className="mono" style={{ color: "var(--ink)" }}>Campaigns · Research · Apps · Mechanisms · Case Studies</span> — each folder opens to its children, with the current page highlighted. Contributors orient immediately; first-time visitors browse the funding landscape the way they'd browse a codebase.
+              I created a Three.js generator for hero art and Open Graph images. It reduces asset production time, keeps the system recognizable at scale, and stays customizable for fast-moving research, campaign, and ecosystem pages. For a quick image, hit randomize all.
             </p>
           </div>
-          <figure className="cs-shot cs-shot-tall">
+          <figure className="cs-shot">
             <Image
-              src="/case_studies/gitcoin-sidebar-tree.png"
-              alt="Gitcoin sidebar showing Campaigns folder expanded"
-              width={800}
-              height={1200}
+              src="/case_studies/gitcoin-asset-generator.png"
+              alt="Gitcoin Chladni asset generator interface with particle pattern artwork"
+              width={1200}
+              height={800}
             />
-            <figcaption>Sidebar · Tree</figcaption>
+            <figcaption>Three.js · Asset Generator</figcaption>
           </figure>
+        </div>
+      </section>
+
+      <hr className="divider wrap-line cs-line" />
+
+      {/* OUTCOME */}
+      <section className="section wrap">
+        <div className="reveal cs-sec-head">
+          <p className="eyebrow">Outcome</p>
+          <h2 className="h2 balance">Relaunch traction, <em>measured</em>.</h2>
+          <p className="body" style={{ maxWidth: "58ch" }}>
+            By the end of April, the repositioned Gitcoin experience showed clear movement across primary and secondary acquisition signals compared with the start of March after relaunch.
+          </p>
+        </div>
+
+        <div className="cs-rx">
+          <article className="reveal cs-card">
+            <div className="cs-card-top">Primary KPIs</div>
+            <h3 className="h3 serif">Core traffic lifted.</h3>
+            <p className="body">
+              Active users reached <strong style={{ color: "var(--ink)" }}>11,038</strong>, up <strong style={{ color: "var(--ink)" }}>+138% WoW</strong> and +41% versus the Q1 2025 average. Sessions reached <strong style={{ color: "var(--ink)" }}>11,772</strong>, up <strong style={{ color: "var(--ink)" }}>+145% WoW</strong> and +24% versus the Q1 2025 average.
+            </p>
+            <p className="body">
+              Organic social reached 518, up +1,892% WoW. Organic search reached 1,227, up +376% WoW.
+            </p>
+          </article>
+          <article className="reveal cs-card" style={{ transitionDelay: ".06s" }}>
+            <div className="cs-card-top">Secondary KPIs</div>
+            <h3 className="h3 serif">Contribution paths started working.</h3>
+            <p className="body">
+              Returning users reached <strong style={{ color: "var(--ink)" }}>408</strong>, up +232% WoW. AI referral traffic reached <strong style={{ color: "var(--ink)" }}>118</strong>, up +462% WoW, and GitHub referral traffic reached <strong style={{ color: "var(--ink)" }}>38</strong>, up +533% WoW.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -292,11 +339,6 @@ export default function GitcoinCaseStudyPage() {
             <span className="cs-next-k">← Previous</span>
             <h4 className="serif">Passport</h4>
             <p className="body">A privacy-first identity hub for proving humanity and resisting Sybil attacks.</p>
-          </Link>
-          <Link className="cs-next-card" href="/case-studies/gitcoin-token-launch">
-            <span className="cs-next-k">Next →</span>
-            <h4 className="serif">Gitcoin Token Launch</h4>
-            <p className="body">GTC rollout and the Quadratic Lands campaign toward DAO governance.</p>
           </Link>
         </div>
       </section>

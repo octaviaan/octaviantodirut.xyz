@@ -7,14 +7,14 @@ export default function HomePage() {
   return (
     <div className="home-page">
       {/* HERO */}
-      <section className="section wrap wide hero">
+      <section id="about" className="section wrap wide hero">
         <div className="hero-grid">
           <div className="reveal hero-lead">
-            <p className="eyebrow">Product &amp; Visual Designer</p>
+            <p className="eyebrow">Senior Product Designer</p>
             <h1 className="display">
-              Octavian
-              <br />
-              Todirut
+              I move between product logic,{" "}
+              <span className="mark">visual systems</span>, and the small
+              details.
             </h1>
 
             <div className="stat-row">
@@ -36,22 +36,13 @@ export default function HomePage() {
               <Link className="btn btn-primary" href="/#work">
                 View case studies
               </Link>
-              <Link className="btn btn-ghost" href="/#about">
-                About me
-              </Link>
-            </div>
-            <div className="contact-links hero-socials">
-              <a href={profile.x} target="_blank" rel="noopener">
-                X
-              </a>
-              <a href={profile.linkedin} target="_blank" rel="noopener">
-                LinkedIn
-              </a>
-              <a href={profile.github} target="_blank" rel="noopener">
-                GitHub
-              </a>
-              <a href={profile.print} target="_blank" rel="noopener">
-                Print
+              <a
+                className="btn btn-ghost"
+                href="https://www.figma.com/proto/JLrOm2x3UF791cQKeZxupW/octa-product-portfolio?node-id=688-6030&p=f&t=wF4Pmwt57Rukxo1v-0&scaling=contain&content-scaling=fixed&starting-point-node-id=688%3A6030&page-id=0%3A1"
+                target="_blank"
+                rel="noopener"
+              >
+                Visit prototype
               </a>
             </div>
           </div>
@@ -71,35 +62,32 @@ export default function HomePage() {
               />
             </div>
             <div className="feature-body">
-              <div className="feature-meta">Product &amp; Visual Designer</div>
-              <h2 className="h3 serif">
-                Based in Europe, working with teams anywhere.
-              </h2>
+              <div className="feature-meta">Senior Product Designer</div>
+              <h2 className="h3 serif">About me</h2>
               <p className="body" style={{ fontSize: ".95rem" }}>
-                I shape product stories, interfaces, and systems for teams
-                building complex digital products.
+                Senior Product and Visual Designer with 15+ years of experience
+                of which 6+ years in Web3 and beyond, leading end-to-end product
+                design across identity and governance. I love simple and elegant
+                solutions to complex problems. I combine product thinking,
+                systems design, and visual direction to ship high-impact
+                products in fast-moving, remote teams.
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      <hr className="divider wrap-line" />
-
-      {/* ABOUT */}
-      <section id="about" className="section wrap wide about-section">
-        <div className="reveal about-copy">
-          <p className="eyebrow">About me</p>
-          <h2 className="h2 balance">
-            I move between product logic,{" "}
-            <span className="mark">visual systems</span>, and the small details.
-          </h2>
-          <div className="about-body">
-            <p className="lede">
-              I'm a product and visual designer with a background that started
-              in print, advertising, and art direction before moving into
-              interactive work, brand systems, and later Web3 products.
-            </p>
+          <div className="contact-links hero-socials">
+            <a href={profile.x} target="_blank" rel="noopener">
+              X
+            </a>
+            <a href={profile.linkedin} target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+            <a href={profile.github} target="_blank" rel="noopener">
+              GitHub
+            </a>
+            <a href={profile.print} target="_blank" rel="noopener">
+              Print
+            </a>
           </div>
         </div>
       </section>
@@ -115,14 +103,41 @@ export default function HomePage() {
             <br />
             not just the finish.
           </h2>
-          <p className="body" style={{ maxWidth: "52ch" }}>
-            A focused set of product and visual design projects with concise
-            context, process, and the business impact behind each one.
-          </p>
         </div>
 
         <div className="work-feature-stack">
-          <Link className="reveal feat" href="/case-studies/gitcoin-3-rebrand">
+          <Link className="reveal feat" href="/case-studies/passport">
+            <div className="feat-art">
+              <Image
+                src="/images/passport.png"
+                alt="Passport identity interface"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+              <span className="feat-badge">01 — Case Study</span>
+            </div>
+            <div className="feat-body">
+              <div className="feat-meta">
+                <span>2025</span>
+                <span>Product · Identity · Sybil Resistance</span>
+              </div>
+              <h3 className="h2 serif">Passport</h3>
+              <p className="body" style={{ maxWidth: "54ch" }}>
+                A privacy-first identity hub for proving humanity through Web2
+                and Web3 stamps — unifying scattered identity signals into one
+                user-controlled trust profile.
+              </p>
+              <span className="link-arrow">
+                Read the case study <span className="arr">→</span>
+              </span>
+            </div>
+          </Link>
+
+          <Link
+            className="reveal feat"
+            href="/case-studies/gitcoin-3-rebrand"
+            style={{ transitionDelay: ".06s" }}
+          >
             <div className="feat-art">
               <Image
                 src="/images/chladni-feature.png"
@@ -130,7 +145,7 @@ export default function HomePage() {
                 fill
                 style={{ objectFit: "cover" }}
               />
-              <span className="feat-badge">01 — Case Study</span>
+              <span className="feat-badge">02 — Case Study</span>
             </div>
             <div className="feat-body">
               <div className="feat-meta">
@@ -146,83 +161,6 @@ export default function HomePage() {
                 paired with a generative Three.js asset tool for consistent
                 visuals at scale.
               </p>
-              <div className="feat-tags">
-                <span className="chip">Brand</span>
-                <span className="chip">Website</span>
-                <span className="chip">Generative Tool</span>
-              </div>
-              <span className="link-arrow">
-                Read the case study <span className="arr">→</span>
-              </span>
-            </div>
-          </Link>
-
-          <Link
-            className="reveal feat"
-            href="/case-studies/passport"
-            style={{ transitionDelay: ".06s" }}
-          >
-            <div className="feat-art">
-              <Image
-                src="/images/passport.png"
-                alt="Passport identity interface"
-                fill
-                style={{ objectFit: "cover" }}
-              />
-              <span className="feat-badge">02 — Case Study</span>
-            </div>
-            <div className="feat-body">
-              <div className="feat-meta">
-                <span>2025</span>
-                <span>Product · Identity · Sybil Resistance</span>
-              </div>
-              <h3 className="h2 serif">Passport</h3>
-              <p className="body" style={{ maxWidth: "54ch" }}>
-                A privacy-first identity hub for proving humanity through Web2
-                and Web3 stamps — unifying scattered identity signals into one
-                user-controlled trust profile.
-              </p>
-              <div className="feat-tags">
-                <span className="chip">Product</span>
-                <span className="chip">Identity</span>
-                <span className="chip">Sybil Resistance</span>
-              </div>
-              <span className="link-arrow">
-                Read the case study <span className="arr">→</span>
-              </span>
-            </div>
-          </Link>
-
-          <Link
-            className="reveal feat"
-            href="/case-studies/gitcoin-token-launch"
-            style={{ transitionDelay: ".12s" }}
-          >
-            <div className="feat-art">
-              <Image
-                src="/images/gtc.png"
-                alt="Gitcoin token launch artwork"
-                fill
-                style={{ objectFit: "cover" }}
-              />
-              <span className="feat-badge">03 — Case Study</span>
-            </div>
-            <div className="feat-body">
-              <div className="feat-meta">
-                <span>2021</span>
-                <span>Launch · Governance · Web3</span>
-              </div>
-              <h3 className="h2 serif">Gitcoin Token Launch</h3>
-              <p className="body" style={{ maxWidth: "54ch" }}>
-                Launch design for the GTC rollout and Quadratic Lands campaign —
-                turning a token drop into an entry point for governance,
-                public-goods funding, and community ownership.
-              </p>
-              <div className="feat-tags">
-                <span className="chip">Launch</span>
-                <span className="chip">Governance</span>
-                <span className="chip">Web3</span>
-              </div>
               <span className="link-arrow">
                 Read the case study <span className="arr">→</span>
               </span>

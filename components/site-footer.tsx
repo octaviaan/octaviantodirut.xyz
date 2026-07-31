@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="stack-sm" style={{ maxWidth: "34ch" }}>
           <p className="serif" style={{ fontSize: "1.4rem" }}>{profile.name}</p>
           <p className="body" style={{ fontSize: ".9rem" }}>
-            Product and visual design for teams that want clarity, confidence,
+            Senior product design for teams that want clarity, confidence,
             and a premium digital feel.
           </p>
         </div>
