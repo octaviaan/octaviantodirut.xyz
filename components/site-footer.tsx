@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 import { navItems, profile } from "@/lib/content";
@@ -8,10 +9,6 @@ export function SiteFooter() {
       <div className="inner">
         <div className="stack-sm" style={{ maxWidth: "34ch" }}>
           <p className="serif" style={{ fontSize: "1.4rem" }}>{profile.name}</p>
-          <p className="body" style={{ fontSize: ".9rem" }}>
-            Senior product design for teams that want clarity, confidence,
-            and a premium digital feel.
-          </p>
         </div>
 
         <div className="stack" style={{ textAlign: "right" }}>
@@ -21,14 +18,16 @@ export function SiteFooter() {
                 {item.label}
               </Link>
             ))}
+            <a
+              className="nav-external"
+              href="https://www.figma.com/proto/SQmTkWyYG5RaxF1FQ2Tw63/octa-graphic-portfolio?node-id=4012-2741&viewport=119%2C196%2C0.35&t=jvqUS1TZTpb6Wewq-1&scaling=contain&content-scaling=fixed&starting-point-node-id=4012%3A2741&page-id=0%3A1"
+              target="_blank"
+              rel="noopener"
+            >
+              Graphic design portfolio
+              <ExternalLink aria-hidden="true" size={14} strokeWidth={1.8} />
+            </a>
           </nav>
-          <a
-            className="link-arrow"
-            href={`mailto:${profile.email}`}
-            style={{ justifyContent: "flex-end" }}
-          >
-            {profile.email}
-          </a>
         </div>
       </div>
     </footer>

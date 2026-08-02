@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 import { profile } from "@/lib/content";
@@ -8,6 +9,16 @@ export default function HomePage() {
     <div className="home-page">
       {/* HERO */}
       <section id="about" className="section wrap wide hero">
+        <div className="hero-bg" aria-hidden="true">
+          <Image
+            src="/images/octavian-profile.jpg"
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 1380px) 1380px, 100vw"
+            style={{ objectFit: "cover", objectPosition: "50% 30%" }}
+          />
+        </div>
         <div className="hero-grid">
           <div className="reveal hero-lead">
             <p className="eyebrow">Senior Product Designer</p>
@@ -16,62 +27,30 @@ export default function HomePage() {
               <span className="mark">visual systems</span>, and the small
               details.
             </h1>
-
-            <div className="stat-row">
-              <div className="stat">
-                <span className="eyebrow muted">Focus</span>
-                <span className="stat-v">Product clarity</span>
-              </div>
-              <div className="stat">
-                <span className="eyebrow muted">Work&nbsp;style</span>
-                <span className="stat-v">Systems + storytelling</span>
-              </div>
-              <div className="stat">
-                <span className="eyebrow muted">Based&nbsp;in</span>
-                <span className="stat-v">Remote / Europe</span>
-              </div>
-            </div>
+            <p className="body hero-about">
+              Senior Product and Visual Designer with 15+ years of experience of
+              which 6+ years in Web3 and beyond, leading end-to-end product
+              design across identity and governance. I love simple and elegant
+              solutions to complex problems. I combine product thinking, systems
+              design, and visual direction to ship high-impact products in
+              fast-moving, remote teams.
+            </p>
 
             <div className="hero-actions">
               <Link className="btn btn-primary" href="/#work">
                 View case studies
               </Link>
+            </div>
+            <div className="hero-prototype-row" aria-label="Prototype links">
               <a
-                className="btn btn-ghost"
+                className="hero-prototype-link"
                 href="https://www.figma.com/proto/JLrOm2x3UF791cQKeZxupW/octa-product-portfolio?node-id=688-6030&p=f&t=wF4Pmwt57Rukxo1v-0&scaling=contain&content-scaling=fixed&starting-point-node-id=688%3A6030&page-id=0%3A1"
                 target="_blank"
                 rel="noopener"
               >
-                Visit prototype
+                Product prototype
+                <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
               </a>
-            </div>
-          </div>
-
-          <div
-            className="reveal feature-card portrait-card"
-            style={{ transitionDelay: ".08s" }}
-          >
-            <div className="feature-art portrait-art">
-              <Image
-                src="/images/octavian-profile.jpg"
-                alt="Portrait of Octavian Todirut"
-                fill
-                priority
-                sizes="(min-width: 1280px) 520px, (min-width: 1024px) 44vw, calc(100vw - 40px)"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className="feature-body">
-              <div className="feature-meta">Senior Product Designer</div>
-              <h2 className="h3 serif">About me</h2>
-              <p className="body" style={{ fontSize: ".95rem" }}>
-                Senior Product and Visual Designer with 15+ years of experience
-                of which 6+ years in Web3 and beyond, leading end-to-end product
-                design across identity and governance. I love simple and elegant
-                solutions to complex problems. I combine product thinking,
-                systems design, and visual direction to ship high-impact
-                products in fast-moving, remote teams.
-              </p>
             </div>
           </div>
 
@@ -88,19 +67,17 @@ export default function HomePage() {
             <a href={profile.print} target="_blank" rel="noopener">
               Print
             </a>
+            <a href={`mailto:${profile.email}`}>Email</a>
           </div>
         </div>
       </section>
 
-      <hr className="divider wrap-line" />
-
       {/* SELECTED WORK */}
       <section id="work" className="section wrap wide">
-        <div className="reveal sec-head">
+        <div className="reveal sec-head case-studies-head">
           <p className="eyebrow">Case Studies</p>
           <h2 className="h2 balance">
-            Case studies built to show the <em className="mark">thinking</em>,
-            <br />
+            Case studies built to show the <em className="mark">thinking</em> ,
             not just the finish.
           </h2>
         </div>
@@ -166,6 +143,108 @@ export default function HomePage() {
               </span>
             </div>
           </Link>
+        </div>
+      </section>
+
+      <hr className="divider wrap-line" />
+
+      {/* SELECTED WORKS */}
+      <section id="selected-works" className="section wrap wide">
+        <div className="reveal sec-head">
+          <p className="eyebrow">Selected Works</p>
+          <h2 className="h2 balance">
+            Additional work across product, visual, brand, and campaigns.
+          </h2>
+        </div>
+
+        <div className="selected-work-grid">
+          <Link
+            className="reveal selected-work-card"
+            href="/selected-works/schelling-point"
+          >
+            <div className="selected-work-art">
+              <Image
+                src="/images/schelling-cover.jpg"
+                alt="Schelling Point brand and product artwork"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div className="selected-work-body">
+              <div className="feat-meta">
+                <span>Brand · Product · Visuals</span>
+              </div>
+              <h3 className="h3 serif">Schelling Point</h3>
+              <p className="body">
+                A series of conferences revolving around human coordination.
+              </p>
+              <span className="link-arrow">
+                Read work <span className="arr">→</span>
+              </span>
+            </div>
+          </Link>
+
+          <a
+            className="reveal selected-work-card"
+            href="https://quadraticlands.com/"
+            target="_blank"
+            rel="noopener"
+            style={{ transitionDelay: ".06s" }}
+          >
+            <div className="selected-work-art">
+              <Image
+                src="/images/gtc.png"
+                alt="Gitcoin DAO and GTC Quadratic Lands campaign artwork"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div className="selected-work-body">
+              <div className="feat-meta">
+                <span>Brand · Product · Visuals</span>
+              </div>
+              <h3 className="h3 serif">Gitcoin DAO / GTC</h3>
+              <p className="body">
+                Campaign and launch work for Gitcoin's DAO transition, GTC, and
+                the Quadratic Lands experience.
+              </p>
+              <span className="link-arrow">
+                Visit work{" "}
+                <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
+              </span>
+            </div>
+          </a>
+
+          <a
+            className="reveal selected-work-card"
+            href="https://cristinalare.github.io/pluriverse.wtf/"
+            target="_blank"
+            rel="noopener"
+            style={{ transitionDelay: ".12s" }}
+          >
+            <div className="selected-work-art">
+              <Image
+                src="/images/pluri.jpg"
+                alt="Pluriverse website artwork"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div className="selected-work-body">
+              <div className="feat-meta">
+                <span>Product · Visuals · Branding</span>
+              </div>
+              <h3 className="h3 serif">Pluriverse</h3>
+              <p className="body">
+                Website and visual direction for a series of comic books.
+                Created a pdf guide for the comic book universe.
+              </p>
+              <span className="link-arrow">
+                Visit work{" "}
+                <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
+              </span>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -254,34 +333,6 @@ export default function HomePage() {
               <span className="chip">SVG Export</span>
             </div>
           </Link>
-        </div>
-      </section>
-
-      {/* CTA STRIP */}
-      <section id="contact" className="section wrap wide">
-        <div className="reveal cta-strip panel">
-          <div>
-            <h2 className="h2">
-              Let&apos;s <span className="mark"> build</span> something.
-            </h2>
-            <div className="contact-links">
-              <a href={profile.x} target="_blank" rel="noopener">
-                X
-              </a>
-              <a href={profile.linkedin} target="_blank" rel="noopener">
-                LinkedIn
-              </a>
-              <a href={profile.github} target="_blank" rel="noopener">
-                GitHub
-              </a>
-              <a href={profile.print} target="_blank" rel="noopener">
-                Print
-              </a>
-            </div>
-          </div>
-          <a className="btn btn-primary" href={`mailto:${profile.email}`}>
-            Start a conversation <span className="arr">↗</span>
-          </a>
         </div>
       </section>
     </div>

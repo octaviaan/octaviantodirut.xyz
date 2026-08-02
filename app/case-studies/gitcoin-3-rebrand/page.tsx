@@ -42,6 +42,9 @@ export default function GitcoinCaseStudyPage() {
             <a className="btn btn-primary" href="https://gitcoin.co/" target="_blank" rel="noopener">
               Visit website <span className="arr">↗</span>
             </a>
+            <a className="btn btn-ghost" href="https://gitcoin.co/generator" target="_blank" rel="noopener">
+              View generator <span className="arr">↗</span>
+            </a>
           </div>
           <div className="cs-facts">
             <div className="cs-fact">
@@ -182,12 +185,14 @@ export default function GitcoinCaseStudyPage() {
             </p>
           </div>
           <figure className="cs-shot">
-            <Image
-              src="/case_studies/gitcoin-search-cmdk.png"
-              alt="Command-K global search overlay with suggestions"
-              width={1200}
-              height={800}
-            />
+            <a href="/case_studies/gitcoin-search-cmdk.png" target="_blank" rel="noopener" aria-label="Open image full size">
+              <Image
+                src="/case_studies/gitcoin-search-cmdk.png"
+                alt="Command-K global search overlay with suggestions"
+                width={1200}
+                height={800}
+              />
+            </a>
             <figcaption>Search · ⌘K</figcaption>
           </figure>
         </div>
@@ -203,12 +208,14 @@ export default function GitcoinCaseStudyPage() {
             </p>
           </div>
           <figure className="cs-shot cs-shot-tall">
-            <Image
-              src="/case_studies/gitcoin-sidebar-tree.png"
-              alt="Gitcoin sidebar showing Campaigns folder expanded"
-              width={800}
-              height={1200}
-            />
+            <a href="/case_studies/gitcoin-sidebar-tree.png" target="_blank" rel="noopener" aria-label="Open image full size">
+              <Image
+                src="/case_studies/gitcoin-sidebar-tree.png"
+                alt="Gitcoin sidebar showing Campaigns folder expanded"
+                width={800}
+                height={1200}
+              />
+            </a>
             <figcaption>Sidebar · Tree</figcaption>
           </figure>
         </div>
@@ -224,12 +231,14 @@ export default function GitcoinCaseStudyPage() {
             </p>
           </div>
           <figure className="cs-shot">
-            <Image
-              src="/case_studies/gitcoin-breadcrumbs.png"
-              alt="Gitcoin top nav and breadcrumb leading to an article"
-              width={1200}
-              height={800}
-            />
+            <a href="/case_studies/gitcoin-breadcrumbs.png" target="_blank" rel="noopener" aria-label="Open image full size">
+              <Image
+                src="/case_studies/gitcoin-breadcrumbs.png"
+                alt="Gitcoin top nav and breadcrumb leading to an article"
+                width={1200}
+                height={800}
+              />
+            </a>
             <figcaption>Header · Breadcrumbs</figcaption>
           </figure>
         </div>
@@ -247,12 +256,14 @@ export default function GitcoinCaseStudyPage() {
             </p>
           </div>
           <figure className="cs-shot">
-            <Image
-              src="/case_studies/gitcoin-ai-assistant.png"
-              alt="AI Assistant side panel with suggested questions"
-              width={1200}
-              height={800}
-            />
+            <a href="/case_studies/gitcoin-ai-assistant.png" target="_blank" rel="noopener" aria-label="Open image full size">
+              <Image
+                src="/case_studies/gitcoin-ai-assistant.png"
+                alt="AI Assistant side panel with suggested questions"
+                width={1200}
+                height={800}
+              />
+            </a>
             <figcaption>AI Assistant · ⌘I</figcaption>
           </figure>
         </div>
@@ -268,12 +279,14 @@ export default function GitcoinCaseStudyPage() {
             </p>
           </div>
           <figure className="cs-shot cs-frame-glow">
-            <Image
-              src="/case_studies/gitcoin-edit-github.png"
-              alt="Edit on GitHub button with a soft purple glow"
-              width={1200}
-              height={800}
-            />
+            <a href="/case_studies/gitcoin-edit-github.png" target="_blank" rel="noopener" aria-label="Open image full size">
+              <Image
+                src="/case_studies/gitcoin-edit-github.png"
+                alt="Edit on GitHub button with a soft purple glow"
+                width={1200}
+                height={800}
+              />
+            </a>
             <figcaption style={{ color: "var(--glow)" }}>Edit · GitHub</figcaption>
           </figure>
         </div>
@@ -281,21 +294,45 @@ export default function GitcoinCaseStudyPage() {
         {/* 09 - Solution 6 */}
         <div className="cs-surface reveal reverse">
           <div className="cs-surface-text">
-            <p className="eyebrow muted">Generative Asset System</p>
-            <h3 className="h3 serif">Hero art and OG images, <em>consistent at scale</em>.</h3>
+            <p className="eyebrow muted">Generative asset system</p>
+            <h3 className="h3 serif">Generative asset system <em>(using Claude in VS Code)</em>.</h3>
             <p className="body">
-              I created a Three.js generator for hero art and Open Graph images. It reduces asset production time, keeps the system recognizable at scale, and stays customizable for fast-moving research, campaign, and ecosystem pages. For a quick image, hit randomize all.
+              I have created a generator for hero art + Open Graph images using Three.js, a JavaScript library for 3D.
             </p>
+            <p className="body">
+              Consistent at scale. Reduces and democratizes asset production time, in the spirit of open source software.
+            </p>
+            <p className="body">
+              It's packed with features and very customizable. If you just want a quick image, hit "randomize all" and you get an image. Instructions and shortcuts are also built into the generator.
+            </p>
+            <a className="link-arrow" href="https://gitcoin.co/generator" target="_blank" rel="noopener">
+              Open generator <span className="arr">↗</span>
+            </a>
           </div>
-          <figure className="cs-shot">
-            <Image
-              src="/case_studies/gitcoin-asset-generator.png"
-              alt="Gitcoin Chladni asset generator interface with particle pattern artwork"
-              width={1200}
-              height={800}
-            />
-            <figcaption>Three.js · Asset Generator</figcaption>
-          </figure>
+          <div className="cs-shot-carousel" aria-label="Generative asset system screenshots">
+            <figure className="cs-shot">
+              <a href="/case_studies/gitcoin-asset-generator.png" target="_blank" rel="noopener" aria-label="Open image full size">
+                <Image
+                  src="/case_studies/gitcoin-asset-generator.png"
+                  alt="Gitcoin Chladni asset generator interface with particle pattern artwork"
+                  width={1200}
+                  height={800}
+                />
+              </a>
+              <figcaption>Three.js · Asset Generator</figcaption>
+            </figure>
+            <figure className="cs-shot">
+              <a href="/case_studies/gitcoin-generator-controls.png" target="_blank" rel="noopener" aria-label="Open image full size">
+                <Image
+                  src="/case_studies/gitcoin-generator-controls.png"
+                  alt="Gitcoin generator controls for particles, logo, text, capture, and GIF settings"
+                  width={921}
+                  height={881}
+                />
+              </a>
+              <figcaption>Controls · Customization</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 

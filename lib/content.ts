@@ -10,6 +10,9 @@ export type CaseStudyMedia = {
   caption?: string;
   poster?: string;
   aspectRatio?: "landscape" | "portrait" | "square";
+  fit?: "cover" | "contain";
+  presentation?: "default" | "transparent";
+  size?: "default" | "small";
 };
 
 export type CaseStudyStep = {
@@ -75,8 +78,8 @@ export const profile = {
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/#work", label: "Case Studies" },
+  { href: "/#selected-works", label: "Selected Works" },
   { href: "/#experiments", label: "AI Experiments" },
-  { href: "/#contact", label: "Contact" },
 ];
 
 const sortCaseStudies = (studies: CaseStudy[]) => {
@@ -97,6 +100,7 @@ export const caseStudies = sortCaseStudies([
         href: "https://octaviaan.github.io/impact/case-study.html",
       },
       { label: "Visit Gitcoin", href: "https://gitcoin.co/" },
+      { label: "View generator", href: "https://gitcoin.co/generator" },
     ],
     heroImageSrc: "/images/gitcoin-3.jpg",
     heroImageAlt: "Gitcoin 3.0 brand artwork with Fund What Matters messaging.",
@@ -265,6 +269,18 @@ export const caseStudies = sortCaseStudies([
         details: [
           "We designed Passport around a cumulative Humanity Score, allowing multiple independent signals to contribute toward an overall confidence level. This gave users multiple paths to qualify while allowing partners to choose thresholds appropriate for their own risk tolerance.",
         ],
+        media: [
+          {
+            type: "image",
+            src: "/case_studies/why-score.png",
+            alt: "Passport Unique Humanity Score cards showing score updates.",
+            caption:
+              "The Humanity Score gave users a visible, cumulative trust signal instead of a binary pass or fail state.",
+            aspectRatio: "portrait",
+            presentation: "transparent",
+            size: "small",
+          },
+        ],
       },
       {
         title: "Stamps",
@@ -294,11 +310,13 @@ export const caseStudies = sortCaseStudies([
         media: [
           {
             type: "image",
-            src: "/case_studies/03_stamp_credentials.png",
-            alt: "Passport credential details and stamp progress interface.",
+            src: "/case_studies/embed.png",
+            alt: "Passport embed verification cards over a geometric cube pattern.",
             caption:
-              "Credential details, progress states, and the passing-score threshold made the proof model easier to understand at a glance.",
-            aspectRatio: "landscape",
+              "The embedded verification flow let partners run Passport checks inside their own product surfaces.",
+            aspectRatio: "square",
+            fit: "contain",
+            presentation: "transparent",
           },
         ],
       },

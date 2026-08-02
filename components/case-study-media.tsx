@@ -19,23 +19,40 @@ export function CaseStudyMedia({ media, className }: CaseStudyMediaProps) {
     media.type === "video"
       ? "aspect-video"
       : aspectRatioClassName[media.aspectRatio ?? "landscape"];
+  const transparent = media.presentation === "transparent";
+  const contain = transparent || media.fit === "contain";
 
   return (
-    <figure className={cn("space-y-3", className)}>
+    <figure
+      className={cn(
+        "space-y-3",
+        media.size === "small" && "case-media-small",
+        className,
+      )}
+    >
       <div
         className={cn(
-          "media-frame relative overflow-hidden rounded-md",
+          "relative overflow-hidden",
+          transparent ? "media-frame-transparent" : "media-frame rounded-md",
           aspectClassName,
         )}
       >
         {media.type === "image" ? (
-          <Image
-            src={media.src}
-            alt={media.alt ?? ""}
-            fill
-            sizes="(min-width: 1280px) 46vw, (min-width: 768px) 80vw, 100vw"
-            className="object-cover object-top"
-          />
+          <a
+            className="media-open-link"
+            href={media.src}
+            target="_blank"
+            rel="noopener"
+            aria-label="Open image full size"
+          >
+            <Image
+              src={media.src}
+              alt={media.alt ?? ""}
+              fill
+              sizes="(min-width: 1280px) 46vw, (min-width: 768px) 80vw, 100vw"
+              className={cn(contain ? "object-contain" : "object-cover object-top")}
+            />
+          </a>
         ) : (
           <video
             className="h-full w-full object-cover"

@@ -124,7 +124,6 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               className="case-process-step"
             >
               <div className="case-step-copy">
-                <span className="cs-num">Step 0{index + 1}</span>
                 {step.title ? <h3 className="h3">{step.title}</h3> : null}
                 <p className="body">{step.description}</p>
                 {step.details?.map((detail) => (

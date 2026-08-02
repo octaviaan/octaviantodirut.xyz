@@ -43,12 +43,6 @@ export function SiteHeader() {
             <ExternalLink aria-hidden="true" size={14} strokeWidth={1.8} />
           </a>
         </nav>
-
-        <div className="header-cta">
-          <Link className="btn btn-ghost btn-sm" href="/#contact">
-            Let&apos;s&nbsp;talk
-          </Link>
-        </div>
       </div>
     </header>
   );
