@@ -40,7 +40,7 @@ export type CaseStudy = {
   heroLabel: string;
   challenge: string;
   process: CaseStudyStep[];
-  outcome: string;
+  outcome?: string;
   metrics: Metric[];
 };
 
@@ -245,19 +245,10 @@ export const caseStudies = sortCaseStudies([
         ],
         media: [
           {
-            type: "image",
-            src: "/case_studies/web2.png",
-            alt: "Passport stamp selection for Web2 identity sources.",
+            type: "video",
+            src: "/case_studies/eth_stamp.mov",
             caption:
-              "Web2 and platform-based stamps expanded the trust model beyond wallet activity.",
-            aspectRatio: "landscape",
-          },
-          {
-            type: "image",
-            src: "/case_studies/web3.png",
-            alt: "Passport stamp selection for Web3 and blockchain credentials.",
-            caption:
-              "Blockchain-native stamps translated wallet history and ecosystem participation into scoreable signals.",
+              "The ETH stamp flow shows how individual credential details and verification states are handled without leaving the main product surface.",
             aspectRatio: "landscape",
           },
         ],
@@ -292,11 +283,14 @@ export const caseStudies = sortCaseStudies([
         ],
         media: [
           {
-            type: "video",
-            src: "/case_studies/eth_stamp.mov",
+            type: "image",
+            src: "/case_studies/passport-stamps.png",
+            alt: "Passport stamp cards and Ethereum stamp details sidebar.",
             caption:
-              "The ETH stamp flow shows how individual credential details and verification states are handled without leaving the main product surface.",
-            aspectRatio: "landscape",
+              "Stamp cards and detail views made verification state, points, expiration, and credential breakdowns visible in one flow.",
+            aspectRatio: "portrait",
+            fit: "contain",
+            presentation: "transparent",
           },
         ],
       },
@@ -328,10 +322,20 @@ export const caseStudies = sortCaseStudies([
           "Security was designed to evolve. The model constantly adapted by comparing transaction history against known bot behavior.",
           "Because users were asked to trust a privacy-preserving identity system, we exposed the stored passport as downloadable JSON rather than hiding implementation details. That improved transparency without requiring users to understand cryptography.",
         ],
+        media: [
+          {
+            type: "image",
+            src: "/case_studies/passport-privacy.png",
+            alt: "Passport JSON fields explaining privacy-preserving stamp metadata.",
+            caption:
+              "The downloadable Passport JSON exposed stored stamp metadata so privacy and security choices stayed legible.",
+            aspectRatio: "landscape",
+            fit: "contain",
+            presentation: "transparent",
+          },
+        ],
       },
     ],
-    outcome:
-      "The result was a privacy-first identity aggregator that unified trust signals into a user-controlled dashboard, gave partners a flexible verification layer, and helped lay the foundation for Gitcoin Passport's evolution into Human Passport.",
     metrics: [
       { label: "Human Passports", value: "2M+" },
       { label: "Ecosystem Partners", value: "120+" },

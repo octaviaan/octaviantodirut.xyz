@@ -830,6 +830,7 @@ section[id] { scroll-margin-top: 5.5rem; }
 
 .progress-track { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: transparent; z-index: 80; }
 .progress-bar { display: block; height: 100%; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: var(--accent); }
+.gitcoin-hero-art { position: relative; overflow: hidden; }
 
 .cs-hero { position: relative; overflow: hidden; padding-block: clamp(5rem, 12vw, 9rem) clamp(3rem,7vw,5rem); border-bottom: 1px solid var(--line); }
 .cs-hero-art { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5; display: block; }
@@ -839,6 +840,7 @@ section[id] { scroll-margin-top: 5.5rem; }
 .cs-back { margin-bottom: 2.5rem; display: inline-flex; }
 .cs-hero .display { margin: 1rem 0 1.5rem; }
 .cs-hero-lede { max-width: 46ch; }
+.cs-hero-actions { margin-top: clamp(2rem, 4vw, 3.5rem); }
 .cs-facts { display: flex; flex-wrap: wrap; gap: 0; margin-top: 3rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .cs-fact { flex: 1 1 160px; padding: 1.1rem 1.5rem 1.1rem 0; display: flex; flex-direction: column; gap: .5rem; border-right: 1px solid var(--line); }
 .cs-fact:last-child { border-right: 0; }
@@ -876,10 +878,10 @@ section[id] { scroll-margin-top: 5.5rem; }
 .cs-surface.reverse .cs-surface-text { order: 2; }
 .cs-surface-text { display: flex; flex-direction: column; gap: 1rem; }
 .cs-surface-text .body { max-width: 42ch; }
-.cs-shot { position: relative; background: #0a0b05; border: 1px solid var(--line-2); overflow: hidden; }
+.cs-shot { position: relative; background: transparent; border: 0; overflow: hidden; }
 .cs-shot > a { display: block; cursor: zoom-in; }
 .cs-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cs-shot-tall img { object-fit: contain; background: #0c0d06; max-height: 540px; }
+.cs-shot-tall img { object-fit: contain; background: transparent; max-height: 540px; }
 .cs-shot figcaption { position: absolute; left: .9rem; bottom: .8rem; font-family: var(--mono); font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); background: color-mix(in srgb, var(--bg) 70%, transparent); padding: .3rem .5rem; }
 .cs-shot-carousel {
   display: grid;

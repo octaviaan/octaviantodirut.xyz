@@ -53,10 +53,6 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           </Link>
 
           <div className="case-detail-title">
-            <div className="cl-meta">
-              <span>{study.year}</span>
-              <span>{study.tags.join(" / ")}</span>
-            </div>
             <h1 className="display balance">{study.title}</h1>
             <p className="lede">{study.description}</p>
           </div>
@@ -146,15 +142,17 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           ))}
         </section>
 
-        <FadeIn>
-          <section className="case-text-section">
-            <div>
-              <p className="eyebrow">Impact</p>
-              <h2 className="h2">Outcome</h2>
-            </div>
-            <p className="lede">{study.outcome}</p>
-          </section>
-        </FadeIn>
+        {study.outcome ? (
+          <FadeIn>
+            <section className="case-text-section">
+              <div>
+                <p className="eyebrow">Impact</p>
+                <h2 className="h2">Outcome</h2>
+              </div>
+              <p className="lede">{study.outcome}</p>
+            </section>
+          </FadeIn>
+        ) : null}
       </div>
     </article>
   );

@@ -6,8 +6,7 @@ import { ReadProgress } from "@/components/read-progress";
 
 export const metadata: Metadata = {
   title: "Gitcoin 3.0 — Case Study",
-  description:
-    "A rebrand that walks Gitcoin back to its lunar-punk roots — and forward into the database of everything funding on Ethereum.",
+  description: "Product strategy & platform repositioning for a decentralized funding platform.",
 };
 
 export default function GitcoinCaseStudyPage() {
@@ -16,53 +15,49 @@ export default function GitcoinCaseStudyPage() {
       <ReadProgress />
 
       {/* HERO */}
-      <section className="cs-hero">
-        <Image
-          src="/images/chladni-feature.png"
-          alt="Gitcoin 3.0 brand artwork with Fund What Matters messaging"
-          fill
-          priority
-          sizes="100vw"
-          className="cs-hero-art cs-hero-image"
-        />
-        <div className="cs-hero-veil" />
-        <div className="wrap cs-hero-inner">
-          <Link className="cs-back link-arrow" href="/#work">
-            <span className="arr">←</span> Case Studies
-          </Link>
-          <p className="eyebrow">Gitcoin · Case Study</p>
-          <h1 className="display balance">
-            Product strategy<br />&amp; platform <em>repositioning</em>.
-          </h1>
-          <p className="lede balance cs-hero-lede">
-            A rebrand that walks Gitcoin <em className="serif">back</em> to its lunar-punk roots — and forward into something new:{" "}
-            <em className="serif">the database of everything funding</em> on Ethereum.
-          </p>
-          <div className="case-detail-actions">
-            <a className="btn btn-primary" href="https://gitcoin.co/" target="_blank" rel="noopener">
-              Visit website <span className="arr">↗</span>
-            </a>
-            <a className="btn btn-ghost" href="https://gitcoin.co/generator" target="_blank" rel="noopener">
-              View generator <span className="arr">↗</span>
-            </a>
+      <section className="section wrap wide gitcoin-hero">
+        <div className="case-detail-hero">
+          <div className="case-detail-copy">
+            <Link className="link-arrow" href="/#work">
+              <span className="arr">←</span> Case Studies
+            </Link>
+            <div className="case-detail-title">
+              <h1 className="display balance">
+                Gitcoin 3.0
+              </h1>
+              <p className="lede balance">
+                Product strategy & platform repositioning for a decentralized funding platform.
+              </p>
+            </div>
+            <div className="case-detail-actions cs-hero-actions">
+              <a
+                className="btn btn-primary"
+                href="https://gitcoin.co/"
+                target="_blank"
+                rel="noopener"
+              >
+                Visit website <span className="arr">↗</span>
+              </a>
+              <a
+                className="btn btn-ghost"
+                href="https://gitcoin.co/generator"
+                target="_blank"
+                rel="noopener"
+              >
+                View generator <span className="arr">↗</span>
+              </a>
+            </div>
           </div>
-          <div className="cs-facts">
-            <div className="cs-fact">
-              <span className="eyebrow muted">Year</span>
-              <span className="cs-fact-v">2026</span>
-            </div>
-            <div className="cs-fact">
-              <span className="eyebrow muted">Role</span>
-              <span className="cs-fact-v">Brand · Product</span>
-            </div>
-            <div className="cs-fact">
-              <span className="eyebrow muted">Stack</span>
-              <span className="cs-fact-v">Next.js · Three.js</span>
-            </div>
-            <div className="cs-fact">
-              <span className="eyebrow muted">Read</span>
-              <span className="cs-fact-v">~6 min</span>
-            </div>
+
+          <div className="case-detail-art gitcoin-hero-art">
+            <Image
+              src="/images/chladni-feature.png"
+              alt="Gitcoin 3.0 brand artwork with Fund What Matters messaging"
+              fill
+              priority
+              sizes="(min-width: 1280px) 46vw, (min-width: 768px) 80vw, 100vw"
+              className="object-cover object-center"
+            />
           </div>
         </div>
       </section>
@@ -72,31 +67,45 @@ export default function GitcoinCaseStudyPage() {
         <div className="cs-split">
           <div className="reveal">
             <p className="eyebrow">What is Gitcoin?</p>
-            <h2 className="h2">Funding the <em>open</em> internet.</h2>
+            <h2 className="h2">
+              Funding the <em>open</em> internet.
+            </h2>
           </div>
           <div className="reveal stack" style={{ transitionDelay: ".06s" }}>
             <p className="lede">
-              Gitcoin is a <strong>decentralized platform</strong> on Ethereum that helps fund open-source software and digital public goods, connecting developers with creators and community donors through hackathons, bounties, and grants.
+              Gitcoin is a <strong>decentralized platform</strong> that helps fund open-source software and digital public goods,
+              connecting developers with creators and community donors through
+              hackathons, bounties, and grants.
             </p>
             <p className="body">
-              It has done so <strong style={{ color: "var(--ink)" }}>since 2017</strong> — helping kickstart projects like ENS, Uniswap, 1inch, and yearn.finance, routing over{" "}
-              <strong style={{ color: "var(--ink)" }}>$63 million</strong> to more than{" "}
-              <strong style={{ color: "var(--ink)" }}>3,700</strong> open-source and decentralized projects.
+              It has done so{" "}
+              <strong style={{ color: "var(--ink)" }}>since 2017</strong> —
+              helping kickstart projects like ENS, Uniswap, 1inch, and
+              yearn.finance, routing over{" "}
+              <strong style={{ color: "var(--ink)" }}>$63 million</strong> to
+              more than <strong style={{ color: "var(--ink)" }}>3,700</strong>{" "}
+              open-source and decentralized projects.
             </p>
           </div>
         </div>
 
         <div className="cs-stats reveal">
           <div className="cs-stat">
-            <span className="cs-stat-n serif">$63<em>M</em></span>
+            <span className="cs-stat-n serif">
+              $63<em>M</em>
+            </span>
             <span className="cs-stat-l">Routed to public goods</span>
           </div>
           <div className="cs-stat">
-            <span className="cs-stat-n serif">3,700<em>+</em></span>
+            <span className="cs-stat-n serif">
+              3,700<em>+</em>
+            </span>
             <span className="cs-stat-l">Open-source projects funded</span>
           </div>
           <div className="cs-stat">
-            <span className="cs-stat-n serif">2017<em>→</em></span>
+            <span className="cs-stat-n serif">
+              2017<em>→</em>
+            </span>
             <span className="cs-stat-l">Years supporting OSS</span>
           </div>
         </div>
@@ -108,9 +117,15 @@ export default function GitcoinCaseStudyPage() {
       <section className="section wrap">
         <div className="reveal cs-sec-head">
           <p className="eyebrow">The Challenge</p>
-          <h2 className="h2 balance">Lost the <em>plot</em>.<br />Time to find it.</h2>
+          <h2 className="h2 balance">
+            Lost the <em>plot</em>.<br />
+            Time to find it.
+          </h2>
           <p className="body" style={{ maxWidth: "54ch" }}>
-            Gitcoin became too institutional and lost a lot of the startup and grassroots vibe, as well as credibility with the community that originally built it. The brand looked like an enterprise SaaS company, not a public-goods funder.
+            Gitcoin became too institutional and lost a lot of the startup and
+            grassroots vibe, as well as credibility with the community that
+            originally built it. The brand looked like an enterprise SaaS
+            company, not a public-goods funder.
           </p>
         </div>
       </section>
@@ -121,50 +136,14 @@ export default function GitcoinCaseStudyPage() {
       <section className="section wrap">
         <div className="reveal cs-sec-head">
           <p className="eyebrow">The Solution</p>
-          <h2 className="h2 balance">A database of <em>everything funding</em>.</h2>
+          <h2 className="h2 balance">
+            A database of <em>everything funding</em>.
+          </h2>
           <p className="body" style={{ maxWidth: "58ch" }}>
-            Turn Gitcoin into the knowledge layer: the premier place where Ethereum funds solutions to its most important problems, and where the team curates the funding landscape.
+            Turn Gitcoin into the knowledge layer: the premier place where
+            Ethereum funds solutions to its most important problems, and where
+            the team curates the funding landscape.
           </p>
-        </div>
-      </section>
-
-      <hr className="divider wrap-line cs-line" />
-
-      {/* PRINCIPLES */}
-      <section className="section wrap">
-        <div className="reveal cs-sec-head">
-          <p className="eyebrow">Achieving the database feel</p>
-          <h2 className="h2 balance">Browse, search, edit, <em>contribute</em>.</h2>
-          <p className="body" style={{ maxWidth: "58ch" }}>
-            If Gitcoin is becoming a database, it should feel like one. Fast, navigable, and editable by anyone, in the spirit of open-source software. Six decisions reinforced it as a database and knowledge layer.
-          </p>
-        </div>
-
-        <div className="cs-principles">
-          <div className="reveal cs-pr">
-            <h4>Browsable + searchable</h4>
-            <p className="body">Search is front and center. ⌘K from anywhere. Ask AI inline.</p>
-          </div>
-          <div className="reveal cs-pr" style={{ transitionDelay: ".04s" }}>
-            <h4>Tree-explorer sidebar</h4>
-            <p className="body">A file-tree on the left. Always know where you are in the database.</p>
-          </div>
-          <div className="reveal cs-pr" style={{ transitionDelay: ".08s" }}>
-            <h4>Breadcrumbs everywhere</h4>
-            <p className="body">Every article shows its lineage. Easy back-out, easy lateral moves.</p>
-          </div>
-          <div className="reveal cs-pr" style={{ transitionDelay: ".04s" }}>
-            <h4>Time-to-read on every page</h4>
-            <p className="body">Set expectations before the reader starts.</p>
-          </div>
-          <div className="reveal cs-pr" style={{ transitionDelay: ".08s" }}>
-            <h4>Edit on GitHub</h4>
-            <p className="body">Every article is a PR away from being improved. Transparent, OSS.</p>
-          </div>
-          <div className="reveal cs-pr" style={{ transitionDelay: ".12s" }}>
-            <h4>Generative asset system</h4>
-            <p className="body">Three.js generator for hero art + OG images. Consistent at scale.</p>
-          </div>
         </div>
       </section>
 
@@ -178,22 +157,31 @@ export default function GitcoinCaseStudyPage() {
         <div className="cs-surface reveal">
           <div className="cs-surface-text">
             <p className="eyebrow muted">Search</p>
-            <h3 className="h3 serif">Search, <em>front and center</em>.</h3>
+            <h3 className="h3 serif">
+              Search, <em>front and center</em>.
+            </h3>
             <p className="body">
-              The header search bar lives next to the primary nav — visible on every page. A <kbd>⌘K</kbd> shortcut summons a global overlay that floats above the page.{" "}
-              <strong style={{ color: "var(--ink)" }}>Ask AI</strong> is one tab away, for when the answer isn't an article title.
+              The header search bar lives next to the primary nav — visible on
+              every page. A <kbd>⌘K</kbd> shortcut summons a global overlay that
+              floats above the page.{" "}
+              <strong style={{ color: "var(--ink)" }}>Ask AI</strong> is one tab
+              away, for when the answer isn't an article title.
             </p>
           </div>
           <figure className="cs-shot">
-            <a href="/case_studies/gitcoin-search-cmdk.png" target="_blank" rel="noopener" aria-label="Open image full size">
+            <a
+              href="/case_studies/gitcoin-principle-1.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open image full size"
+            >
               <Image
-                src="/case_studies/gitcoin-search-cmdk.png"
-                alt="Command-K global search overlay with suggestions"
-                width={1200}
-                height={800}
+                src="/case_studies/gitcoin-principle-1.png"
+                alt="Gitcoin search overlay and AI assistant panel."
+                width={1105}
+                height={640}
               />
             </a>
-            <figcaption>Search · ⌘K</figcaption>
           </figure>
         </div>
 
@@ -201,22 +189,33 @@ export default function GitcoinCaseStudyPage() {
         <div className="cs-surface reveal reverse">
           <div className="cs-surface-text">
             <p className="eyebrow muted">Tree Sidebar</p>
-            <h3 className="h3 serif">The whole database, in the <em>left rail</em>.</h3>
+            <h3 className="h3 serif">
+              The whole database, in the <em>left rail</em>.
+            </h3>
             <p className="body">
               A file-explorer sidebar mirrors the repo.{" "}
-              <span className="mono" style={{ color: "var(--ink)" }}>Campaigns · Research · Apps · Mechanisms · Case Studies</span> — each folder opens to its children, with the current page highlighted. Contributors orient immediately; first-time visitors browse the funding landscape the way they'd browse a codebase.
+              <span className="mono" style={{ color: "var(--ink)" }}>
+                Campaigns · Research · Apps · Mechanisms · Case Studies
+              </span>{" "}
+              — each folder opens to its children, with the current page
+              highlighted. Contributors orient immediately; first-time visitors
+              browse the funding landscape the way they'd browse a codebase.
             </p>
           </div>
-          <figure className="cs-shot cs-shot-tall">
-            <a href="/case_studies/gitcoin-sidebar-tree.png" target="_blank" rel="noopener" aria-label="Open image full size">
+          <figure className="cs-shot">
+            <a
+              href="/case_studies/gitcoin-tree-sidebar.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open image full size"
+            >
               <Image
-                src="/case_studies/gitcoin-sidebar-tree.png"
-                alt="Gitcoin sidebar showing Campaigns folder expanded"
-                width={800}
-                height={1200}
+                src="/case_studies/gitcoin-tree-sidebar.png"
+                alt="Gitcoin article page with tree sidebar navigation."
+                width={1173}
+                height={821}
               />
             </a>
-            <figcaption>Sidebar · Tree</figcaption>
           </figure>
         </div>
 
@@ -224,14 +223,26 @@ export default function GitcoinCaseStudyPage() {
         <div className="cs-surface reveal">
           <div className="cs-surface-text">
             <p className="eyebrow muted">Breadcrumbs &amp; Header</p>
-            <h3 className="h3 serif">You are <em>here</em>. Always.</h3>
+            <h3 className="h3 serif">
+              You are <em>here</em>. Always.
+            </h3>
             <p className="body">
               Every article carries its full lineage —{" "}
-              <span className="mono" style={{ color: "var(--ink)" }}>Home → Mechanisms → Aqueduct</span> — so readers never feel lost. The header keeps the wordmark, nav, search box, and the Partner CTA in the same place on every page. Time-to-read sits directly under the lede.
+              <span className="mono" style={{ color: "var(--ink)" }}>
+                Home → Mechanisms → Aqueduct
+              </span>{" "}
+              — so readers never feel lost. The header keeps the wordmark, nav,
+              search box, and the Partner CTA in the same place on every page.
+              Time-to-read sits directly under the lede.
             </p>
           </div>
           <figure className="cs-shot">
-            <a href="/case_studies/gitcoin-breadcrumbs.png" target="_blank" rel="noopener" aria-label="Open image full size">
+            <a
+              href="/case_studies/gitcoin-breadcrumbs.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open image full size"
+            >
               <Image
                 src="/case_studies/gitcoin-breadcrumbs.png"
                 alt="Gitcoin top nav and breadcrumb leading to an article"
@@ -239,32 +250,6 @@ export default function GitcoinCaseStudyPage() {
                 height={800}
               />
             </a>
-            <figcaption>Header · Breadcrumbs</figcaption>
-          </figure>
-        </div>
-
-        {/* Supporting AI surface */}
-        <div className="cs-surface reveal reverse">
-          <div className="cs-surface-text">
-            <p className="eyebrow muted">Ask AI</p>
-            <h3 className="h3 serif">An assistant that <em>actually</em> reads the docs.</h3>
-            <p className="body">
-              A right-side panel grounded in the database itself, pre-seeded with first-visit questions —{" "}
-              <em className="serif">"What is quadratic funding?"</em>,{" "}
-              <em className="serif">"Show me active campaigns"</em>,{" "}
-              <em className="serif">"How does retroactive funding work?"</em> Opens with <kbd>⌘I</kbd>, closes the same way.
-            </p>
-          </div>
-          <figure className="cs-shot">
-            <a href="/case_studies/gitcoin-ai-assistant.png" target="_blank" rel="noopener" aria-label="Open image full size">
-              <Image
-                src="/case_studies/gitcoin-ai-assistant.png"
-                alt="AI Assistant side panel with suggested questions"
-                width={1200}
-                height={800}
-              />
-            </a>
-            <figcaption>AI Assistant · ⌘I</figcaption>
           </figure>
         </div>
 
@@ -272,14 +257,26 @@ export default function GitcoinCaseStudyPage() {
         <div className="cs-surface reveal cs-glow-scope">
           <div className="cs-surface-text">
             <p className="eyebrow muted">Edit on GitHub</p>
-            <h3 className="h3 serif">Every article is <em>a PR away</em>.</h3>
+            <h3 className="h3 serif">
+              Every article is <em>a PR away</em>.
+            </h3>
             <p className="body">
               At the bottom of every page sits a single luminous button:{" "}
-              <strong style={{ color: "var(--glow)" }}>Edit on GitHub</strong>. It opens an issue or PR against the page's source — turning the whole site into a contributable repository. The glow is the only place the lunar-punk language allows itself to <em className="serif">actually</em> glow, saved for the one moment that signals participation.
+              <strong style={{ color: "var(--glow)" }}>Edit on GitHub</strong>.
+              It opens an issue or PR against the page's source — turning the
+              whole site into a contributable repository. The glow is the only
+              place the lunar-punk language allows itself to{" "}
+              <em className="serif">actually</em> glow, saved for the one moment
+              that signals participation.
             </p>
           </div>
           <figure className="cs-shot cs-frame-glow">
-            <a href="/case_studies/gitcoin-edit-github.png" target="_blank" rel="noopener" aria-label="Open image full size">
+            <a
+              href="/case_studies/gitcoin-edit-github.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open image full size"
+            >
               <Image
                 src="/case_studies/gitcoin-edit-github.png"
                 alt="Edit on GitHub button with a soft purple glow"
@@ -287,7 +284,6 @@ export default function GitcoinCaseStudyPage() {
                 height={800}
               />
             </a>
-            <figcaption style={{ color: "var(--glow)" }}>Edit · GitHub</figcaption>
           </figure>
         </div>
 
@@ -295,44 +291,46 @@ export default function GitcoinCaseStudyPage() {
         <div className="cs-surface reveal reverse">
           <div className="cs-surface-text">
             <p className="eyebrow muted">Generative asset system</p>
-            <h3 className="h3 serif">Generative asset system <em>(using Claude in VS Code)</em>.</h3>
+            <h3 className="h3 serif">
+              Generative asset system <em>(using Claude in VS Code)</em>.
+            </h3>
             <p className="body">
-              I have created a generator for hero art + Open Graph images using Three.js, a JavaScript library for 3D.
+              I have created a generator for hero art + Open Graph images using
+              Three.js, a JavaScript library for 3D.
             </p>
             <p className="body">
-              Consistent at scale. Reduces and democratizes asset production time, in the spirit of open source software.
+              Consistent at scale. Reduces and democratizes asset production
+              time, in the spirit of open source software.
             </p>
             <p className="body">
-              It's packed with features and very customizable. If you just want a quick image, hit "randomize all" and you get an image. Instructions and shortcuts are also built into the generator.
+              It's packed with features and very customizable. If you just want
+              a quick image, hit "randomize all" and you get an image.
+              Instructions and shortcuts are also built into the generator.
             </p>
-            <a className="link-arrow" href="https://gitcoin.co/generator" target="_blank" rel="noopener">
+            <a
+              className="link-arrow"
+              href="https://gitcoin.co/generator"
+              target="_blank"
+              rel="noopener"
+            >
               Open generator <span className="arr">↗</span>
             </a>
           </div>
-          <div className="cs-shot-carousel" aria-label="Generative asset system screenshots">
-            <figure className="cs-shot">
-              <a href="/case_studies/gitcoin-asset-generator.png" target="_blank" rel="noopener" aria-label="Open image full size">
-                <Image
-                  src="/case_studies/gitcoin-asset-generator.png"
-                  alt="Gitcoin Chladni asset generator interface with particle pattern artwork"
-                  width={1200}
-                  height={800}
-                />
-              </a>
-              <figcaption>Three.js · Asset Generator</figcaption>
-            </figure>
-            <figure className="cs-shot">
-              <a href="/case_studies/gitcoin-generator-controls.png" target="_blank" rel="noopener" aria-label="Open image full size">
-                <Image
-                  src="/case_studies/gitcoin-generator-controls.png"
-                  alt="Gitcoin generator controls for particles, logo, text, capture, and GIF settings"
-                  width={921}
-                  height={881}
-                />
-              </a>
-              <figcaption>Controls · Customization</figcaption>
-            </figure>
-          </div>
+          <figure className="cs-shot">
+            <a
+              href="/case_studies/gitcoin-generator-system.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open image full size"
+            >
+              <Image
+                src="/case_studies/gitcoin-generator-system.png"
+                alt="Gitcoin generative asset system controls over Chladni particle artwork."
+                width={921}
+                height={881}
+              />
+            </a>
+          </figure>
         </div>
       </section>
 
@@ -342,9 +340,13 @@ export default function GitcoinCaseStudyPage() {
       <section className="section wrap">
         <div className="reveal cs-sec-head">
           <p className="eyebrow">Outcome</p>
-          <h2 className="h2 balance">Relaunch traction, <em>measured</em>.</h2>
+          <h2 className="h2 balance">
+            Relaunch traction, <em>measured</em>.
+          </h2>
           <p className="body" style={{ maxWidth: "58ch" }}>
-            By the end of April, the repositioned Gitcoin experience showed clear movement across primary and secondary acquisition signals compared with the start of March after relaunch.
+            By the end of April, the repositioned Gitcoin experience showed
+            clear movement across primary and secondary acquisition signals
+            compared with the start of March after relaunch.
           </p>
         </div>
 
@@ -353,17 +355,32 @@ export default function GitcoinCaseStudyPage() {
             <div className="cs-card-top">Primary KPIs</div>
             <h3 className="h3 serif">Core traffic lifted.</h3>
             <p className="body">
-              Active users reached <strong style={{ color: "var(--ink)" }}>11,038</strong>, up <strong style={{ color: "var(--ink)" }}>+138% WoW</strong> and +41% versus the Q1 2025 average. Sessions reached <strong style={{ color: "var(--ink)" }}>11,772</strong>, up <strong style={{ color: "var(--ink)" }}>+145% WoW</strong> and +24% versus the Q1 2025 average.
+              Active users reached{" "}
+              <strong style={{ color: "var(--ink)" }}>11,038</strong>, up{" "}
+              <strong style={{ color: "var(--ink)" }}>+138% WoW</strong> and
+              +41% versus the Q1 2025 average. Sessions reached{" "}
+              <strong style={{ color: "var(--ink)" }}>11,772</strong>, up{" "}
+              <strong style={{ color: "var(--ink)" }}>+145% WoW</strong> and
+              +24% versus the Q1 2025 average.
             </p>
             <p className="body">
-              Organic social reached 518, up +1,892% WoW. Organic search reached 1,227, up +376% WoW.
+              Organic social reached 518, up +1,892% WoW. Organic search reached
+              1,227, up +376% WoW.
             </p>
           </article>
-          <article className="reveal cs-card" style={{ transitionDelay: ".06s" }}>
+          <article
+            className="reveal cs-card"
+            style={{ transitionDelay: ".06s" }}
+          >
             <div className="cs-card-top">Secondary KPIs</div>
             <h3 className="h3 serif">Contribution paths started working.</h3>
             <p className="body">
-              Returning users reached <strong style={{ color: "var(--ink)" }}>408</strong>, up +232% WoW. AI referral traffic reached <strong style={{ color: "var(--ink)" }}>118</strong>, up +462% WoW, and GitHub referral traffic reached <strong style={{ color: "var(--ink)" }}>38</strong>, up +533% WoW.
+              Returning users reached{" "}
+              <strong style={{ color: "var(--ink)" }}>408</strong>, up +232%
+              WoW. AI referral traffic reached{" "}
+              <strong style={{ color: "var(--ink)" }}>118</strong>, up +462%
+              WoW, and GitHub referral traffic reached{" "}
+              <strong style={{ color: "var(--ink)" }}>38</strong>, up +533% WoW.
             </p>
           </article>
         </div>
@@ -375,7 +392,10 @@ export default function GitcoinCaseStudyPage() {
           <Link className="cs-next-card" href="/case-studies/passport">
             <span className="cs-next-k">← Previous</span>
             <h4 className="serif">Passport</h4>
-            <p className="body">A privacy-first identity hub for proving humanity and resisting Sybil attacks.</p>
+            <p className="body">
+              A privacy-first identity hub for proving humanity and resisting
+              Sybil attacks.
+            </p>
           </Link>
         </div>
       </section>

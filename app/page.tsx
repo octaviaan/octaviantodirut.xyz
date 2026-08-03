@@ -55,9 +55,6 @@ export default function HomePage() {
           </div>
 
           <div className="contact-links hero-socials">
-            <a href={profile.x} target="_blank" rel="noopener">
-              X
-            </a>
             <a href={profile.linkedin} target="_blank" rel="noopener">
               LinkedIn
             </a>
@@ -129,14 +126,10 @@ export default function HomePage() {
                 <span>2026</span>
                 <span>Brand · Product · Three.js</span>
               </div>
-              <h3 className="h2 serif">
-                Gitcoin 3.0 — <em>the rebrand that returned home</em>
-              </h3>
+              <h3 className="h2 serif">Gitcoin 3.0</h3>
               <p className="body" style={{ maxWidth: "54ch" }}>
-                A rebrand that walks Gitcoin back to its lunar-punk roots and
-                forward into the database of everything funding on Ethereum —
-                paired with a generative Three.js asset tool for consistent
-                visuals at scale.
+                Product strategy & platform repositioning for a decentralized
+                funding platform.
               </p>
               <span className="link-arrow">
                 Read the case study <span className="arr">→</span>
