@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,7 +19,7 @@ export default function GitcoinCaseStudyPage() {
       <section className="section wrap wide gitcoin-hero">
         <div className="case-detail-hero">
           <div className="case-detail-copy">
-            <Link className="link-arrow" href="/#work">
+            <Link className="text-link" href="/#work">
               <span className="arr">←</span> Case Studies
             </Link>
             <div className="case-detail-title">
@@ -39,7 +40,7 @@ export default function GitcoinCaseStudyPage() {
                 Visit website <span className="arr">↗</span>
               </a>
               <a
-                className="btn btn-ghost"
+                className="btn btn-secondary"
                 href="https://gitcoin.co/generator"
                 target="_blank"
                 rel="noopener"
@@ -111,8 +112,6 @@ export default function GitcoinCaseStudyPage() {
         </div>
       </section>
 
-      <hr className="divider wrap-line cs-line" />
-
       {/* CHALLENGE */}
       <section className="section wrap">
         <div className="reveal cs-sec-head">
@@ -129,8 +128,6 @@ export default function GitcoinCaseStudyPage() {
           </p>
         </div>
       </section>
-
-      <hr className="divider wrap-line cs-line" />
 
       {/* SOLUTION */}
       <section className="section wrap">
@@ -308,12 +305,13 @@ export default function GitcoinCaseStudyPage() {
               Instructions and shortcuts are also built into the generator.
             </p>
             <a
-              className="link-arrow"
+              className="text-link text-link-external"
               href="https://gitcoin.co/generator"
               target="_blank"
               rel="noopener"
             >
-              Open generator <span className="arr">↗</span>
+              Open generator
+              <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
             </a>
           </div>
           <figure className="cs-shot">
@@ -333,8 +331,6 @@ export default function GitcoinCaseStudyPage() {
           </figure>
         </div>
       </section>
-
-      <hr className="divider wrap-line cs-line" />
 
       {/* OUTCOME */}
       <section className="section wrap">

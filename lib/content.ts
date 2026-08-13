@@ -232,11 +232,6 @@ export const caseStudies = sortCaseStudies([
         ],
       },
       {
-        title: "Problem",
-        description:
-          "Scattered identity across platforms increased the number of bad actors and bots, making fair funding, participation, and governance harder. Existing verification methods each provided only part of the picture, so the product needed to combine multiple independent signals into a single identity model.",
-      },
-      {
         title: "Solution",
         description:
           "For users, Passport aggregated digital identity into a single score. The user decided how to show they were human by verifying stamps that together formed a passport, ranging from ID verification and social platforms to blockchain activity.",

@@ -386,19 +386,19 @@ export default function DesignSystemPage() {
 
           <FadeIn delay={0.26}>
             <ShowcaseRow
-              name=".ui-button-*"
+              name=".btn-*"
               kind="Class"
-              description="Button size and variant classes expressed through the shared UiButton component."
+              description="Primary and secondary button classes shared by raw links and the UiButton component."
               preview={
                 <div className="flex flex-wrap gap-3">
                   <UiButton href="/design-system" variant="primary" size="md">
-                    .ui-button-primary + .ui-button-md
+                    .btn-primary
                   </UiButton>
                   <UiButton href="/design-system" variant="secondary" size="md">
-                    .ui-button-secondary + .ui-button-md
+                    .btn-secondary
                   </UiButton>
                   <UiButton href="/design-system" variant="secondary" size="sm">
-                    .ui-button-sm
+                    .btn-sm
                   </UiButton>
                 </div>
               }

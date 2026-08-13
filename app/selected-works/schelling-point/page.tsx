@@ -22,7 +22,7 @@ export default function SchellingPointPage() {
     <article className="selected-detail">
       <section className="section wrap wide selected-detail-hero">
         <div className="selected-detail-copy reveal">
-          <Link className="link-arrow" href="/#selected-works">
+          <Link className="text-link" href="/#selected-works">
             <span className="arr">←</span> Selected Works
           </Link>
           <p className="eyebrow">Selected Work</p>
@@ -35,7 +35,7 @@ export default function SchellingPointPage() {
             {schellingLinks.map((link) => (
               <a
                 key={link.href}
-                className="btn btn-ghost"
+                className="btn btn-secondary"
                 href={link.href}
                 target="_blank"
                 rel="noopener"

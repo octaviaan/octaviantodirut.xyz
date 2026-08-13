@@ -48,7 +48,7 @@ export default function HomePage() {
             </div>
             <div className="hero-prototype-row" aria-label="Prototype links">
               <a
-                className="hero-prototype-link"
+                className="text-link text-link-external"
                 href="https://www.figma.com/proto/JLrOm2x3UF791cQKeZxupW/octa-product-portfolio?node-id=688-6030&p=f&t=wF4Pmwt57Rukxo1v-0&scaling=contain&content-scaling=fixed&starting-point-node-id=688%3A6030&page-id=0%3A1"
                 target="_blank"
                 rel="noopener"
@@ -57,7 +57,7 @@ export default function HomePage() {
                 <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
               </a>
               <a
-                className="hero-prototype-link"
+                className="text-link text-link-external"
                 href={productPortfolioPdfUrl}
                 target="_blank"
                 rel="noopener"
@@ -115,7 +115,7 @@ export default function HomePage() {
                 and Web3 stamps — unifying scattered identity signals into one
                 user-controlled trust profile.
               </p>
-              <span className="link-arrow">
+              <span className="text-link">
                 Read the case study <span className="arr">→</span>
               </span>
             </div>
@@ -145,15 +145,13 @@ export default function HomePage() {
                 Product strategy & platform repositioning for a decentralized
                 funding platform.
               </p>
-              <span className="link-arrow">
+              <span className="text-link">
                 Read the case study <span className="arr">→</span>
               </span>
             </div>
           </Link>
         </div>
       </section>
-
-      <hr className="divider wrap-line" />
 
       {/* SELECTED WORKS */}
       <section id="selected-works" className="section wrap wide">
@@ -185,7 +183,7 @@ export default function HomePage() {
               <p className="body">
                 A series of conferences revolving around human coordination.
               </p>
-              <span className="link-arrow">
+              <span className="text-link">
                 Read work <span className="arr">→</span>
               </span>
             </div>
@@ -215,7 +213,7 @@ export default function HomePage() {
                 Campaign and launch work for Gitcoin's DAO transition, GTC, and
                 the Quadratic Lands experience.
               </p>
-              <span className="link-arrow">
+              <span className="text-link text-link-external">
                 Visit work{" "}
                 <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
               </span>
@@ -246,7 +244,7 @@ export default function HomePage() {
                 Website and visual direction for a series of comic books.
                 Created a pdf guide for the comic book universe.
               </p>
-              <span className="link-arrow">
+              <span className="text-link text-link-external">
                 Visit work{" "}
                 <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
               </span>
@@ -254,8 +252,6 @@ export default function HomePage() {
           </a>
         </div>
       </section>
-
-      <hr className="divider wrap-line" />
 
       {/* EXPERIMENTS */}
       <section id="experiments" className="section wrap wide">
@@ -343,8 +339,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <hr className="divider wrap-line" />
-
       <section className="section wrap wide final-portfolio-cta">
         <div className="reveal final-portfolio-inner">
           <h2 className="h2 balance">Check my graphic design portfolio</h2>
@@ -359,7 +353,7 @@ export default function HomePage() {
               <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
             </a>
             <a
-              className="btn btn-ghost"
+              className="btn btn-secondary"
               href={graphicPortfolioPdfUrl}
               target="_blank"
               rel="noopener"

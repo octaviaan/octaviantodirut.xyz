@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Newsreader } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 
@@ -7,14 +7,6 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { profile } from "@/lib/content";
-
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-serif",
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
-});
 
 const geist = Geist({
   subsets: ["latin"],
@@ -52,7 +44,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${newsreader.variable} ${geist.variable} ${geistMono.variable}`}>
+      <body className={`${geist.variable} ${geistMono.variable}`}>
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

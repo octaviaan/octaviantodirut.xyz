@@ -33,9 +33,9 @@ export function UiButton({
   type = "button",
 }: UiButtonProps) {
   const buttonClassName = cn(
-    "ui-button",
-    variant === "primary" ? "ui-button-primary" : "ui-button-secondary",
-    size === "sm" ? "ui-button-sm" : "ui-button-md",
+    "btn",
+    variant === "primary" ? "btn-primary" : "btn-secondary",
+    size === "sm" && "btn-sm",
     className,
   );
 
