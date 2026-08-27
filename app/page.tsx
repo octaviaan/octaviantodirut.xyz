@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
+import { HeroFaceSequence } from "@/components/hero-face-sequence";
 import { profile } from "@/lib/content";
 
 const graphicPortfolioUrl =
@@ -14,16 +15,6 @@ export default function HomePage() {
     <div className="home-page">
       {/* HERO */}
       <section id="about" className="section wrap wide hero">
-        <div className="hero-bg" aria-hidden="true">
-          <Image
-            src="/images/octavian-profile.jpg"
-            alt=""
-            fill
-            priority
-            sizes="(min-width: 1380px) 1380px, 100vw"
-            style={{ objectFit: "cover", objectPosition: "50% 30%" }}
-          />
-        </div>
         <div className="hero-grid">
           <div className="reveal hero-lead">
             <p className="eyebrow">Senior Product Designer</p>
@@ -68,6 +59,8 @@ export default function HomePage() {
             </div>
           </div>
 
+          <HeroFaceSequence />
+
           <div className="contact-links hero-socials">
             <a href={profile.linkedin} target="_blank" rel="noopener">
               LinkedIn
@@ -88,7 +81,7 @@ export default function HomePage() {
         <div className="reveal sec-head case-studies-head">
           <p className="eyebrow">Case Studies</p>
           <h2 className="h2 balance">
-            Case studies built to show the <em className="mark">thinking</em> ,
+            Case studies built to show the <span className="mark">thinking</span> ,
             not just the finish.
           </h2>
         </div>
@@ -158,7 +151,8 @@ export default function HomePage() {
         <div className="reveal sec-head">
           <p className="eyebrow">Selected Works</p>
           <h2 className="h2 balance">
-            Additional work across product, visual, brand, and campaigns.
+            Additional work across <span className="mark">product</span>, visual
+            and brand.
           </h2>
         </div>
 
@@ -250,6 +244,37 @@ export default function HomePage() {
               </span>
             </div>
           </a>
+
+          <a
+            className="reveal selected-work-card"
+            href="https://www.aligneth.xyz/"
+            target="_blank"
+            rel="noopener"
+            style={{ transitionDelay: ".18s" }}
+          >
+            <div className="selected-work-art">
+              <Image
+                src="/images/aligneth.png"
+                alt="AlignETH website artwork about solving alignment with Ethereum"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div className="selected-work-body">
+              <div className="feat-meta">
+                <span>Product · Visuals · Ethereum</span>
+              </div>
+              <h3 className="h3 serif">AlignETH</h3>
+              <p className="body">
+                Website and visual system exploring how Ethereum can help solve
+                alignment problems and multipolar traps.
+              </p>
+              <span className="text-link text-link-external">
+                Visit work{" "}
+                <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
+              </span>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -259,7 +284,7 @@ export default function HomePage() {
           <div className="stack-sm">
             <p className="eyebrow">AI Experiments</p>
             <h2 className="h2">
-              <span className="mark">Asset generation</span> tools
+              Asset generation <span className="mark">tools</span>
             </h2>
           </div>
         </div>
@@ -341,7 +366,9 @@ export default function HomePage() {
 
       <section className="section wrap wide final-portfolio-cta">
         <div className="reveal final-portfolio-inner">
-          <h2 className="h2 balance">Check my graphic design portfolio</h2>
+          <h2 className="h2 balance">
+            Check my <span className="mark">graphic design</span> portfolio
+          </h2>
           <div className="final-portfolio-actions">
             <a
               className="btn btn-primary"

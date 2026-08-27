@@ -1,14 +1,17 @@
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
-import { navItems, profile } from "@/lib/content";
+import { navItems } from "@/lib/content";
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="inner">
         <div className="stack-sm" style={{ maxWidth: "34ch" }}>
-          <p className="serif" style={{ fontSize: "1.4rem" }}>{profile.name}</p>
+          <Link className="brand" href="/" aria-label="Octavian home">
+            <span className="ot-mark">OT</span>
+            <span className="who">Octavian</span>
+          </Link>
         </div>
 
         <div className="stack" style={{ textAlign: "right" }}>
