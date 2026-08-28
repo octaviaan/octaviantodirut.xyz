@@ -62,24 +62,32 @@ export function HeroFaceSequence() {
   const activeFrameRef = useRef(0);
   const [activeFrame, setActiveFrame] = useState(0);
 
+  const updateFrameFromPoint = (pointerX: number, pointerY: number) => {
+    if (!frameRef.current) {
+      return;
+    }
+
+    const nextFrame = getFrameIndex(
+      pointerX,
+      pointerY,
+      frameRef.current.getBoundingClientRect(),
+    );
+
+    if (nextFrame === activeFrameRef.current) {
+      return;
+    }
+
+    activeFrameRef.current = nextFrame;
+    setActiveFrame(nextFrame);
+  };
+
   useEffect(() => {
     const updateFrame = (event: PointerEvent) => {
-      if (event.pointerType === "touch" || !frameRef.current) {
+      if (event.pointerType === "touch") {
         return;
       }
 
-      const nextFrame = getFrameIndex(
-        event.clientX,
-        event.clientY,
-        frameRef.current.getBoundingClientRect(),
-      );
-
-      if (nextFrame === activeFrameRef.current) {
-        return;
-      }
-
-      activeFrameRef.current = nextFrame;
-      setActiveFrame(nextFrame);
+      updateFrameFromPoint(event.clientX, event.clientY);
     };
 
     window.addEventListener("pointermove", updateFrame, { passive: true });
@@ -91,7 +99,26 @@ export function HeroFaceSequence() {
 
   return (
     <div className="hero-face-wrap">
-      <div className="hero-face" ref={frameRef} aria-hidden="true">
+      <div
+        className="hero-face"
+        ref={frameRef}
+        aria-hidden="true"
+        onPointerDown={(event) => {
+          if (event.pointerType !== "touch") {
+            return;
+          }
+
+          event.currentTarget.setPointerCapture(event.pointerId);
+          updateFrameFromPoint(event.clientX, event.clientY);
+        }}
+        onPointerMove={(event) => {
+          if (event.pointerType !== "touch") {
+            return;
+          }
+
+          updateFrameFromPoint(event.clientX, event.clientY);
+        }}
+      >
         {frames.map((frame, index) => (
           <Image
             key={frame.src}

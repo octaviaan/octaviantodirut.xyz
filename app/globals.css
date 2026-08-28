@@ -164,6 +164,7 @@ section[id] { scroll-margin-top: 5.5rem; }
   max-width: 1380px; margin: 0 auto;
   padding: .85rem var(--pad);
   display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  position: relative;
 }
 .brand { display: inline-flex; align-items: center; gap: .7rem; }
 .brand .ot-mark {
@@ -176,6 +177,27 @@ section[id] { scroll-margin-top: 5.5rem; }
 }
 .brand .who { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .site-nav { display: flex; align-items: center; gap: .25rem; }
+.nav-menu-button {
+  display: none;
+  align-items: center;
+  gap: .45rem;
+  font-family: var(--mono);
+  font-size: .76rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  padding: .6rem .75rem;
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+}
+.nav-menu-button:hover,
+.nav-menu-button:focus-visible {
+  background: var(--accent);
+}
+.nav-menu-button svg {
+  flex: 0 0 auto;
+}
 .site-nav a {
   font-family: var(--mono); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase;
   color: var(--muted); padding: .55rem .8rem; transition: background .2s ease, color .2s ease; position: relative;
@@ -202,7 +224,40 @@ section[id] { scroll-margin-top: 5.5rem; }
   flex: 0 0 auto;
 }
 @media (max-width: 860px) {
-  .site-nav { display: none; }
+  .site-header .bar {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .75rem;
+  }
+
+  .nav-menu-button {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    display: none;
+    flex-basis: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: .6rem;
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .site-nav[data-open="true"] {
+    display: flex;
+  }
+
+  .site-nav a {
+    width: 100%;
+    padding: .85rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .site-nav a.active::after {
+    display: none;
+  }
 }
 
 /* ---------- buttons ---------- */
@@ -428,13 +483,16 @@ section[id] { scroll-margin-top: 5.5rem; }
   aspect-ratio: 1122 / 1402;
   overflow: hidden;
   border-radius: 128px;
-  pointer-events: none;
+  cursor: default;
+  touch-action: none;
+  user-select: none;
 }
 .hero-face-frame {
   object-fit: contain;
   object-position: center bottom;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 .hero-face-frame[data-active="true"] {
   opacity: 1;
@@ -1415,12 +1473,6 @@ kbd {
   border-color: var(--line-strong);
   border-radius: 0;
   background: var(--bg-2);
-}
-
-@media (max-width: 860px) {
-  .site-header .bar {
-    align-items: flex-start;
-  }
 }
 
 @media (max-width: 680px) {
