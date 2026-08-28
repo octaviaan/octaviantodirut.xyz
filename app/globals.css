@@ -419,11 +419,14 @@ section[id] { scroll-margin-top: 5.5rem; }
 }
 .hero-face {
   position: relative;
-  align-self: end;
+  align-self: center;
   justify-self: end;
-  width: min(39vw, 440px);
-  min-width: 290px;
+  width: min(32vw, 340px);
+  min-width: 240px;
   aspect-ratio: 1122 / 1402;
+  overflow: hidden;
+  border-radius: 128px;
+  transform: translateX(-80px);
   pointer-events: none;
 }
 .hero-face-frame {
