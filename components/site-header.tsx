@@ -13,7 +13,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="bar">
         <Link className="brand" href="/" aria-label="Octavian home">
-          <span className="ot-mark">OT</span>
+          <span className="ot-mark">O</span>
           <span className="who">Octavian</span>
         </Link>
 

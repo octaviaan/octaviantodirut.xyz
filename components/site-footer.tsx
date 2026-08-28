@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="inner">
         <div className="stack-sm" style={{ maxWidth: "34ch" }}>
           <Link className="brand" href="/" aria-label="Octavian home">
-            <span className="ot-mark">OT</span>
+            <span className="ot-mark">O</span>
             <span className="who">Octavian</span>
           </Link>
         </div>

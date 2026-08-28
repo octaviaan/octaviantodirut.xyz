@@ -90,19 +90,21 @@ export function HeroFaceSequence() {
   }, []);
 
   return (
-    <div className="hero-face" ref={frameRef} aria-hidden="true">
-      {frames.map((frame, index) => (
-        <Image
-          key={frame.src}
-          src={frame.src}
-          alt={index === 0 ? frame.alt : ""}
-          fill
-          priority
-          sizes="(min-width: 1180px) 38vw, (min-width: 760px) 42vw, 78vw"
-          className="hero-face-frame"
-          data-active={activeFrame === index}
-        />
-      ))}
+    <div className="hero-face-wrap">
+      <div className="hero-face" ref={frameRef} aria-hidden="true">
+        {frames.map((frame, index) => (
+          <Image
+            key={frame.src}
+            src={frame.src}
+            alt={index === 0 ? frame.alt : ""}
+            fill
+            priority
+            sizes="(min-width: 1180px) 38vw, (min-width: 760px) 42vw, 78vw"
+            className="hero-face-frame"
+            data-active={activeFrame === index}
+          />
+        ))}
+      </div>
     </div>
   );
 }

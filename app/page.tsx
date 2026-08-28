@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 import { HeroFaceSequence } from "@/components/hero-face-sequence";
+import { IntroVideoButton } from "@/components/intro-video-button";
 import { profile } from "@/lib/content";
 
 const graphicPortfolioUrl =
@@ -36,40 +37,34 @@ export default function HomePage() {
               <Link className="btn btn-primary" href="/#work">
                 View case studies
               </Link>
-            </div>
-            <div className="hero-prototype-row" aria-label="Prototype links">
-              <a
-                className="text-link text-link-external"
-                href="https://www.figma.com/proto/JLrOm2x3UF791cQKeZxupW/octa-product-portfolio?node-id=688-6030&p=f&t=wF4Pmwt57Rukxo1v-0&scaling=contain&content-scaling=fixed&starting-point-node-id=688%3A6030&page-id=0%3A1"
-                target="_blank"
-                rel="noopener"
-              >
-                Figma prototype
-                <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
-              </a>
-              <a
-                className="text-link text-link-external"
-                href={productPortfolioPdfUrl}
-                target="_blank"
-                rel="noopener"
-              >
-                PDF portfolio
-                <ExternalLink aria-hidden="true" size={15} strokeWidth={1.8} />
-              </a>
+              <IntroVideoButton className="btn btn-secondary" />
             </div>
           </div>
 
           <HeroFaceSequence />
 
           <div className="contact-links hero-socials">
+            <a
+              className="text-link-external"
+              href="https://www.figma.com/proto/JLrOm2x3UF791cQKeZxupW/octa-product-portfolio?node-id=688-6030&p=f&t=wF4Pmwt57Rukxo1v-0&scaling=contain&content-scaling=fixed&starting-point-node-id=688%3A6030&page-id=0%3A1"
+              target="_blank"
+              rel="noopener"
+            >
+              Figma Prototype
+            </a>
+            <a
+              className="text-link-external"
+              href={productPortfolioPdfUrl}
+              target="_blank"
+              rel="noopener"
+            >
+              PDF Portfolio
+            </a>
             <a href={profile.linkedin} target="_blank" rel="noopener">
               LinkedIn
             </a>
             <a href={profile.github} target="_blank" rel="noopener">
               GitHub
-            </a>
-            <a href={profile.print} target="_blank" rel="noopener">
-              Print
             </a>
             <a href={`mailto:${profile.email}`}>Email</a>
           </div>
