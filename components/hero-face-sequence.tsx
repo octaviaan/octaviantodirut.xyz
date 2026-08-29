@@ -9,15 +9,42 @@ const centerFrame = {
 };
 
 const directionFrames = [
-  { src: "/images/hero-face-sequence/face-right.webp", angle: 0 },
-  { src: "/images/hero-face-sequence/face-down-right.webp", angle: 45 },
-  { src: "/images/hero-face-sequence/face-down.webp", angle: 90 },
-  { src: "/images/hero-face-sequence/face-down-left.webp", angle: 135 },
-  { src: "/images/hero-face-sequence/face-left.webp", angle: 180 },
-  { src: "/images/hero-face-sequence/face-up-left.webp", angle: -150 },
-  { src: "/images/hero-face-sequence/face-far-up-left.webp", angle: -120 },
-  { src: "/images/hero-face-sequence/face-up.webp", angle: -90 },
-  { src: "/images/hero-face-sequence/face-up-right.webp", angle: -45 },
+  {
+    src: "/images/hero-face-sequence/face-right.webp",
+    angle: 0,
+  },
+  {
+    src: "/images/hero-face-sequence/face-down-right.webp",
+    angle: 45,
+  },
+  {
+    src: "/images/hero-face-sequence/face-down.webp",
+    angle: 90,
+  },
+  {
+    src: "/images/hero-face-sequence/face-down-left.webp",
+    angle: 135,
+  },
+  {
+    src: "/images/hero-face-sequence/face-left.webp",
+    angle: 180,
+  },
+  {
+    src: "/images/hero-face-sequence/face-up-left.webp",
+    angle: -150,
+  },
+  {
+    src: "/images/hero-face-sequence/face-far-up-left.webp",
+    angle: -120,
+  },
+  {
+    src: "/images/hero-face-sequence/face-up.webp",
+    angle: -90,
+  },
+  {
+    src: "/images/hero-face-sequence/face-up-right.webp",
+    angle: -45,
+  },
 ];
 
 const frames = [

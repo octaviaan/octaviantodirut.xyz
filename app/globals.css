@@ -473,16 +473,16 @@ section[id] { scroll-margin-top: 5.5rem; }
   align-items: center;
   justify-self: end;
   gap: 1rem;
-  transform: translate(-80px, -100px);
+  transform: translate(-100px, -350px);
 }
 .hero-face {
   position: relative;
   align-self: center;
-  width: min(32vw, 340px);
-  min-width: 240px;
-  aspect-ratio: 1122 / 1402;
+  width: min(18vw, 200px);
+  min-width: 200px  ;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 128px;
+  border-radius: 0;
   cursor: default;
   touch-action: none;
   user-select: none;
@@ -1368,7 +1368,7 @@ h4,
   }
 
   .hero-face {
-    width: min(64vw, 390px);
+    width: min(58vw, 340px);
     min-width: 0;
   }
 }
@@ -1491,7 +1491,7 @@ kbd {
   }
 
   .hero-face {
-    width: min(78vw, 330px);
+    width: min(72vw, 290px);
     min-width: 0;
   }
 

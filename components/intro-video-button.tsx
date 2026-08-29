@@ -8,6 +8,8 @@ type IntroVideoButtonProps = {
   className?: string;
 };
 
+const introVideoSrc = "/intro.mp4?v=2026-08-29";
+
 export function IntroVideoButton({ className }: IntroVideoButtonProps) {
   const [isIntroOpen, setIsIntroOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -72,7 +74,7 @@ export function IntroVideoButton({ className }: IntroVideoButtonProps) {
                 </button>
                 <video
                   className="intro-video"
-                  src="/intro.mp4"
+                  src={introVideoSrc}
                   controls
                   autoPlay
                   playsInline
