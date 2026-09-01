@@ -309,6 +309,11 @@ export default function HomePage() {
                     Disk <br />
                     Graphics
                   </>
+                ) : experiment.slug === "bezier-swarms" ? (
+                  <>
+                    Bezier <br />
+                    Swarms
+                  </>
                 ) : (
                   experiment.title
                 )}
