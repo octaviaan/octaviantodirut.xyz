@@ -304,7 +304,12 @@ export default function HomePage() {
               style={{ transitionDelay: `${index * 0.06}s` }}
             >
               <h3 className="h3 serif">
-                {experiment.slug === "disc-graphics" ? (
+                {experiment.slug === "chladni-particles" ? (
+                  <>
+                    Gitcoin Brand <br />
+                    Asset Generator
+                  </>
+                ) : experiment.slug === "disc-graphics" ? (
                   <>
                     Disk <br />
                     Graphics
@@ -318,6 +323,11 @@ export default function HomePage() {
                   <>
                     Ascii <br />
                     ArtGen
+                  </>
+                ) : experiment.slug === "dithering-effect-svg" ? (
+                  <>
+                    Image to <br />
+                    Dithering Effect
                   </>
                 ) : (
                   experiment.title
