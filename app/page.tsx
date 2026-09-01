@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { HeroFaceSequence } from "@/components/hero-face-sequence";
 import { IntroVideoButton } from "@/components/intro-video-button";
-import { profile } from "@/lib/content";
+import { experiments, profile } from "@/lib/content";
 
 const graphicPortfolioUrl =
   "https://www.figma.com/proto/SQmTkWyYG5RaxF1FQ2Tw63/octa-graphic-portfolio?node-id=4012-2741&viewport=119%2C196%2C0.35&t=jvqUS1TZTpb6Wewq-1&scaling=contain&content-scaling=fixed&starting-point-node-id=4012%3A2741&page-id=0%3A1";
@@ -76,8 +76,8 @@ export default function HomePage() {
         <div className="reveal sec-head case-studies-head">
           <p className="eyebrow">Case Studies</p>
           <h2 className="h2 balance">
-            Case studies built to show the <span className="mark">thinking</span> ,
-            not just the finish.
+            Case studies built to show the{" "}
+            <span className="mark">thinking</span> , not just the finish.
           </h2>
         </div>
 
@@ -287,108 +287,65 @@ export default function HomePage() {
             <h2 className="h2">
               Asset generation <span className="mark">tools</span>
             </h2>
+            <p className="body" style={{ maxWidth: "64ch" }}>
+              I am interested in creating visual systems and asset generation
+              tools that output consistent images and graphics. It all started
+              with me wanting to replicate a certain look and be able to quickly
+              generate multiple assets to use.
+            </p>
           </div>
         </div>
 
         <div className="exp-grid exp-grid-three">
-          <Link
-            className="reveal exp-card"
-            href="/experiments/chladni-particles"
-          >
-            <h3 className="h3 serif">Gitcoin Brand Asset Generator</h3>
-            <p className="body" style={{ fontSize: ".95rem" }}>
-              A particle simulation of Chladni figures where motion reacts to an
-              energy field and resolves into resonant patterns.
-            </p>
-            <div className="exp-art frame">
-              <Image
-                src="/images/chladni.png"
-                alt="Gitcoin brand asset generator artwork"
-                width={800}
-                height={450}
-              />
-            </div>
-            <div className="exp-stack">
-              <span className="chip">JavaScript</span>
-              <span className="chip">Three.js</span>
-            </div>
-          </Link>
-
-          <Link
-            className="reveal exp-card"
-            href="/experiments/dithering-effect-svg"
-            style={{ transitionDelay: ".06s" }}
-          >
-            <h3 className="h3 serif">Dithering Effect to SVG</h3>
-            <p className="body" style={{ fontSize: ".95rem" }}>
-              An image uploader that applies multiple dithering algorithms and
-              exports the result as both PNG and crisp SVG.
-            </p>
-            <div className="exp-art frame">
-              <Image
-                src="/images/dithering.jpg"
-                alt="Dithered wildlife artwork"
-                width={800}
-                height={450}
-              />
-            </div>
-            <div className="exp-stack">
-              <span className="chip">SVG Export</span>
-            </div>
-          </Link>
-
-          <Link
-            className="reveal exp-card"
-            href="/experiments/bezier-swarms"
-            style={{ transitionDelay: ".12s" }}
-          >
-            <h3 className="h3 serif">
-              Bezier <br />
-              Swarms
-            </h3>
-            <p className="body" style={{ fontSize: ".95rem" }}>
-              A particle drawing tool that sends swarms through Bezier paths to
-              create dense, layered motion sketches.
-            </p>
-            <div className="exp-art frame">
-              <Image
-                src="/images/bezier-swarms.png"
-                alt="Layered particle trails generated from Bezier swarm paths"
-                width={800}
-                height={450}
-              />
-            </div>
-            <div className="exp-stack">
-              <span className="chip">JavaScript</span>
-              <span className="chip">Canvas</span>
-            </div>
-          </Link>
-
-          <Link
-            className="reveal exp-card"
-            href="/experiments/ascii-art-gen"
-            style={{ transitionDelay: ".18s" }}
-          >
-            <h3 className="h3 serif">
-              ASCII Art <br />
-              Generator
-            </h3>
-            <p className="body" style={{ fontSize: ".95rem" }}>
-              A browser-based ASCII generator that turns uploaded images into
-              text-driven compositions.
-            </p>
-            <div className="exp-art frame">
-              <Image
-                src="/images/ascii-art.png"
-                alt="Colorful ASCII artwork generated from an uploaded image"
-                width={800}
-                height={450}
-              />
-            </div>
-            <div className="exp-stack">
-              <span className="chip">SVG Export</span>
-            </div>
-          </Link>
+          {experiments.map((experiment, index) => (
+            <article
+              key={experiment.slug}
+              className="reveal exp-card"
+              style={{ transitionDelay: `${index * 0.06}s` }}
+            >
+              <h3 className="h3 serif">
+                {experiment.slug === "disc-graphics" ? (
+                  <>
+                    Disk <br />
+                    Graphics
+                  </>
+                ) : (
+                  experiment.title
+                )}
+              </h3>
+              <p className="body" style={{ fontSize: ".95rem" }}>
+                {experiment.description}
+              </p>
+              {experiment.previewImageSrc ? (
+                <div className="exp-art frame">
+                  <Image
+                    src={experiment.previewImageSrc}
+                    alt={experiment.previewImageAlt ?? experiment.title}
+                    width={800}
+                    height={450}
+                  />
+                </div>
+              ) : null}
+              <div className="exp-actions">
+                <a
+                  className="btn btn-secondary"
+                  href={experiment.repo}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Repo
+                </a>
+                <a
+                  className="btn btn-primary"
+                  href={experiment.href}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Try me
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

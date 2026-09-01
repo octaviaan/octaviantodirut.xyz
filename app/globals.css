@@ -679,6 +679,8 @@ section[id] { scroll-margin-top: 5.5rem; }
 .exp-card > .body { min-height: calc(4 * 1lh); }
 .exp-art { aspect-ratio: 16/9; margin-top: .4rem; }
 .exp-stack { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: auto; }
+.exp-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: auto; }
+.exp-actions .btn { min-height: 2.7rem; padding: .72rem 1rem; }
 
 .home-page .feature-card:hover,
 .home-page .exp-card:hover,

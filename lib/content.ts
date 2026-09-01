@@ -366,27 +366,27 @@ export const experiments: ExperimentItem[] = [
     ],
   },
   {
-    slug: "dithering-effect-svg",
-    title: "Dithering Effect to SVG",
-    year: "2025",
-    format: "Image Tool",
+    slug: "disc-graphics",
+    title: "Disk Graphics",
+    year: "2026",
+    format: "Asset Tool",
     description:
-      "An image uploader that applies multiple dithering algorithms and exports the result as both PNG and SVG.",
-    previewImageSrc: "/images/dithering.jpg",
+      "A browser-based graphics tool for generating consistent circular compositions and disc-based visual assets.",
+    previewImageSrc: "/images/disc-graphics.png",
     previewImageAlt:
-      "Dithered wildlife artwork rendered in a warm orange palette.",
+      "Circular generative graphic with blue outlines, orange hatching, and green wave patterns.",
     heroLabel:
-      "Raster-to-vector image processing with export-ready dithered outputs.",
-    href: "https://octaviaan.github.io/dithering-effect-svg/",
-    repo: "https://github.com/octaviaan/dithering-effect-svg",
-    cta: "Try the converter",
-    stack: ["JavaScript", "SVG Export", "Image Processing"],
+      "Disc-based visual system for generating repeatable circular graphics.",
+    href: "https://octaviaan.github.io/disc-graphics/",
+    repo: "https://github.com/octaviaan/disc-graphics",
+    cta: "Open Disc Graphics",
+    stack: ["JavaScript", "Canvas", "Asset Generation"],
     overview:
-      "Built as a compact image-processing tool for turning flat source images into stylized outputs. It focuses on keeping the controls simple while still exposing multiple dithering behaviors and export formats.",
+      "Disc Graphics is an asset generation tool for producing circular graphic systems with consistent structure, color behavior, and repeatable visual rules.",
     notes: [
-      "The interesting part is not just the effect itself but the ability to export a crisp SVG version for print or motion workflows.",
-      "The interface keeps the transformation tight and fast: upload, tune, compare, export.",
-      "It sits in the overlap between utility software and visual experimentation.",
+      "The tool focuses on output consistency, making it useful for visual systems where many related graphics need to share the same underlying language.",
+      "The preview shows the system's layered line logic: blue contours, orange radial hatching, and green wave fields.",
+      "It extends the asset-generation toolkit with a more structured circular composition model.",
     ],
   },
   {
@@ -411,6 +411,30 @@ export const experiments: ExperimentItem[] = [
       "The preview emphasizes the output quality: layered particle density, warm color mixing, and soft path memory.",
       "Bezier handles provide a familiar drawing model while swarm behavior keeps the generated image loose and organic.",
       "It fits into the asset-generation toolkit as a quick way to produce abstract textures and directional motion studies.",
+    ],
+  },
+  {
+    slug: "dithering-effect-svg",
+    title: "Dithering Effect to SVG",
+    year: "2025",
+    format: "Image Tool",
+    description:
+      "An image uploader that applies multiple dithering algorithms and exports the result as both PNG and SVG.",
+    previewImageSrc: "/images/dithering.jpg",
+    previewImageAlt:
+      "Dithered wildlife artwork rendered in a warm orange palette.",
+    heroLabel:
+      "Raster-to-vector image processing with export-ready dithered outputs.",
+    href: "https://octaviaan.github.io/dithering-effect-svg/",
+    repo: "https://github.com/octaviaan/dithering-effect-svg",
+    cta: "Try the converter",
+    stack: ["JavaScript", "SVG Export", "Image Processing"],
+    overview:
+      "Built as a compact image-processing tool for turning flat source images into stylized outputs. It focuses on keeping the controls simple while still exposing multiple dithering behaviors and export formats.",
+    notes: [
+      "The interesting part is not just the effect itself but the ability to export a crisp SVG version for print or motion workflows.",
+      "The interface keeps the transformation tight and fast: upload, tune, compare, export.",
+      "It sits in the overlap between utility software and visual experimentation.",
     ],
   },
   {
