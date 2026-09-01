@@ -314,6 +314,11 @@ export default function HomePage() {
                     Bezier <br />
                     Swarms
                   </>
+                ) : experiment.slug === "ascii-art-gen" ? (
+                  <>
+                    Ascii <br />
+                    ArtGen
+                  </>
                 ) : (
                   experiment.title
                 )}
