@@ -390,6 +390,30 @@ export const experiments: ExperimentItem[] = [
     ],
   },
   {
+    slug: "bezier-swarms",
+    title: "Bezier Swarms",
+    year: "2026",
+    format: "Generative Art",
+    description:
+      "A browser-based particle drawing tool that sends swarms through Bezier paths to create dense, layered motion sketches.",
+    previewImageSrc: "/images/bezier-swarms.png",
+    previewImageAlt:
+      "Layered orange, red, yellow, and green particle trails generated from Bezier swarm paths.",
+    heroLabel:
+      "Particle swarms moving through Bezier curves to generate textured abstract compositions.",
+    href: "https://octaviaan.github.io/bezier-swarms/",
+    repo: "https://github.com/octaviaan/bezier-swarms",
+    cta: "Open Bezier Swarms",
+    stack: ["JavaScript", "Canvas", "Generative Systems"],
+    overview:
+      "This tool explores Bezier curves as motion scaffolding for particle systems. Instead of drawing clean vector lines, it lets many small marks accumulate into smoky, granular trails that can be used as visual assets or composition studies.",
+    notes: [
+      "The preview emphasizes the output quality: layered particle density, warm color mixing, and soft path memory.",
+      "Bezier handles provide a familiar drawing model while swarm behavior keeps the generated image loose and organic.",
+      "It fits into the asset-generation toolkit as a quick way to produce abstract textures and directional motion studies.",
+    ],
+  },
+  {
     slug: "ascii-art-gen",
     title: "ASCII Art Gen",
     year: "2025",

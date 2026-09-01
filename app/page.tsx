@@ -88,6 +88,7 @@ export default function HomePage() {
                 src="/images/passport.png"
                 alt="Passport identity interface"
                 fill
+                sizes="(min-width: 1180px) 42vw, (min-width: 760px) 88vw, 100vw"
                 style={{ objectFit: "cover" }}
               />
               <span className="feat-badge">01 — Case Study</span>
@@ -119,6 +120,7 @@ export default function HomePage() {
                 src="/images/chladni-feature.png"
                 alt="Chladni generative pattern from the asset generator"
                 fill
+                sizes="(min-width: 1180px) 42vw, (min-width: 760px) 88vw, 100vw"
                 style={{ objectFit: "cover" }}
               />
               <span className="feat-badge">02 — Case Study</span>
@@ -161,6 +163,7 @@ export default function HomePage() {
                 src="/images/schelling-cover.jpg"
                 alt="Schelling Point brand and product artwork"
                 fill
+                sizes="(min-width: 1180px) 28vw, (min-width: 760px) 44vw, 100vw"
                 style={{ objectFit: "cover" }}
               />
             </div>
@@ -190,6 +193,7 @@ export default function HomePage() {
                 src="/images/gtc.png"
                 alt="Gitcoin DAO and GTC Quadratic Lands campaign artwork"
                 fill
+                sizes="(min-width: 1180px) 28vw, (min-width: 760px) 44vw, 100vw"
                 style={{ objectFit: "cover" }}
               />
             </div>
@@ -221,6 +225,7 @@ export default function HomePage() {
                 src="/images/pluri.jpg"
                 alt="Pluriverse website artwork"
                 fill
+                sizes="(min-width: 1180px) 28vw, (min-width: 760px) 44vw, 100vw"
                 style={{ objectFit: "cover" }}
               />
             </div>
@@ -249,9 +254,10 @@ export default function HomePage() {
           >
             <div className="selected-work-art">
               <Image
-                src="/images/aligneth.png"
+                src="/images/aligneth-preview.png"
                 alt="AlignETH website artwork about solving alignment with Ethereum"
                 fill
+                sizes="(min-width: 1180px) 28vw, (min-width: 760px) 44vw, 100vw"
                 style={{ objectFit: "cover" }}
               />
             </div>
@@ -333,8 +339,35 @@ export default function HomePage() {
 
           <Link
             className="reveal exp-card"
-            href="/experiments/ascii-art-gen"
+            href="/experiments/bezier-swarms"
             style={{ transitionDelay: ".12s" }}
+          >
+            <h3 className="h3 serif">
+              Bezier <br />
+              Swarms
+            </h3>
+            <p className="body" style={{ fontSize: ".95rem" }}>
+              A particle drawing tool that sends swarms through Bezier paths to
+              create dense, layered motion sketches.
+            </p>
+            <div className="exp-art frame">
+              <Image
+                src="/images/bezier-swarms.png"
+                alt="Layered particle trails generated from Bezier swarm paths"
+                width={800}
+                height={450}
+              />
+            </div>
+            <div className="exp-stack">
+              <span className="chip">JavaScript</span>
+              <span className="chip">Canvas</span>
+            </div>
+          </Link>
+
+          <Link
+            className="reveal exp-card"
+            href="/experiments/ascii-art-gen"
+            style={{ transitionDelay: ".18s" }}
           >
             <h3 className="h3 serif">
               ASCII Art <br />

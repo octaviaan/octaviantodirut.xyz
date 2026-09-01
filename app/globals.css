@@ -675,6 +675,8 @@ section[id] { scroll-margin-top: 5.5rem; }
 .exp-card { border: 1px solid var(--line); background: var(--surface); padding: clamp(1.5rem,3vw,2.2rem); display: flex; flex-direction: column; gap: 1.2rem; transition: border-color .2s ease; }
 .exp-card:hover { border-color: var(--line-2); }
 .exp-top { display: flex; justify-content: space-between; font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.exp-card > .h3 { min-height: calc(2 * 1lh); }
+.exp-card > .body { min-height: calc(4 * 1lh); }
 .exp-art { aspect-ratio: 16/9; margin-top: .4rem; }
 .exp-stack { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: auto; }
 
@@ -699,6 +701,8 @@ section[id] { scroll-margin-top: 5.5rem; }
 }
 @media (max-width: 680px) {
   .work-grid, .exp-grid, .selected-work-grid { grid-template-columns: 1fr; }
+  .exp-card > .h3,
+  .exp-card > .body { min-height: 0; }
   .final-portfolio-inner .h2 { max-width: 16ch; }
   .final-portfolio-actions { flex-direction: column; }
 }
