@@ -66,6 +66,9 @@ export default function HomePage() {
             <a href={profile.github} target="_blank" rel="noopener">
               GitHub
             </a>
+            <a href={profile.x} target="_blank" rel="noopener">
+              X
+            </a>
             <a href={`mailto:${profile.email}`}>Email</a>
           </div>
         </div>
