@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
-import { HeroFaceSequence } from "@/components/hero-face-sequence";
+import { HeroPortrait } from "@/components/hero-portrait";
 import { IntroVideoButton } from "@/components/intro-video-button";
 import { experiments, profile } from "@/lib/content";
 
@@ -41,7 +41,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <HeroFaceSequence />
+          <HeroPortrait />
 
           <div className="contact-links hero-socials">
             <a
