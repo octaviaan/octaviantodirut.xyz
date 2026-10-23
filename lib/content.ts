@@ -79,7 +79,7 @@ export const navItems = [
   { href: "/", label: "Home" },
   { href: "/#work", label: "Case Studies" },
   { href: "/#selected-works", label: "Selected Works" },
-  { href: "/#experiments", label: "AI Experiments" },
+  { href: "/#experiments", label: "Generative Design Tools" },
 ];
 
 const sortCaseStudies = (studies: CaseStudy[]) => {

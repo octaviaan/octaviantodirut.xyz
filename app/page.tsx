@@ -286,7 +286,7 @@ export default function HomePage() {
       <section id="experiments" className="section wrap wide">
         <div className="reveal sec-head row-head">
           <div className="stack-sm">
-            <p className="eyebrow">AI Experiments</p>
+            <p className="eyebrow">Generative Design Tools</p>
             <h2 className="h2">
               Asset generation <span className="mark">tools</span>
             </h2>

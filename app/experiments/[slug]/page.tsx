@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!experiment) {
     return {
-      title: "AI Experiments",
+      title: "Generative Design Tools",
     };
   }
 
@@ -48,7 +48,7 @@ export default async function ExperimentDetailPage({ params }: PageProps) {
     <article className="space-y-16 pb-10 sm:space-y-20">
       <FadeIn className="space-y-8">
         <Link href="/#experiments" className="text-sm text-(--muted) transition hover:text-(--text)">
-          Back to AI Experiments
+          Back to Generative Design Tools
         </Link>
 
         <div className="space-y-5">
