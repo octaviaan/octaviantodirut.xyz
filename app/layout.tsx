@@ -7,6 +7,7 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { profile } from "@/lib/content";
+import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
         <main>{children}</main>
         <SiteFooter />
         <ScrollReveal />
+        <Analytics />
       </body>
     </html>
   );
