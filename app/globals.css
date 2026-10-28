@@ -631,10 +631,16 @@ section[id] {
   text-align: left;
 }
 .hero-lead {
+  min-width: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 900px;
+  max-width: 980px;
+  background: var(--bg);
+  padding: clamp(1.1rem, 3vw, 2rem);
+  /* Keep positioning independent of the reveal animation’s transform. */
+  translate: -30px 10px;
 }
 .hero-lead .display {
   font-size: clamp(1.4rem, 2.6vw, 2.8rem);
@@ -658,13 +664,16 @@ section[id] {
   flex-wrap: wrap;
 }
 .hero-face-wrap {
+  min-width: 0;
+  width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-self: end;
   gap: 1rem;
   margin-top: clamp(1.1rem, 3vw, 2rem);
-  transform: translate(-30px, 30px);
+  transform: translateY(10px);
 }
 .hero-face {
   position: relative;
@@ -672,18 +681,18 @@ section[id] {
   align-items: flex-end;
   justify-content: center;
   align-self: center;
-  width: min(36vw, 400px);
-  min-width: 400px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 0;
   cursor: default;
   user-select: none;
 }
 .hero-portrait {
   width: 80%;
   height: auto;
-  border: 1px solid var(--line-strong);
+  /* border: 1px solid var(--line-strong); */
   object-fit: contain;
   object-position: center bottom;
   pointer-events: none;
@@ -738,6 +747,11 @@ section[id] {
   object-fit: contain;
   background: var(--ink);
 }
+main:has(> #experiments),
+main:has(> .final-portfolio-cta) {
+  background: var(--bg-2);
+}
+
 .final-portfolio-cta {
   padding-block: clamp(3.5rem, 7vw, 6rem);
 }
@@ -935,6 +949,10 @@ section[id] {
   flex-direction: column;
   gap: 1rem;
   padding: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.selected-work-body > .text-link {
+  margin-top: auto;
 }
 
 .selected-detail {
@@ -2341,13 +2359,6 @@ h4,
   align-items: start;
 }
 
-.hero-lead {
-  align-items: flex-start;
-  max-width: 980px;
-  background: var(--bg);
-  padding: clamp(1.1rem, 3vw, 2rem);
-}
-
 .hero-lead .display {
   font-size: clamp(1.25rem, 4.8vw, 4rem);
   line-height: 0.96;
@@ -2503,6 +2514,7 @@ kbd {
 
 @media (max-width: 680px) {
   .hero-lead {
+    translate: none;
     padding: 1rem;
   }
 
@@ -2523,5 +2535,346 @@ kbd {
 
   .hero-socials {
     gap: 1rem;
+  }
+}
+
+.hero-face-interactive {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+.hero-face-interactive:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 6px;
+}
+.hero-portrait-stage {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+}
+.hero-portrait-fallback {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hero-portrait-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* The landing page contains only the hero; work lives on dedicated routes. */
+body:has(.home-page) {
+  min-height: 100svh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+body:has(.home-page) > .site-header {
+  flex-shrink: 0;
+}
+body:has(.home-page) > main {
+  flex: 1;
+  min-height: 0;
+}
+.home-page {
+  height: 100%;
+}
+.home-page .hero {
+  height: 100%;
+  min-height: 0;
+  padding-block: clamp(1rem, 3svh, 2.5rem);
+  align-items: center;
+}
+.home-page .hero-grid {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: 100%;
+  align-items: center;
+  gap: clamp(0.75rem, 2svh, 1.5rem);
+}
+.home-page .hero-lead {
+  translate: none;
+  padding: 0;
+}
+.home-page .hero-lead .display {
+  font-size: clamp(1.6rem, min(3.6vw, 6svh), 3.6rem);
+  margin: 0 0 clamp(0.75rem, 2svh, 1.5rem);
+}
+.home-page .hero-about {
+  font-size: clamp(0.8rem, 1.6svh, 1rem);
+  line-height: 1.6;
+}
+.home-page .hero-actions {
+  margin-top: clamp(0.75rem, 2.5svh, 2rem);
+}
+.home-page .hero-face-wrap {
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  transform: none;
+  justify-content: center;
+}
+.home-page .hero-face {
+  width: min(100%, 48svh);
+  aspect-ratio: 4 / 5;
+  max-height: 100%;
+}
+.home-page .hero-portrait {
+  width: 100%;
+}
+.home-page .hero-socials {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0;
+  gap: 0.6rem 1.5rem;
+  padding-block: 0.75rem;
+}
+@media (max-width: 860px) {
+  body:has(.home-page) .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg);
+    padding: 0.75rem var(--pad);
+  }
+}
+@media (max-width: 680px) {
+  .home-page .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 0.75rem;
+  }
+  .home-page .hero-face-wrap {
+    grid-row: 1;
+    height: min(20svh, 160px);
+  }
+  .home-page .hero-face {
+    width: auto;
+    height: 100%;
+  }
+  .home-page .hero-lead .display {
+    font-size: clamp(1.35rem, 4svh, 2rem);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .home-page .hero-about {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+  .home-page .hero-actions {
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .home-page .hero-actions .btn {
+    font-size: 0.7rem;
+    padding: 0.65rem 0.8rem;
+  }
+  .home-page .hero-socials a {
+    font-size: 0.65rem;
+  }
+}
+@media (max-width: 680px) and (max-height: 740px) {
+  .home-page .hero-face-wrap {
+    display: none;
+  }
+  .home-page .hero-grid {
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+}
+/* Retain access to content on unusually short windows and at high zoom. */
+@media (max-height: 500px) {
+  body:has(.home-page) {
+    height: auto;
+    min-height: 100svh;
+  }
+}
+
+/* Compact section landing pages. Detail pages retain their natural height. */
+body:has(.section-screen) {
+  min-height: 100svh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+body:has(.section-screen) > .site-header {
+  flex-shrink: 0;
+}
+body:has(.section-screen) > main {
+  flex: 1;
+  min-height: 0;
+}
+.section-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 3svh, 2rem);
+  padding-block: clamp(1.5rem, 4svh, 3rem);
+}
+.section-screen:has(> .sec-head) {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+.section-screen .sec-head {
+  padding-block: 1rem;
+  margin: 0;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.section-screen .row-head {
+  align-items: center;
+  justify-content: flex-start;
+}
+.section-screen .sec-head .h2 {
+  font-size: clamp(1.75rem, 4svh, 3rem);
+  max-width: 36ch;
+}
+.section-screen .sec-head .body {
+  font-size: clamp(0.85rem, 1.8svh, 1rem);
+  line-height: 1.6;
+}
+.section-screen .work-feature-stack,
+.section-screen .exp-grid,
+.section-screen .selected-work-grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+.section-screen .work-feature-stack {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+.section-screen .selected-work-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+.section-screen .exp-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.section-screen .feat,
+.section-screen .selected-work-card {
+  min-height: 0;
+  margin: 0;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+/* Share image and copy rows so different text lengths cannot resize images. */
+.section-screen .work-feature-stack .feat,
+.section-screen .selected-work-card {
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+.section-screen .feat-art,
+.section-screen .selected-work-art {
+  min-height: 0;
+}
+.section-screen .feat-body,
+.section-screen .selected-work-body,
+.section-screen .exp-card {
+  padding: clamp(0.75rem, 1.3vw, 1.25rem);
+  gap: 0.65rem;
+}
+/* Start every title at the same inset; keep actions aligned at the bottom. */
+.section-screen .feat-body,
+.section-screen .selected-work-body {
+  justify-content: flex-start;
+}
+.section-screen .feat-body > .text-link {
+  margin-top: auto;
+}
+.section-screen .feat-body .h2,
+.section-screen .h3 {
+  font-size: clamp(1.1rem, 2.5svh, 1.6rem);
+}
+.section-screen .body {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.section-screen .feat-meta {
+  padding-bottom: 0.4rem;
+}
+.section-screen .exp-card {
+  min-height: 0;
+}
+.section-screen .exp-art {
+  flex: 1;
+  min-height: 0;
+  aspect-ratio: auto;
+  margin: 0;
+}
+.section-screen .exp-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-screen .exp-actions {
+  margin: 0;
+}
+.section-screen .exp-actions .btn {
+  min-height: 0;
+  padding: 0.6rem 0.85rem;
+}
+.section-screen.final-portfolio-cta {
+  justify-content: center;
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .section-screen .selected-work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+  .section-screen .selected-work-card {
+    grid-row: auto;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+}
+/* Small screens keep all descriptions and actions reachable. */
+@media (max-width: 760px), (max-height: 540px) {
+  body:has(.section-screen) {
+    height: auto;
+  }
+  .section-screen {
+    height: auto;
+    min-height: calc(100svh - 80px);
+  }
+  .section-screen:has(> .sec-head) {
+    display: flex;
+  }
+  .section-screen .sec-head {
+    padding-block: 0.75rem;
+  }
+  .section-screen .work-feature-stack,
+  .section-screen .exp-grid,
+  .section-screen .selected-work-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-screen .feat,
+  .section-screen .selected-work-card {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    grid-template-rows: auto;
+  }
+  .section-screen .work-feature-stack,
+  .section-screen .selected-work-grid {
+    grid-template-rows: none;
+  }
+  .section-screen .work-feature-stack .feat,
+  .section-screen .selected-work-card {
+    grid-row: auto;
+    grid-template-rows: auto;
+  }
+  .section-screen .work-feature-stack .feat-art,
+  .section-screen .selected-work-art {
+    align-self: start;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+  }
+  .section-screen .exp-art {
+    flex: none;
+    height: 18svh;
   }
 }

@@ -77,9 +77,9 @@ export const profile = {
 
 export const navItems = [
   { href: "/", label: "Home" },
-  { href: "/#work", label: "Case Studies" },
-  { href: "/#selected-works", label: "Selected Works" },
-  { href: "/#experiments", label: "Generative Design Tools" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/experiments", label: "Generative Design Tools" },
+  { href: "/selected-works", label: "Selected Works" },
 ];
 
 const sortCaseStudies = (studies: CaseStudy[]) => {

@@ -19,7 +19,7 @@ export default function GitcoinCaseStudyPage() {
       <section className="section wrap wide gitcoin-hero">
         <div className="case-detail-hero">
           <div className="case-detail-copy">
-            <Link className="text-link" href="/#work">
+            <Link className="text-link" href="/case-studies">
               <span className="arr">←</span> Case Studies
             </Link>
             <div className="case-detail-title">

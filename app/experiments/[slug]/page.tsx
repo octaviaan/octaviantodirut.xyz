@@ -47,7 +47,7 @@ export default async function ExperimentDetailPage({ params }: PageProps) {
   return (
     <article className="space-y-16 pb-10 sm:space-y-20">
       <FadeIn className="space-y-8">
-        <Link href="/#experiments" className="text-sm text-(--muted) transition hover:text-(--text)">
+        <Link href="/experiments" className="text-sm text-(--muted) transition hover:text-(--text)">
           Back to Generative Design Tools
         </Link>
 

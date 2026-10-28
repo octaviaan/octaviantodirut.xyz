@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -54,9 +54,7 @@ export function SiteHeader() {
         <nav className="site-nav" id="site-navigation" data-open={isMenuOpen}>
           {navItems.map((item) => {
             const active =
-              item.href !== "/" &&
-              !item.href.includes("#") &&
-              pathname.startsWith(item.href);
+              item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
@@ -68,16 +66,10 @@ export function SiteHeader() {
               </Link>
             );
           })}
-          <a
-            className="nav-external"
-            href="https://www.figma.com/proto/SQmTkWyYG5RaxF1FQ2Tw63/octa-graphic-portfolio?node-id=4012-2741&viewport=119%2C196%2C0.35&t=jvqUS1TZTpb6Wewq-1&scaling=contain&content-scaling=fixed&starting-point-node-id=4012%3A2741&page-id=0%3A1"
-            target="_blank"
-            rel="noopener"
-            onClick={closeMenu}
-          >
+          <Link href="/graphic-design" onClick={closeMenu}
+            className={pathname === "/graphic-design" ? "active" : undefined}>
             Graphic design portfolio
-            <ExternalLink aria-hidden="true" size={14} strokeWidth={1.8} />
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

@@ -4,7 +4,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { ScrollReveal } from "@/components/scroll-reveal";
-import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { profile } from "@/lib/content";
 import { Analytics } from "@vercel/analytics/next";
@@ -48,7 +47,6 @@ export default function RootLayout({
       <body className={`${geist.variable} ${geistMono.variable}`}>
         <SiteHeader />
         <main>{children}</main>
-        <SiteFooter />
         <ScrollReveal />
         <Analytics />
       </body>
