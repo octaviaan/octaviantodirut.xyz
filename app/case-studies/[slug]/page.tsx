@@ -46,61 +46,63 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
 
   return (
     <article className="section wrap wide case-detail">
-      <FadeIn className="case-detail-hero">
-        <div className="case-detail-copy">
-          <Link href="/case-studies" className="text-link">
-            <span className="arr">←</span> Case Studies
-          </Link>
+      <section className="case-hero-chapter">
+        <FadeIn className="case-detail-hero">
+          <div className="case-detail-copy">
+            <Link href="/case-studies" className="text-link">
+              <span className="arr">←</span> Case Studies
+            </Link>
 
-          <div className="case-detail-title">
-            <h1 className="display balance">{study.title}</h1>
-            <p className="lede">{study.description}</p>
+            <div className="case-detail-title">
+              <h1 className="display balance">{study.title}</h1>
+              <p className="lede">{study.description}</p>
+            </div>
+
+            {study.links?.length ? (
+              <div className="case-detail-actions">
+                {study.links.map((link, index) => (
+                  <UiButton
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    variant={index === 0 ? "primary" : "secondary"}
+                  >
+                    {link.label}
+                  </UiButton>
+                ))}
+              </div>
+            ) : study.href ? (
+              <div className="case-detail-actions">
+                <UiButton href={study.href} target="_blank" variant="primary">
+                  Visit live project
+                </UiButton>
+              </div>
+            ) : null}
           </div>
 
-          {study.links?.length ? (
-            <div className="case-detail-actions">
-              {study.links.map((link, index) => (
-                <UiButton
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  variant={index === 0 ? "primary" : "secondary"}
-                >
-                  {link.label}
-                </UiButton>
+          <CaseStudyArt study={study} className="case-detail-art" />
+        </FadeIn>
+
+        <FadeIn delay={0.04}>
+          <section className="case-impact">
+
+            <div className="case-impact-grid">
+              {study.metrics.map((metric) => (
+                <div key={metric.label} className="case-metric">
+                  <p className="case-metric-label">{metric.label}</p>
+                  <p className="case-metric-value">{metric.value}</p>
+                </div>
               ))}
             </div>
-          ) : study.href ? (
-            <div className="case-detail-actions">
-              <UiButton href={study.href} target="_blank" variant="primary">
-                Visit live project
-              </UiButton>
-            </div>
-          ) : null}
-        </div>
-
-        <CaseStudyArt study={study} className="case-detail-art" />
-      </FadeIn>
-
-      <FadeIn delay={0.04}>
-        <section className="case-impact">
-          <p className="eyebrow">Impact</p>
-          <div className="case-impact-grid">
-            {study.metrics.map((metric) => (
-              <div key={metric.label} className="case-metric">
-                <p className="case-metric-label">{metric.label}</p>
-                <p className="case-metric-value">{metric.value}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      </FadeIn>
+          </section>
+        </FadeIn>
+      </section>
 
       <div className="case-sections">
         <FadeIn>
           <section className="case-text-section">
             <div>
-              <p className="eyebrow">Challenge</p>
+
               <h2 className="h2">Problem</h2>
             </div>
             <p className="lede">{study.challenge}</p>
@@ -108,11 +110,6 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
         </FadeIn>
 
         <section className="case-process">
-          <FadeIn className="case-process-head">
-            <p className="eyebrow">Approach</p>
-            <h2 className="h2">Process</h2>
-          </FadeIn>
-
           {study.process.map((step, index) => (
             <FadeIn
               key={`${step.title ?? "step"}-${index}`}
@@ -146,7 +143,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           <FadeIn>
             <section className="case-text-section">
               <div>
-                <p className="eyebrow">Impact</p>
+
                 <h2 className="h2">Outcome</h2>
               </div>
               <p className="lede">{study.outcome}</p>

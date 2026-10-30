@@ -67,9 +67,9 @@ export default function GitcoinCaseStudyPage() {
       <section className="section wrap">
         <div className="cs-split">
           <div className="reveal">
-            <p className="eyebrow">What is Gitcoin?</p>
+
             <h2 className="h2">
-              Funding the <em>open</em> internet.
+              Funding the open internet.
             </h2>
           </div>
           <div className="reveal stack" style={{ transitionDelay: ".06s" }}>
@@ -115,9 +115,9 @@ export default function GitcoinCaseStudyPage() {
       {/* CHALLENGE */}
       <section className="section wrap">
         <div className="reveal cs-sec-head">
-          <p className="eyebrow">The Challenge</p>
+
           <h2 className="h2 balance">
-            Lost the <em>plot</em>.<br />
+            Lost the plot.<br />
             Time to find it.
           </h2>
           <p className="body" style={{ maxWidth: "54ch" }}>
@@ -132,9 +132,9 @@ export default function GitcoinCaseStudyPage() {
       {/* SOLUTION */}
       <section className="section wrap">
         <div className="reveal cs-sec-head">
-          <p className="eyebrow">The Solution</p>
+
           <h2 className="h2 balance">
-            A database of <em>everything funding</em>.
+            A database of everything funding.
           </h2>
           <p className="body" style={{ maxWidth: "58ch" }}>
             Turn Gitcoin into the knowledge layer: the premier place where
@@ -146,16 +146,12 @@ export default function GitcoinCaseStudyPage() {
 
       {/* SURFACES */}
       <section className="section wrap">
-        <div className="reveal cs-sec-head center">
-          <p className="eyebrow">The work, on screen</p>
-        </div>
-
         {/* 05 - Solution 1 */}
         <div className="cs-surface reveal">
           <div className="cs-surface-text">
-            <p className="eyebrow muted">Search</p>
+
             <h3 className="h3 serif">
-              Search, <em>front and center</em>.
+              Search, front and center.
             </h3>
             <p className="body">
               The header search bar lives next to the primary nav — visible on
@@ -185,9 +181,9 @@ export default function GitcoinCaseStudyPage() {
         {/* 06 - Solution 2 */}
         <div className="cs-surface reveal reverse">
           <div className="cs-surface-text">
-            <p className="eyebrow muted">Tree Sidebar</p>
+
             <h3 className="h3 serif">
-              The whole database, in the <em>left rail</em>.
+              The whole database, in the left rail.
             </h3>
             <p className="body">
               A file-explorer sidebar mirrors the repo.{" "}
@@ -219,9 +215,9 @@ export default function GitcoinCaseStudyPage() {
         {/* 07 - Solution 3/4 */}
         <div className="cs-surface reveal">
           <div className="cs-surface-text">
-            <p className="eyebrow muted">Breadcrumbs &amp; Header</p>
+
             <h3 className="h3 serif">
-              You are <em>here</em>. Always.
+              You are here. Always.
             </h3>
             <p className="body">
               Every article carries its full lineage —{" "}
@@ -253,9 +249,9 @@ export default function GitcoinCaseStudyPage() {
         {/* 08 - Solution 5 */}
         <div className="cs-surface reveal cs-glow-scope">
           <div className="cs-surface-text">
-            <p className="eyebrow muted">Edit on GitHub</p>
+
             <h3 className="h3 serif">
-              Every article is <em>a PR away</em>.
+              Every article is a PR away.
             </h3>
             <p className="body">
               At the bottom of every page sits a single luminous button:{" "}
@@ -263,7 +259,7 @@ export default function GitcoinCaseStudyPage() {
               It opens an issue or PR against the page's source — turning the
               whole site into a contributable repository. The glow is the only
               place the lunar-punk language allows itself to{" "}
-              <em className="serif">actually</em> glow, saved for the one moment
+              <span className="serif">actually</span> glow, saved for the one moment
               that signals participation.
             </p>
           </div>
@@ -287,9 +283,9 @@ export default function GitcoinCaseStudyPage() {
         {/* 09 - Solution 6 */}
         <div className="cs-surface reveal reverse">
           <div className="cs-surface-text">
-            <p className="eyebrow muted">Generative asset system</p>
+
             <h3 className="h3 serif">
-              Generative asset system <em>(using Claude in VS Code)</em>.
+              Generative asset system (using Claude in VS Code).
             </h3>
             <p className="body">
               I have created a generator for hero art + Open Graph images using
@@ -335,9 +331,9 @@ export default function GitcoinCaseStudyPage() {
       {/* OUTCOME */}
       <section className="section wrap">
         <div className="reveal cs-sec-head">
-          <p className="eyebrow">Outcome</p>
+
           <h2 className="h2 balance">
-            Relaunch traction, <em>measured</em>.
+            Relaunch traction, measured.
           </h2>
           <p className="body" style={{ maxWidth: "58ch" }}>
             By the end of April, the repositioned Gitcoin experience showed

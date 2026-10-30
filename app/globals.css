@@ -1468,6 +1468,9 @@ section[id] {
   gap: clamp(1.5rem, 4vw, 3rem);
   align-items: start;
 }
+.case-process-step + .case-process-step {
+  margin-top: clamp(2rem, 5vw, 4rem);
+}
 .case-step-copy {
   position: sticky;
   top: 6rem;
@@ -2909,5 +2912,64 @@ body:has(.section-screen) > main {
   .section-screen .exp-art {
     flex: none;
     height: 18svh;
+  }
+}
+
+/* Case studies: one viewport per chapter, with natural overflow for long content. */
+html:has(.case-detail, .gitcoin-hero) {
+  --case-header-height: 3.4rem;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--case-header-height);
+}
+
+.case-detail {
+  gap: 0;
+  padding-block: 0;
+}
+.case-detail .case-sections,
+.case-detail .case-process {
+  gap: 0;
+}
+.case-detail > .case-hero-chapter,
+.case-detail .case-sections > div,
+.case-detail .case-process-step,
+main:has(> .gitcoin-hero) > .section:not(:has(.cs-surface)),
+main:has(> .gitcoin-hero) .cs-surface {
+  min-height: calc(100svh - var(--case-header-height));
+  padding-block: clamp(2rem, 6svh, 4rem);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.case-detail .case-detail-hero {
+  align-items: center;
+}
+.case-detail .case-process-step {
+  align-items: start;
+  align-content: start;
+}
+.case-detail > .case-hero-chapter,
+.case-detail .case-sections > div,
+main:has(> .gitcoin-hero) > .section:not(:has(.cs-surface)) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.case-detail .case-hero-chapter {
+  gap: clamp(2rem, 5svh, 4rem);
+}
+.case-detail .case-process-step + .case-process-step {
+  margin-top: 0;
+}
+.case-detail .case-step-copy {
+  position: static;
+}
+main:has(> .gitcoin-hero) > .section:has(.cs-surface) {
+  padding-block: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.case-detail, .gitcoin-hero) {
+    scroll-behavior: auto;
+    scroll-snap-type: y proximity;
   }
 }
