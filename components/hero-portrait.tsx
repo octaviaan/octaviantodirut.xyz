@@ -200,7 +200,7 @@ export function HeroPortrait({ effect = "lines" }: { effect?: "halftone" | "line
       >
         <span className="hero-portrait hero-portrait-stage">
           <Image
-            src="/images/portrait.jpeg"
+            src={effect === "lines" ? "/images/portrait-lines-rest.webp" : "/images/portrait-halftone-rest.webp"}
             alt=""
             width={384}
             height={512}

@@ -22,6 +22,8 @@ presets remain available in code through `<HeroPortrait effect="halftone" />`,
 with independently editable `portraitRestSettings` and `portraitHoverSettings`.
 There is no effect selector in the UI.
 
-The canvas loads `public/images/portrait.jpg`; `portrait.jpeg` is the static
-fallback. The component adds warm ink separation to grayscale pixels while
+The canvas loads `public/images/portrait.jpg`; `portrait-lines-rest.webp` is the static first-frame fallback for lines,
+and `portrait-halftone-rest.webp` is used for the retained circle effect. These
+assets are rendered at zero animation progress using the current presets;
+regenerate them after changing the resting settings. The component adds warm ink separation to grayscale pixels while
 retaining the lavender shirt. Near-white pixels are excluded from this tint.
