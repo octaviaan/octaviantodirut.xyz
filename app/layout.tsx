@@ -35,7 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // The pre-paint reveal script intentionally changes this element before hydration.
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Reveal gating — runs before paint */}
         <script

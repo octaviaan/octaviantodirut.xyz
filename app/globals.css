@@ -690,9 +690,8 @@ section[id] {
   user-select: none;
 }
 .hero-portrait {
-  width: 80%;
+  width: 100%;
   height: auto;
-  /* border: 1px solid var(--line-strong); */
   object-fit: contain;
   object-position: center bottom;
   pointer-events: none;
@@ -747,11 +746,6 @@ section[id] {
   object-fit: contain;
   background: var(--ink);
 }
-main:has(> #experiments),
-main:has(> .final-portfolio-cta) {
-  background: var(--bg-2);
-}
-
 .final-portfolio-cta {
   padding-block: clamp(3.5rem, 7vw, 6rem);
 }
@@ -779,7 +773,7 @@ main:has(> .final-portfolio-cta) {
 
 .feature-card {
   display: block;
-  border: 1px solid var(--line);
+  border: 0;
   background: var(--surface);
   transition: border-color 0.2s ease;
 }
@@ -926,7 +920,7 @@ main:has(> .final-portfolio-cta) {
 .selected-work-card {
   display: grid;
   grid-template-rows: minmax(240px, 28vw) auto;
-  border: 1px solid var(--line);
+  border: 0;
   background: var(--surface);
   transition: border-color 0.2s ease;
 }
@@ -1001,7 +995,7 @@ main:has(> .final-portfolio-cta) {
   grid-template-columns: repeat(3, 1fr);
 }
 .exp-card {
-  border: 1px solid var(--line);
+  border: 0;
   background: var(--surface);
   padding: clamp(1.5rem, 3vw, 2.2rem);
   display: flex;
@@ -1188,7 +1182,7 @@ main:has(> .final-portfolio-cta) {
 .feat {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  border: 1px solid var(--line);
+  border: 0;
   background: var(--surface);
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
   transition: border-color 0.2s ease;
@@ -1698,7 +1692,7 @@ main:has(> .final-portfolio-cta) {
 }
 .cs-card {
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 0;
   padding: clamp(1.5rem, 3vw, 2.4rem);
   display: flex;
   flex-direction: column;
@@ -1864,7 +1858,7 @@ kbd {
   gap: clamp(1rem, 2vw, 1.5rem);
 }
 .cs-next-card {
-  border: 1px solid var(--line);
+  border: 0;
   background: var(--surface);
   padding: clamp(1.5rem, 3vw, 2.2rem);
   display: flex;
@@ -1952,7 +1946,7 @@ kbd {
   gap: clamp(1.5rem, 3vw, 2.2rem);
 }
 .ex-card {
-  border: 1px solid var(--line);
+  border: 0;
   background: var(--surface);
   padding: clamp(1.5rem, 2.5vw, 2rem);
   display: flex;
@@ -2302,6 +2296,12 @@ h4,
   box-shadow: none;
 }
 
+/* Card artwork sits directly on the page without an image frame. */
+:is(.feature-card, .selected-work-card, .work-card, .exp-card, .ex-card, .feat, .cs-card, .cs-next-card)
+  :is(.frame, .media-frame) {
+  border: 0;
+}
+
 .hairline,
 .site-footer,
 .hero-socials,
@@ -2551,14 +2551,16 @@ kbd {
 .hero-portrait-stage {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
 }
 .hero-portrait-fallback {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 }
 .hero-portrait-canvas {
+  object-fit: contain;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -2619,11 +2621,42 @@ body:has(.home-page) > main {
 }
 .home-page .hero-face {
   width: min(100%, 48svh);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   max-height: 100%;
+  min-height: 0;
+  flex-shrink: 1;
+}
+.hero-effect-control {
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.hero-effect-control select {
+  max-width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.hero-effect-control select:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+.hero-effect-hint {
+  font-size: 0.65rem;
 }
 .home-page .hero-portrait {
   width: 100%;
+  height: 100%;
+  min-height: 0;
+  transform: scale(0.8);
+  transform-origin: center;
 }
 .home-page .hero-socials {
   grid-column: 1 / -1;

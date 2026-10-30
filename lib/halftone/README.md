@@ -1,24 +1,27 @@
-# Hero halftone
+# Hero portrait
 
 The canvas renderer and its geometry/tone helpers are adapted from the local
-`Graphic Generators/Halftone Fun/app/lib` implementation. Editor controls,
-exports, workers, and third-party color-profile dependencies are not included.
+`Graphic Generators/Halftone Fun/app/lib` implementation.
 
-`portrait-settings.ts` recreates the GIF's black halftone → CMYK stipple look.
-These are reconstructed settings, not an exported preset. The component adds
-warm ink separation to the available grayscale portrait to approximate the
-reference GIF's yellow face while retaining the lavender shirt.
+The portrait rests in mono with aligned lines. Hovering or focusing either
+hero action (View case studies or Play intro) expands its line angle range
+from 0°–0° to 0°–360° and transitions to colored CMYK ink. Leaving or blurring
+reverses it. Moving the mouse left to right over the portrait directly controls
+the angle range and color mix. Pointer control takes priority over button focus
+and renders at most once per animation frame. Leaving restores the button or
+resting state. Navbar links do not trigger animation.
 
-`components/hero-portrait.tsx` owns the reversible 1.4-second timeline. It drives
-`mixRatio` directly rather than the generator's looping `animateMix` timeline,
-so reversing does not jump or wait through the original hold frames. Animation
-stops at either endpoint, offscreen, and while the document is hidden. Reduced
-motion keeps the resting state. Keyboard focus activates it; touch holds play
-forward and releasing reverses.
+`components/hero-portrait.tsx` owns the reversible timeline. Change `DURATION_MS`
+to adjust its speed (currently 600 ms). Rendering stops at the endpoints,
+offscreen, and while the document is hidden. Reduced motion keeps the resting
+state. Listeners and animation frames are cleaned up when the component unmounts.
 
-The source portrait is `public/images/hero-face-sequence/face-center.jpg`,
-flattened onto white from the original portrait. Near-white pixels are excluded
-from the warm ink tint so the JPEG background stays clear of colored dots.
+Tune `portraitLineSettings` and `portraitLineColorSettings` in
+`portrait-settings.ts` for the visible line treatments. The original circle
+presets remain available in code through `<HeroPortrait effect="halftone" />`,
+with independently editable `portraitRestSettings` and `portraitHoverSettings`.
+There is no effect selector in the UI.
 
-The static WebP is the GIF's first frame, used before canvas initialization or
-if the source cannot load. The animated GIF is not loaded by the hero.
+The canvas loads `public/images/portrait.jpg`; `portrait.jpeg` is the static
+fallback. The component adds warm ink separation to grayscale pixels while
+retaining the lavender shirt. Near-white pixels are excluded from this tint.

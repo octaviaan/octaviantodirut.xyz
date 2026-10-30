@@ -50,7 +50,7 @@ export type Settings = {
   squareCornerRadius: number;
   lineSquareCap: boolean;
   crossThickness: number;
-  secondShape: ShapeSettings | null;
+  secondShape: (ShapeSettings & Partial<Pick<Settings, "screenRotation" | "plateSeparation" | "contrast" | "saturation" | "gamma" | "shadows" | "midtones" | "highlights" | "threshold" | "grainAmount" | "grainSize">>) | null;
   mixRatio: number;
   animateMix: boolean;
   mixDuration: number;
@@ -161,7 +161,11 @@ export function createHalftoneRenderer() {
         ? createColorMixSampler(sampleContext.getImageData(0, 0, width, height).data, width, height, settings.mixColorA, settings.mixColorB, settings.mixSoftness)
         : undefined;
       const pixels = sampleContext.getImageData(0, 0, width, height).data;
+      const secondPixels = settings.secondShape ? new Uint8ClampedArray(pixels) : pixels;
       applyPhotoTones(pixels, settings);
+      if (settings.secondShape) {
+        applyPhotoTones(secondPixels, { ...settings, ...settings.secondShape });
+      }
       let hasTransparency = false;
       for (let index = 3; index < pixels.length; index += 4) {
         if (pixels[index] < 255) { hasTransparency = true; break; }
@@ -210,9 +214,9 @@ export function createHalftoneRenderer() {
       const shapeB = renderSettings.secondShape ? { ...renderSettings, ...renderSettings.secondShape } : renderSettings;
       const outgoing = returningToA ? shapeB : renderSettings;
       const incoming = returningToA ? renderSettings : shapeB;
-      if (mix < 1) drawShape(context, pixels, width, height, outgoing, mix, false, blendField, plate);
+      if (mix < 1) drawShape(context, returningToA ? secondPixels : pixels, width, height, outgoing, mix, false, blendField, plate);
       if (renderSettings.secondShape && mix > 0) {
-        drawShape(context, pixels, width, height, incoming, mix, true, blendField, plate);
+        drawShape(context, returningToA ? pixels : secondPixels, width, height, incoming, mix, true, blendField, plate);
       }
       context.restore();
 
@@ -230,8 +234,11 @@ export function createHalftoneRenderer() {
         context.globalCompositeOperation = 'source-over';
       }
       // Stable logical-resolution grain preserves its character in scaled exports.
-      if (!plate && settings.grainAmount > 0) {
-        const size = Math.max(0.5, settings.grainSize);
+      const grainMix = returningToA ? 1 - mix : mix;
+      const grainAmount = settings.grainAmount + ((settings.secondShape?.grainAmount ?? settings.grainAmount) - settings.grainAmount) * grainMix;
+      const grainSize = settings.grainSize + ((settings.secondShape?.grainSize ?? settings.grainSize) - settings.grainSize) * grainMix;
+      if (!plate && grainAmount > 0) {
+        const size = Math.max(0.5, grainSize);
         const key = [outputWidth, outputHeight, size].join(':');
         if (grainKey !== key) {
           grain.width = Math.ceil(outputWidth / size);
@@ -253,12 +260,12 @@ export function createHalftoneRenderer() {
         context.save();
         context.setTransform(1, 0, 0, 1, 0, 0);
         context.globalCompositeOperation = 'soft-light';
-        context.globalAlpha = clamp(settings.grainAmount / 100);
+        context.globalAlpha = clamp(grainAmount / 100);
         context.imageSmoothingEnabled = true;
         context.drawImage(grain, 0, 0, target.width, target.height);
         // Carry subtle texture into solid ink and blank paper as well.
         context.globalCompositeOperation = 'source-over';
-        context.globalAlpha = clamp(settings.grainAmount / 100) * 0.16;
+        context.globalAlpha = clamp(grainAmount / 100) * 0.16;
         context.drawImage(grain, 0, 0, target.width, target.height);
         context.restore();
       }
